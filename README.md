@@ -43,7 +43,7 @@ Needs Node.js 22 or 24 and the Forge CLI (`npm install -g @forge/cli`), and an A
 
 ```bash
 npm install
-npm test                 # 21 tests: parser, matcher, gate, and every handler against a fake Jira and Confluence
+npm test                 # 22 tests: parser, matcher, gate, and every handler against a fake Jira and Confluence
 npm run evaluate         # scores the matcher on 30 labelled sample changes, writes logs/evaluate.log
 forge login
 forge register           # gives the app your own id
@@ -61,7 +61,7 @@ From `logs/evaluate.log` (30 sample changes for a sample infusion pump, 8 hazard
 
 - SafeChange found **27 of 27** expected hazard links and missed none. It added 3 extra links, all on the safe side (it asks for a review that a person may decide is not needed).
 - 21 of the 30 changes touch a hazard. A plain Jira workflow has no hazard check, so all 21 could reach Done with no risk review. With SafeChange, all of them are held until reviewed and tested.
-- The 9 changes that touch no hazard (docs, CI, translations) pass with no extra step.
+- 8 of the 9 changes that touch no hazard (docs, CI, translations) pass with no extra step. The ninth, a rate limit on a cloud login API, was flagged by the word "rate limit": a safe side false alarm that a reviewer can clear.
 
 ## Project layout
 
