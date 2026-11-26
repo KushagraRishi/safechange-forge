@@ -1,0 +1,203 @@
+modules:
+  jira:issuePanel:
+    - key: safechange-panel
+      resource: panel
+      resolver:
+        function: panel-resolver
+      render: native
+      title: SafeChange
+      icon: resource:icons;safechange.svg
+  jira:adminPage:
+    - key: safechange-admin
+      resource: admin
+      resolver:
+        function: admin-resolver
+      render: native
+      title: SafeChange setup
+      useAsConfig: true
+      useAsGetStarted: true
+  jira:workflowValidator:
+    - key: safechange-gate
+      name: SafeChange hazard gate
+      description: Stops a change from moving on until every hazard it touches has a signed risk review and a passed, linked test.
+      function: validate
+      projectTypes:
+        - company-managed
+        - team-managed
+  rovo:agent:
+    - key: safechange-agent
+      name: SafeChange Risk Reviewer
+      description: Checks which hazards a change to medical device software touches, explains the risk, and drafts the review note.
+      icon: resource:icons;safechange.svg
+      prompt: resource:prompts;agent-prompt.md
+      conversationStarters:
+        - Which hazards does this change touch?
+        - What is still missing before this can be Done?
+        - Is the next release safe to ship?
+      actions:
+        - analyze-change
+        - hazard-impact
+        - similar-recalls
+        - record-risk-review
+        - release-check
+  action:
+    - key: analyze-change
+      name: Analyze change
+      function: analyze-change-fn
+      actionVerb: GET
+      description: Lists the hazards from the hazard log that a Jira issue touches, why each matched, and whether each has a signed review and a passed test.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          description: The Jira issue key of the change, for example PUMP-120. Use the current issue if the user does not name one.
+          required: false
+    - key: hazard-impact
+      name: Hazard impact
+      function: hazard-impact-fn
+      actionVerb: GET
+      description: Lists the open changes that touch one hazard from the hazard log, for example HAZ-1.
+      inputs:
+        hazardId:
+          title: Hazard ID
+          type: string
+          description: The hazard ID from the hazard log, for example HAZ-1.
+          required: true
+        jql:
+          title: JQL
+          type: string
+          description: Optional JQL to limit which changes are checked.
+          required: false
+    - key: similar-recalls
+      name: Similar FDA recalls
+      function: similar-recalls-fn
+      actionVerb: GET
+      description: Finds real FDA device recalls with a software root cause that match a hazard, from the public openFDA recall data.
+      inputs:
+        hazardId:
+          title: Hazard ID
+          type: string
+          description: The hazard ID from the hazard log, for example HAZ-4.
+          required: true
+    - key: record-risk-review
+      name: Record risk review
+      function: record-risk-review-fn
+      actionVerb: UPDATE
+      description: Saves a risk review for one hazard on one change, signed by the current user. Only use after the user has read and agreed to the note.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          description: The Jira issue key of the change.
+          required: true
+        hazardId:
+          title: Hazard ID
+          type: string
+          description: The hazard ID being reviewed, for example HAZ-1.
+          required: true
+        decision:
+          title: Decision
+          type: string
+          description: Either acceptable or not-acceptable.
+          required: true
+        note:
+          title: Note
+          type: string
+          description: Why the risk is or is not acceptable, in the user's words.
+          required: true
+        testKey:
+          title: Test issue key
+          type: string
+          description: The Jira issue key of the linked verification test.
+          required: false
+    - key: release-check
+      name: Release check
+      function: release-check-fn
+      actionVerb: GET
+      description: Checks every change in a release, project or JQL query and lists the ones with hazards not yet cleared.
+      inputs:
+        version:
+          title: Fix version
+          type: string
+          description: A Jira fix version name, for example 2.4.
+          required: false
+        project:
+          title: Project key
+          type: string
+          description: A Jira project key, to check all its open changes.
+          required: false
+        jql:
+          title: JQL
+          type: string
+          description: Any JQL query.
+          required: false
+  rovo:mcp:
+    - key: safechange-mcp
+      name: SafeChange
+      tools:
+        - analyze-change
+        - hazard-impact
+        - similar-recalls
+        - release-check
+  rovo:skill:
+    - key: safechange-skill
+      source:
+        dir: skills/safechange-risk-review
+      dependencies:
+        tools:
+          - analyze-change
+          - hazard-impact
+          - similar-recalls
+          - release-check
+  function:
+    - key: panel-resolver
+      handler: index.panelResolver
+    - key: admin-resolver
+      handler: index.adminResolver
+    - key: validate
+      handler: index.validate
+    - key: analyze-change-fn
+      handler: index.actionAnalyzeChange
+    - key: hazard-impact-fn
+      handler: index.actionHazardImpact
+    - key: similar-recalls-fn
+      handler: index.actionSimilarRecalls
+    - key: record-risk-review-fn
+      handler: index.actionRecordReview
+    - key: release-check-fn
+      handler: index.actionReleaseCheck
+resources:
+  - key: panel
+    path: src/frontend/panel.jsx
+  - key: admin
+    path: src/frontend/admin.jsx
+  - key: icons
+    path: static/icons
+  - key: prompts
+    path: static/prompts
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+    - manage:jira-project
+    - storage:app
+    - read:page:confluence
+    - write:page:confluence
+    - read:space:confluence
+    - search:confluence
+  external:
+    fetch:
+      backend:
+        - https://api.fda.gov
+app:
+  id: ari:cloud:ecosystem::app/00000000-0000-0000-0000-000000000000
+  runtime:
+    name: nodejs24.x
+    architecture: arm64
+    memoryMB: 256
+  compatibility:
+    jira:
+      required: true
+    confluence:
+      required: false
