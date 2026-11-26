@@ -38,7 +38,8 @@ modules:
   jira:workflowValidator:
     - key: safechange-gate
       name: SafeChange hazard gate
-      description: Stops a change from moving on until every hazard it touches has a signed risk review and a passed, linked test.
+      description: Stops a change from moving on until every hazard it touches has a
+        signed risk review and a passed, linked test.
       function: validate
       projectTypes:
         - company-managed
@@ -46,7 +47,8 @@ modules:
   rovo:agent:
     - key: safechange-agent
       name: SafeChange Risk Reviewer
-      description: Checks which hazards a change to medical device software touches, explains the risk, and drafts the review note.
+      description: Checks which hazards a change to medical device software touches,
+        explains the risk, and drafts the review note.
       icon: resource:icons;safechange.svg
       prompt: resource:prompts;agent-prompt.md
       conversationStarters:
@@ -64,18 +66,22 @@ modules:
       name: Analyze change
       function: analyze-change-fn
       actionVerb: GET
-      description: Lists the hazards from the hazard log that a Jira issue touches, why each matched, and whether each has a signed review and a passed test.
+      description: Lists the hazards from the hazard log that a Jira issue touches,
+        why each matched, and whether each has a signed review and a passed
+        test.
       inputs:
         issueKey:
           title: Issue key
           type: string
-          description: The Jira issue key of the change, for example PUMP-120. Use the current issue if the user does not name one.
+          description: The Jira issue key of the change, for example PUMP-120. Use the
+            current issue if the user does not name one.
           required: false
     - key: hazard-impact
       name: Hazard impact
       function: hazard-impact-fn
       actionVerb: GET
-      description: Lists the open changes that touch one hazard from the hazard log, for example HAZ-1.
+      description: Lists the open changes that touch one hazard from the hazard log,
+        for example HAZ-1.
       inputs:
         hazardId:
           title: Hazard ID
@@ -91,7 +97,8 @@ modules:
       name: Similar FDA recalls
       function: similar-recalls-fn
       actionVerb: GET
-      description: Finds real FDA device recalls with a software root cause that match a hazard, from the public openFDA recall data.
+      description: Finds real FDA device recalls with a software root cause that match
+        a hazard, from the public openFDA recall data.
       inputs:
         hazardId:
           title: Hazard ID
@@ -102,7 +109,8 @@ modules:
       name: Record risk review
       function: record-risk-review-fn
       actionVerb: UPDATE
-      description: Saves a risk review for one hazard on one change, signed by the current user. Only use after the user has read and agreed to the note.
+      description: Saves a risk review for one hazard on one change, signed by the
+        current user. Only use after the user has read and agreed to the note.
       inputs:
         issueKey:
           title: Issue key
@@ -133,7 +141,8 @@ modules:
       name: Release check
       function: release-check-fn
       actionVerb: GET
-      description: Checks every change in a release, project or JQL query and lists the ones with hazards not yet cleared.
+      description: Checks every change in a release, project or JQL query and lists
+        the ones with hazards not yet cleared.
       inputs:
         version:
           title: Fix version
@@ -212,9 +221,9 @@ permissions:
   external:
     fetch:
       backend:
-        - https://api.fda.gov
+        - address: https://api.fda.gov
 app:
-  id: ari:cloud:ecosystem::app/00000000-0000-0000-0000-000000000000
+  id: ari:cloud:ecosystem::app/d7f345d2-c219-4a9f-b138-70100a1b9546
   runtime:
     name: nodejs24.x
     architecture: arm64
