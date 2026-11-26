@@ -1,7 +1,7 @@
 // SafeChange: Forge entry points.
 
 import Resolver from '@forge/resolver';
-import { checkChange, signReview, recallsForHazard, releaseCheck, changesTouchingHazard, loadHazardLog, NotConfigured } from './services/engine.js';
+import { checkChange, signReview, recallsForHazard, releaseCheck, changesTouchingHazard, loadHazardLog, hazardLogStatus, NotConfigured } from './services/engine.js';
 import { getSettings, saveSettings } from './services/store.js';
 import { findPages, getPage } from './services/atlassian.js';
 import { blockMessage } from './core/gate.js';
@@ -124,6 +124,32 @@ admin.define('releaseCheck', async ({ payload }) => {
 });
 
 export const adminResolver = admin.getDefinitions();
+
+// ---------- Confluence byline on the hazard log page ----------
+
+const byline = new Resolver();
+
+byline.define('status', async ({ context }) => {
+  try {
+    const pageId = context.extension?.content?.id;
+    const [status, settings] = await Promise.all([hazardLogStatus(pageId), getSettings()]);
+    return { ...status, isActiveLog: settings.pageId === String(pageId) };
+  } catch (e) {
+    return fail(e);
+  }
+});
+
+byline.define('useThisPage', async ({ context }) => {
+  try {
+    const page = await getPage(context.extension?.content?.id);
+    await saveSettings({ pageId: page.id, pageTitle: page.title, pageUrl: page.url });
+    return { ok: true };
+  } catch (e) {
+    return fail(e);
+  }
+});
+
+export const bylineResolver = byline.getDefinitions();
 
 // ---------- Workflow validator ----------
 

@@ -7,6 +7,25 @@ modules:
       render: native
       title: SafeChange
       icon: resource:icons;safechange.svg
+  jira:issueContext:
+    - key: safechange-context
+      resource: panel
+      resolver:
+        function: panel-resolver
+      render: native
+      title: SafeChange
+      label: SafeChange hazards
+      icon: resource:icons;safechange.svg
+  confluence:contentBylineItem:
+    - key: safechange-byline
+      resource: byline
+      resolver:
+        function: byline-resolver
+      render: native
+      title: SafeChange
+      tooltip: Open changes that touch each hazard on this page
+      icon: resource:icons;safechange.svg
+      viewportSize: large
   jira:adminPage:
     - key: safechange-admin
       resource: admin
@@ -154,6 +173,8 @@ modules:
       handler: index.panelResolver
     - key: admin-resolver
       handler: index.adminResolver
+    - key: byline-resolver
+      handler: index.bylineResolver
     - key: validate
       handler: index.validate
     - key: analyze-change-fn
@@ -171,6 +192,8 @@ resources:
     path: src/frontend/panel.jsx
   - key: admin
     path: src/frontend/admin.jsx
+  - key: byline
+    path: src/frontend/byline.jsx
   - key: icons
     path: static/icons
   - key: prompts

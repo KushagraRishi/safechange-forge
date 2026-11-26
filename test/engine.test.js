@@ -164,7 +164,7 @@ test('Rovo actions: analyze, impact, recalls, record, release', async () => {
   assert.equal(rel.blocked, 1);
 });
 
-test('if the hazard log cannot be read, the gate fails closed', async () => {
+test("if the hazard log cannot be read, the gate fails closed", async () => {
   const saved = site.page;
   site.page = null;
   const orig = client.requestConfluence;
@@ -174,4 +174,14 @@ test('if the hazard log cannot be read, the gate fails closed', async () => {
   assert.match(v.errorMessage, /could not check/);
   client.requestConfluence = orig;
   site.page = saved;
+});
+
+test('Confluence byline: each hazard lists the open changes touching it', async () => {
+  const r = await app.bylineResolver.status({ context: { extension: { content: { id: '100' } } } });
+  assert.equal(r.isHazardLog, true);
+  assert.equal(r.isActiveLog, true);
+  const byId = Object.fromEntries(r.rows.map((x) => [x.hazard.id, x]));
+  assert.deepEqual(byId['HAZ-1'].changes.map((c) => c.key), ['PUMP-1']);
+  assert.equal(byId['HAZ-4'].changes.length, 0);
+  assert.ok(byId['HAZ-1'].open >= 1);
 });

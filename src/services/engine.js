@@ -121,3 +121,38 @@ export async function changesTouchingHazard(hazardId, jql) {
   }
   return { hazard, changes: hits };
 }
+
+/**
+ * For a Confluence page that holds a hazard log: each hazard with the open
+ * changes that touch it, and how many are still held. Reads the page it is on,
+ * so it does not depend on the Jira side settings.
+ */
+export async function hazardLogStatus(pageId, jql = 'statusCategory != Done ORDER BY updated DESC') {
+  const page = await getPage(pageId);
+  const log = parseHazardLog(page.body);
+  if (!log.hazards.length) return { isHazardLog: false, problems: log.problems, page: { id: page.id, title: page.title } };
+  const issues = await searchIssues(jql, 50);
+  const per = Object.fromEntries(log.hazards.map((h) => [h.id, { hazard: h, changes: [] }]));
+  for (const issue of issues) {
+    const change = changeFromIssue(issue);
+    const touched = analyzeChange(change, log.hazards);
+    if (!touched.length) continue;
+    const reviews = await getReviews(issue.key);
+    const tests = await getStatuses(Object.values(reviews).map((r) => r.testKey));
+    const gate = evaluateGate(touched, reviews, fingerprint(change), tests);
+    for (const item of gate.items) {
+      per[item.hazard.id].changes.push({ key: issue.key, summary: change.summary, state: item.state, label: item.label, blocks: item.blocks });
+    }
+  }
+  const rows = Object.values(per).map((r) => ({
+    ...r,
+    open: r.changes.filter((c) => c.blocks).length,
+  }));
+  return {
+    isHazardLog: true,
+    page: { id: page.id, title: page.title, version: page.version },
+    problems: log.problems,
+    checked: issues.length,
+    rows,
+  };
+}
