@@ -1,0 +1,12 @@
+{
+  "name": "safechange",
+  "version": "1.0.0",
+  "description": "Hazard-aware change control for medical device software, in Jira and Confluence. Built on Atlassian Forge.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "evaluate": "node scripts/evaluate.js"
+  }
+}

@@ -1,0 +1,39 @@
+SafeChange evaluation, 2026-11-26T21:19:46.509Z
+Hazard log: 8 hazards. Changes: 30.
+
+DIFF PUMP-101  found [HAZ-1, HAZ-6] expected [HAZ-1]  Speed up bolus calculation for small volumes
+OK   PUMP-102  found [HAZ-5] expected [HAZ-5]  Fix typo in the About screen
+OK   PUMP-103  found [] expected []  Update user manual PDF link
+DIFF PUMP-104  found [HAZ-3, HAZ-6] expected [HAZ-3]  Lower occlusion pressure threshold for neonatal mode
+OK   PUMP-105  found [HAZ-4] expected [HAZ-4]  New air sensor driver for rev C board
+OK   PUMP-106  found [HAZ-5] expected [HAZ-5]  Allow mcg/kg/min as a dose unit
+OK   PUMP-107  found [HAZ-2, HAZ-6] expected [HAZ-6, HAZ-2]  Mute button holds for 5 minutes instead of 2
+OK   PUMP-108  found [] expected []  CI: cache the toolchain download
+OK   PUMP-109  found [HAZ-7] expected [HAZ-7]  Battery gauge shows percent instead of bars
+OK   PUMP-110  found [HAZ-8] expected [HAZ-8]  Over the air firmware update support
+OK   PUMP-111  found [] expected []  Translate main menu to Spanish
+OK   PUMP-112  found [HAZ-1, HAZ-2] expected [HAZ-1, HAZ-2]  Motor PID gains retuned for the new gearbox
+OK   PUMP-113  found [HAZ-2] expected [HAZ-2]  Log the stall counter to the service log
+OK   PUMP-114  found [] expected []  Change splash screen colour
+OK   PUMP-115  found [HAZ-5] expected [HAZ-5]  Drug library import accepts concentration in mg/L
+DIFF PUMP-116  found [HAZ-1] expected []  Add rate limit to the cloud login API
+OK   PUMP-117  found [HAZ-2, HAZ-6, HAZ-7] expected [HAZ-7, HAZ-6, HAZ-2]  Low battery alarm moved from 30 to 15 minutes
+OK   PUMP-118  found [HAZ-8] expected [HAZ-8]  Remote pause from the nurse station
+OK   PUMP-119  found [] expected []  Unit tests for the keypad debounce
+OK   PUMP-120  found [HAZ-1] expected [HAZ-1]  Max flow rate raised to 1200 mL/h
+OK   PUMP-121  found [HAZ-4] expected [HAZ-4]  Bubble detection debounce from 3 to 5 samples
+OK   PUMP-122  found [] expected []  Update copyright year in source headers
+OK   PUMP-123  found [HAZ-3] expected [HAZ-3]  Pressure sensor calibration table for new supplier
+OK   PUMP-124  found [HAZ-5] expected [HAZ-5]  Dark mode for the settings screen
+OK   PUMP-125  found [HAZ-2, HAZ-6] expected [HAZ-6, HAZ-2]  Alarm volume minimum lowered for night shift
+OK   PUMP-126  found [] expected []  Readme: how to build on macOS
+OK   PUMP-127  found [HAZ-1, HAZ-2] expected [HAZ-1, HAZ-2]  Under-infusion check uses the encoder instead of motor current
+OK   PUMP-128  found [HAZ-8] expected [HAZ-8]  Wi-Fi reconnect backoff
+OK   PUMP-129  found [] expected []  Service tool shows serial number
+OK   PUMP-130  found [HAZ-5] expected [HAZ-5]  Soft dose limit warning wording
+
+Hazard links found: 27 of 27 expected (missed 0). Extra links: 3.
+Changes that touch a hazard: 21 of 30.
+Plain Jira workflow: 21 of 21 hazard changes could reach Done with no risk review.
+SafeChange, before any review: 22 changes held at Done, 8 passed with no extra step.
+Time to analyse all 30 changes: 12.7 ms.
