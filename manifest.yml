@@ -33,8 +33,14 @@ modules:
         function: admin-resolver
       render: native
       title: SafeChange setup
-      useAsConfig: true
-      useAsGetStarted: true
+  jira:globalPage:
+    - key: safechange-home
+      resource: admin
+      resolver:
+        function: admin-resolver
+      render: native
+      title: SafeChange
+      icon: resource:icons;safechange.svg
   jira:workflowValidator:
     - key: safechange-gate
       name: SafeChange hazard gate

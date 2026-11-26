@@ -88,3 +88,8 @@ test('gate: every state', () => {
   assert.equal(blockMessage(ok), '');
   assert.equal(evaluateGate([], {}, fp).status, 'no-hazards');
 });
+
+test('verification tests are never gated', () => {
+  const t = analyzeChange({ ...base, summary: 'Verify HAZ-6: alarm mute timeout', labels: ['verification'] }, hazards);
+  assert.deepEqual(t, []);
+});

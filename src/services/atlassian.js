@@ -8,7 +8,8 @@ async function json(res, what) {
     const text = await res.text().catch(() => '');
     throw new Error(`${what} failed (${res.status}) ${text.slice(0, 200)}`);
   }
-  return res.status === 204 ? {} : res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : {};
 }
 
 // ---------- Jira ----------

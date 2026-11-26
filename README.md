@@ -43,7 +43,7 @@ Needs Node.js 22 or 24 and the Forge CLI (`npm install -g @forge/cli`), and an A
 
 ```bash
 npm install
-npm test                 # 22 tests: parser, matcher, gate, and every handler against a fake Jira and Confluence
+npm test                 # 23 tests: parser, matcher, gate, and every handler against a fake Jira and Confluence
 npm run evaluate         # scores the matcher on 30 labelled sample changes, writes logs/evaluate.log
 forge login
 forge register           # gives the app your own id

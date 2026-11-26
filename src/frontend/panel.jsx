@@ -46,12 +46,12 @@ function Verdict({ gate }) {
     );
   if (gate.status === 'clear')
     return (
-      <SectionMessage appearance="success" title={`All ${gate.total} hazards cleared`}>
+      <SectionMessage appearance="success" title={gate.total === 1 ? 'The hazard is cleared' : `All ${gate.total} hazards cleared`}>
         <Text>Every hazard this change touches has a signed review and a passed test.</Text>
       </SectionMessage>
     );
   return (
-    <SectionMessage appearance="error" title={`Held at Done: ${gate.open} of ${gate.total} hazards not cleared`}>
+    <SectionMessage appearance="error" title={`Held at Done: ${gate.open} of ${gate.total} ${gate.total === 1 ? 'hazard' : 'hazards'} not cleared`}>
       <Text>Review each hazard below and link a passed test. Then this change can move to Done.</Text>
     </SectionMessage>
   );
@@ -78,10 +78,15 @@ function Recalls({ hazardId }) {
         <Strong>{data.total}</Strong> FDA recalls with a software root cause mention the same risks (openFDA, updated {data.updated}).
       </Text>
       {data.items.map((r) => (
-        <Text key={r.id}>
-          {r.date} · {r.firm}: {r.reason.slice(0, 160)}
-          {r.reason.length > 160 ? '…' : ''} <Link href={r.url} openNewTab>FDA record</Link>
-        </Text>
+        <Stack key={r.id} space="space.025">
+          <Text>
+            <Strong>{r.firm}</Strong>, {r.date}
+          </Text>
+          <Text>
+            {r.reason.slice(0, 160)}
+            {r.reason.length > 160 ? '...' : ''} <Link href={r.url} openNewTab>FDA record</Link>
+          </Text>
+        </Stack>
       ))}
     </Stack>
   );
@@ -127,7 +132,7 @@ function ReviewForm({ item, linked, onSigned }) {
           Draft from hazard log
         </Button>
       </Inline>
-      <TextArea id={`n-${item.hazard.id}`} value={note} onChange={(e) => setNote(e.target.value)} placeholder="What the change does to this hazard, and why the risk is or is not acceptable" />
+      <TextArea id={`n-${item.hazard.id}`} minimumRows={5} resize="vertical" value={note} onChange={(e) => setNote(e.target.value)} placeholder="What the change does to this hazard, and why the risk is or is not acceptable" />
       <Label labelFor={`t-${item.hazard.id}`}>Verification test</Label>
       <Select id={`t-${item.hazard.id}`} value={test} onChange={setTest} options={testOptions} placeholder={testOptions.length ? 'Pick a linked issue' : 'Link a test issue to this change first'} isClearable />
       {err ? <Text>{err}</Text> : null}

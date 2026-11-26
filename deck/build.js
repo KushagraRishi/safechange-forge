@@ -263,7 +263,7 @@ async function icon(Comp, color) {
   };
   bar(2, 1.95, 'Risky changes held', 21, 21, '21 of 21');
   bar(3, 3.25, 'Safe changes passed with no extra step', 8, 9, '8 of 9');
-  bar(4, 4.55, 'Automated tests passing', 22, 22, '22 of 22');
+  bar(4, 4.55, "Automated tests passing", 23, 23, "23 of 23");
   text(s, '30 sample changes, 8 hazards, labelled by hand. 3 extra flags, all on the safe side.', 0.7, 6.2, 11.9, 0.35, { fontSize: 13, color: C.accent5 }, 'a5|method');
 
   // ============ 9. Close ============

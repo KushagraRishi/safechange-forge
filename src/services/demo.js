@@ -13,7 +13,8 @@ async function ok(res, what) {
     const t = await res.text().catch(() => '');
     throw new Error(`${what} failed (${res.status}) ${t.slice(0, 300)}`);
   }
-  return res.status === 204 ? {} : res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : {};
 }
 
 const J = { Accept: 'application/json', 'Content-Type': 'application/json' };
@@ -114,6 +115,7 @@ export async function createDemo({ projectKey, spaceId }) {
   // 3. One verification test per hazard
   const typeId = await issueTypeId(projectKey);
   const testKeys = {};
+  // Created in order so the test keys follow the hazard numbers.
   for (const h of hazards) {
     testKeys[h.id] = await createIssue(projectKey, typeId, `Verify ${h.id}: ${h.verification}`, `Verification test for ${h.id} (${h.title}).\nRisk control under test: ${h.control}`, [], ['verification']);
   }
@@ -124,9 +126,10 @@ export async function createDemo({ projectKey, spaceId }) {
   for (const c of DEMO_CHANGES) {
     const key = await createIssue(projectKey, typeId, c.summary, c.description, c.components, c.labels);
     const touched = analyzeChange({ ...c, files: extractFiles(c.description) }, hazards);
-    for (const t of touched) await link(key, testKeys[t.hazard.id]);
     created.push({ key, summary: c.summary, hazards: touched.map((t) => t.hazard.id) });
   }
+  // Links do not depend on each other, so make them all at once.
+  await Promise.all(created.flatMap((c) => c.hazards.map((id) => link(c.key, testKeys[id]))));
   steps.push(`Created ${created.length} sample changes and linked each to its tests.`);
 
   return { ok: true, steps, page: { id: page.id, title: page.title, url: pageUrl }, tests: testKeys, changes: created };

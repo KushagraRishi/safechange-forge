@@ -68,7 +68,11 @@ function keywordRegex(word) {
  * For each hazard, list the reasons this change touches it.
  * Returns only touched hazards, most severe first.
  */
+export const TEST_LABEL = 'verification';
+
 export function analyzeChange(change, hazards) {
+  // Verification tests are evidence, not changes: they never need a review.
+  if (change.labels.some((l) => l.toLowerCase() === TEST_LABEL)) return [];
   const text = `${change.summary}\n${change.description}`;
   const comps = change.components.map((c) => c.toLowerCase());
   const labels = change.labels.map((l) => l.toLowerCase());

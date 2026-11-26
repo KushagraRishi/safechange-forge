@@ -1,4 +1,4 @@
-SafeChange evaluation, 2026-11-26T21:19:46.509Z
+SafeChange evaluation, 2026-11-26T22:14:26.406Z
 Hazard log: 8 hazards. Changes: 30.
 
 DIFF PUMP-101  found [HAZ-1, HAZ-6] expected [HAZ-1]  Speed up bolus calculation for small volumes
@@ -36,4 +36,4 @@ Hazard links found: 27 of 27 expected (missed 0). Extra links: 3.
 Changes that touch a hazard: 21 of 30.
 Plain Jira workflow: 21 of 21 hazard changes could reach Done with no risk review.
 SafeChange, before any review: 22 changes held at Done, 8 passed with no extra step.
-Time to analyse all 30 changes: 12.7 ms.
+Time to analyse all 30 changes: 13.0 ms.

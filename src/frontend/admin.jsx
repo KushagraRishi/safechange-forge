@@ -157,6 +157,7 @@ function Gate() {
         <Text>In your project, open Project settings, then Workflows, and edit the workflow.</Text>
         <Text>Select the transition into Done, then Add rule, and pick the validator "SafeChange hazard gate". Publish the workflow.</Text>
         <Text>From then on, a change that touches a hazard cannot move to Done until every touched hazard has a signed review and a passed, linked test.</Text>
+        <Text>Issues with the label "verification" are treated as tests, so the gate never holds them.</Text>
       </Stack>
     </Box>
   );
