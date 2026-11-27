@@ -27,7 +27,7 @@ const STATE = {
   'missing-test': 'moved',
   'test-not-passed': 'inprogress',
 };
-const WHY = { file: 'File', component: 'Component', label: 'Label', word: 'Mentions' };
+const WHY = { file: 'File', component: 'Component', label: 'Label', word: 'Mentions', model: 'Model reads' };
 
 const card = xcss({
   borderColor: 'color.border',
@@ -228,6 +228,12 @@ function App() {
   return (
     <Stack space="space.150">
       <Verdict gate={data.gate} />
+      {data.model && data.model.length ? (
+        <Text>
+          <Strong>Model reads this change as: </Strong>
+          {data.model.map((m) => `${m.name} (${Math.round(m.p * 100)}%)`).join(', ')}
+        </Text>
+      ) : null}
       {data.gate.items.map((item) => (
         <HazardCard key={item.hazard.id} item={item} linked={data.linked} onSigned={setData} />
       ))}

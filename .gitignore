@@ -3,3 +3,5 @@ node_modules/
 *.log.tmp
 deck/node_modules/
 deck/assets/photos/_candidates/
+ml/.venv/
+__pycache__/

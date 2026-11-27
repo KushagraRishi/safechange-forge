@@ -50,3 +50,11 @@ The test events are never read while building the model, the baseline or the thr
 ## What gets reported
 
 Everything above, run once by `python3 ml/evaluate.py --final`, written to `logs/ml_test.json` with the git commit hash. Categories with fewer than 10 test examples are flagged as too small to judge. Failures are reported in the same place and the same size as successes.
+
+## Amendment 1 (2026-11-27, before the test run)
+
+Found while wiring the trained model into the app, using only the 30 hand-made sample changes in `fixtures/changes.json` (no test data was opened):
+
+- Recall text always describes a failure, so the model never saw a harmless change. On short Jira tickets such as "Update user manual link" its probabilities sit near the dev thresholds (about 0.45), so with the dev thresholds alone the app would flag almost every ticket.
+- The app therefore also needs **evidence**: the sum of the change's own term contributions to the logit (the logit minus the intercept). Rule, fixed here: the app bar is the smallest multiple of 0.05 strictly above the largest evidence of any category the model flags on the 9 harmless sample changes. That largest value is 0.495, so **APP_MIN_EVIDENCE = 0.5** (`src/core/model.js`).
+- This does not change the primary endpoint or the frozen model. The test run reports one more secondary method, **model (app operating point)**: a category is flagged only if p is at least its dev threshold **and** evidence is at least 0.5. It also reports the union of the app operating point and the baseline.

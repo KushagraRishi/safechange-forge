@@ -65,3 +65,21 @@ export async function putReview(issueKey, hazardId, review) {
   if (!res.ok) throw new Error(`Could not save the review on ${issueKey} (${res.status})`);
   return reviews[hazardId];
 }
+
+const ALERT_PROP = 'safechange-alert';
+
+/** Fingerprint of the change version we last alerted about. */
+export async function getAlertMark(issueKey) {
+  const res = await api.asApp().requestJira(route`/rest/api/3/issue/${issueKey}/properties/${ALERT_PROP}`, { headers: { Accept: 'application/json' } });
+  if (!res.ok) return null;
+  const body = await res.json();
+  return body.value?.fingerprint || null;
+}
+
+export async function setAlertMark(issueKey, fingerprint) {
+  await api.asApp().requestJira(route`/rest/api/3/issue/${issueKey}/properties/${ALERT_PROP}`, {
+    method: 'PUT',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fingerprint, at: new Date().toISOString() }),
+  });
+}

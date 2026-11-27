@@ -67,6 +67,7 @@ modules:
         - similar-recalls
         - record-risk-review
         - release-check
+        - write-release-record
   action:
     - key: analyze-change
       name: Analyze change
@@ -165,6 +166,39 @@ modules:
           type: string
           description: Any JQL query.
           required: false
+    - key: write-release-record
+      name: Write release safety record
+      function: release-record-fn
+      actionVerb: CREATE
+      description: Writes a Confluence page that records, for every change in a release, the hazards it touches, who signed each review, the test and the change fingerprint.
+      inputs:
+        version:
+          title: Fix version
+          type: string
+          description: A Jira fix version name, for example 2.4.
+          required: false
+        project:
+          title: Project key
+          type: string
+          description: A Jira project key.
+          required: false
+        jql:
+          title: JQL
+          type: string
+          description: Any JQL query.
+          required: false
+        title:
+          title: Page title
+          type: string
+          description: Optional title for the record page.
+          required: false
+  trigger:
+    - key: stale-review-alert
+      function: on-issue-updated
+      events:
+        - avi:jira:updated:issue
+      filter:
+        ignoreSelf: true
   rovo:mcp:
     - key: safechange-mcp
       name: SafeChange
@@ -202,6 +236,10 @@ modules:
       handler: index.actionRecordReview
     - key: release-check-fn
       handler: index.actionReleaseCheck
+    - key: release-record-fn
+      handler: index.actionReleaseRecord
+    - key: on-issue-updated
+      handler: index.onIssueUpdated
 resources:
   - key: panel
     path: src/frontend/panel.jsx

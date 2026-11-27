@@ -1,0 +1,700 @@
+{"event": "63045", "labels": ["info"]}
+{"event": "51501", "labels": ["comms"]}
+{"event": "86269", "labels": ["info"]}
+{"event": "50759", "labels": ["info"]}
+{"event": "83233", "labels": ["stop"]}
+{"event": "46889", "labels": ["info"]}
+{"event": "88405", "labels": ["power", "stop"]}
+{"event": "86474", "labels": ["stop"]}
+{"event": "75613", "labels": ["none"]}
+{"event": "45960", "labels": ["info", "alarm"]}
+{"event": "70157", "labels": ["ui"]}
+{"event": "74620", "labels": ["info"]}
+{"event": "69656", "labels": ["info"]}
+{"event": "86932", "labels": ["info", "dose"]}
+{"event": "59519", "labels": ["dose"]}
+{"event": "79625", "labels": ["dose"]}
+{"event": "45154", "labels": ["info"]}
+{"event": "71505", "labels": ["info"]}
+{"event": "66381", "labels": ["dose"]}
+{"event": "76656", "labels": ["alarm", "comms"]}
+{"event": "53897", "labels": ["info"]}
+{"event": "85243", "labels": ["alarm", "info"]}
+{"event": "69806", "labels": ["alarm"]}
+{"event": "45527", "labels": ["dose"]}
+{"event": "47773", "labels": ["info"]}
+{"event": "57558", "labels": ["info", "ui"]}
+{"event": "64900", "labels": ["info"]}
+{"event": "55774", "labels": ["info"]}
+{"event": "81705", "labels": ["info"]}
+{"event": "76483", "labels": ["stop"]}
+{"event": "65609", "labels": ["info"]}
+{"event": "81589", "labels": ["info"]}
+{"event": "76405", "labels": ["info"]}
+{"event": "65136", "labels": ["info"]}
+{"event": "56873", "labels": ["ui", "info"]}
+{"event": "53045", "labels": ["dose"]}
+{"event": "70775", "labels": ["dose"]}
+{"event": "49538", "labels": ["dose"]}
+{"event": "79770", "labels": ["stop"]}
+{"event": "68270", "labels": ["info"]}
+{"event": "71991", "labels": ["info"]}
+{"event": "78830", "labels": ["stop", "alarm"]}
+{"event": "81975", "labels": ["info"]}
+{"event": "86077", "labels": ["comms", "info"]}
+{"event": "82561", "labels": ["info"]}
+{"event": "57039", "labels": ["info"]}
+{"event": "67657", "labels": ["dose"]}
+{"event": "88581", "labels": ["stop"]}
+{"event": "49012", "labels": ["info"]}
+{"event": "66773", "labels": ["dose"]}
+{"event": "62751", "labels": ["info"]}
+{"event": "70917", "labels": ["info"]}
+{"event": "78443", "labels": ["none"]}
+{"event": "60684", "labels": ["none"]}
+{"event": "68960", "labels": ["none"]}
+{"event": "54278", "labels": ["info"]}
+{"event": "51494", "labels": ["info"]}
+{"event": "46771", "labels": ["dose"]}
+{"event": "49024", "labels": ["info"]}
+{"event": "44965", "labels": ["info"]}
+{"event": "83193", "labels": ["comms", "ui"]}
+{"event": "86846", "labels": ["none"]}
+{"event": "67230", "labels": ["none"]}
+{"event": "84337", "labels": ["alarm", "stop"]}
+{"event": "92798", "labels": ["comms"]}
+{"event": "52697", "labels": ["stop"]}
+{"event": "82216", "labels": ["info"]}
+{"event": "60934", "labels": ["info"]}
+{"event": "60101", "labels": ["info"]}
+{"event": "69880", "labels": ["dose"]}
+{"event": "81959", "labels": ["stop"]}
+{"event": "71937", "labels": ["info"]}
+{"event": "61071", "labels": ["info"]}
+{"event": "51065", "labels": ["alarm"]}
+{"event": "78569", "labels": ["ui"]}
+{"event": "71907", "labels": ["info"]}
+{"event": "48628", "labels": ["stop"]}
+{"event": "68430", "labels": ["ui"]}
+{"event": "85804", "labels": ["info", "stop"]}
+{"event": "85326", "labels": ["info", "ui"]}
+{"event": "71555", "labels": ["none"]}
+{"event": "67374", "labels": ["info"]}
+{"event": "69837", "labels": ["info"]}
+{"event": "54264", "labels": ["none"]}
+{"event": "48738", "labels": ["info"]}
+{"event": "52679", "labels": ["info"]}
+{"event": "72804", "labels": ["info"]}
+{"event": "58256", "labels": ["dose"]}
+{"event": "81380", "labels": ["none"]}
+{"event": "65607", "labels": ["info"]}
+{"event": "65229", "labels": ["info"]}
+{"event": "77014", "labels": ["dose"]}
+{"event": "48701", "labels": ["stop"]}
+{"event": "71264", "labels": ["none"]}
+{"event": "77025", "labels": ["ui"]}
+{"event": "59347", "labels": ["comms"]}
+{"event": "61392", "labels": ["dose"]}
+{"event": "80938", "labels": ["info"]}
+{"event": "85979", "labels": ["alarm"]}
+{"event": "61359", "labels": ["info"]}
+{"event": "69778", "labels": ["dose"]}
+{"event": "45913", "labels": ["alarm"]}
+{"event": "52047", "labels": ["info"]}
+{"event": "68211", "labels": ["none"]}
+{"event": "56447", "labels": ["info", "ui"]}
+{"event": "58974", "labels": ["dose"]}
+{"event": "88880", "labels": ["info", "alarm", "comms"]}
+{"event": "67535", "labels": ["dose"]}
+{"event": "87493", "labels": ["dose"]}
+{"event": "58836", "labels": ["dose"]}
+{"event": "71414", "labels": ["info"]}
+{"event": "75755", "labels": ["info"]}
+{"event": "67056", "labels": ["alarm"]}
+{"event": "67167", "labels": ["stop"]}
+{"event": "55146", "labels": ["info"]}
+{"event": "60228", "labels": ["none"]}
+{"event": "84708", "labels": ["info"]}
+{"event": "60592", "labels": ["info"]}
+{"event": "54658", "labels": ["dose"]}
+{"event": "75111", "labels": ["none"]}
+{"event": "61612", "labels": ["info"]}
+{"event": "45329", "labels": ["info"]}
+{"event": "85765", "labels": ["alarm", "info"]}
+{"event": "66956", "labels": ["dose"]}
+{"event": "65246", "labels": ["alarm", "info"]}
+{"event": "66603", "labels": ["none"]}
+{"event": "67343", "labels": ["info"]}
+{"event": "52223", "labels": ["dose", "stop"]}
+{"event": "52434", "labels": ["info"]}
+{"event": "85269", "labels": ["dose"]}
+{"event": "52171", "labels": ["info"]}
+{"event": "89008", "labels": ["info"]}
+{"event": "66336", "labels": ["power", "alarm", "stop"]}
+{"event": "88683", "labels": ["none"]}
+{"event": "57732", "labels": ["info", "comms"]}
+{"event": "73338", "labels": ["comms"]}
+{"event": "64440", "labels": ["alarm", "stop"]}
+{"event": "79547", "labels": ["dose"]}
+{"event": "63617", "labels": ["security"]}
+{"event": "84705", "labels": ["info", "comms", "dose"]}
+{"event": "75357", "labels": ["info", "alarm"]}
+{"event": "46961", "labels": ["info"]}
+{"event": "68228", "labels": ["info"]}
+{"event": "48603", "labels": ["alarm"]}
+{"event": "68378", "labels": ["alarm"]}
+{"event": "61790", "labels": ["none"]}
+{"event": "51979", "labels": ["info"]}
+{"event": "66361", "labels": ["dose"]}
+{"event": "67528", "labels": ["comms", "info"]}
+{"event": "88324", "labels": ["none"]}
+{"event": "65498", "labels": ["dose"]}
+{"event": "84128", "labels": ["alarm", "comms"]}
+{"event": "76654", "labels": ["comms"]}
+{"event": "60164", "labels": ["info"]}
+{"event": "68979", "labels": ["info", "comms"]}
+{"event": "71315", "labels": ["stop", "alarm", "info"]}
+{"event": "78739", "labels": ["comms", "info"]}
+{"event": "58214", "labels": ["info"]}
+{"event": "65333", "labels": ["info"]}
+{"event": "82451", "labels": ["dose"]}
+{"event": "77982", "labels": ["none"]}
+{"event": "66467", "labels": ["info"]}
+{"event": "77354", "labels": ["stop"]}
+{"event": "76594", "labels": ["comms"]}
+{"event": "54844", "labels": ["info"]}
+{"event": "37587", "labels": ["dose"]}
+{"event": "64674", "labels": ["info"]}
+{"event": "52022", "labels": ["info"]}
+{"event": "51222", "labels": ["power"]}
+{"event": "83513", "labels": ["info"]}
+{"event": "62437", "labels": ["comms", "info"]}
+{"event": "74427", "labels": ["info"]}
+{"event": "46907", "labels": ["info"]}
+{"event": "71050", "labels": ["info"]}
+{"event": "55922", "labels": ["none"]}
+{"event": "56461", "labels": ["comms"]}
+{"event": "67685", "labels": ["info"]}
+{"event": "61591", "labels": ["info"]}
+{"event": "64111", "labels": ["comms", "info"]}
+{"event": "53483", "labels": ["info"]}
+{"event": "70068", "labels": ["alarm"]}
+{"event": "67223", "labels": ["ui"]}
+{"event": "76258", "labels": ["info"]}
+{"event": "79814", "labels": ["dose"]}
+{"event": "57377", "labels": ["none"]}
+{"event": "71115", "labels": ["info", "comms"]}
+{"event": "47245", "labels": ["none"]}
+{"event": "69560", "labels": ["ui"]}
+{"event": "88854", "labels": ["stop"]}
+{"event": "62551", "labels": ["stop"]}
+{"event": "68965", "labels": ["comms", "info"]}
+{"event": "46266", "labels": ["none"]}
+{"event": "87083", "labels": ["info"]}
+{"event": "74737", "labels": ["dose"]}
+{"event": "67763", "labels": ["stop"]}
+{"event": "73481", "labels": ["info"]}
+{"event": "82491", "labels": ["info"]}
+{"event": "49608", "labels": ["alarm"]}
+{"event": "72617", "labels": ["info"]}
+{"event": "65719", "labels": ["info"]}
+{"event": "62894", "labels": ["info"]}
+{"event": "86996", "labels": ["info"]}
+{"event": "78460", "labels": ["info"]}
+{"event": "77950", "labels": ["info"]}
+{"event": "49475", "labels": ["info"]}
+{"event": "78466", "labels": ["info"]}
+{"event": "81403", "labels": ["info"]}
+{"event": "52861", "labels": ["comms", "info"]}
+{"event": "68266", "labels": ["none"]}
+{"event": "68741", "labels": ["dose", "alarm"]}
+{"event": "70959", "labels": ["alarm", "comms"]}
+{"event": "77635", "labels": ["dose", "info"]}
+{"event": "46318", "labels": ["comms", "info"]}
+{"event": "72094", "labels": ["info", "ui"]}
+{"event": "74508", "labels": ["dose", "stop"]}
+{"event": "59853", "labels": ["info"]}
+{"event": "72684", "labels": ["stop"]}
+{"event": "81285", "labels": ["dose"]}
+{"event": "69960", "labels": ["dose"]}
+{"event": "70264", "labels": ["info"]}
+{"event": "77750", "labels": ["none"]}
+{"event": "81547", "labels": ["info"]}
+{"event": "51498", "labels": ["info"]}
+{"event": "82035", "labels": ["none"]}
+{"event": "81310", "labels": ["stop"]}
+{"event": "81182", "labels": ["dose"]}
+{"event": "82104", "labels": ["info"]}
+{"event": "67188", "labels": ["info"]}
+{"event": "67574", "labels": ["dose"]}
+{"event": "60146", "labels": ["info"]}
+{"event": "71204", "labels": ["none"]}
+{"event": "88086", "labels": ["alarm", "info"]}
+{"event": "71233", "labels": ["power", "stop"]}
+{"event": "58568", "labels": ["info", "comms"]}
+{"event": "84653", "labels": ["alarm", "comms"]}
+{"event": "83883", "labels": ["info", "alarm"]}
+{"event": "85168", "labels": ["info", "ui"]}
+{"event": "76851", "labels": ["comms", "info"]}
+{"event": "56415", "labels": ["stop"]}
+{"event": "53132", "labels": ["info"]}
+{"event": "84330", "labels": ["dose"]}
+{"event": "69583", "labels": ["alarm"]}
+{"event": "45410", "labels": ["info"]}
+{"event": "66527", "labels": ["dose", "stop"]}
+{"event": "58269", "labels": ["info"]}
+{"event": "69996", "labels": ["info"]}
+{"event": "67481", "labels": ["comms"]}
+{"event": "65471", "labels": ["info", "comms"]}
+{"event": "70000", "labels": ["alarm"]}
+{"event": "73422", "labels": ["alarm"]}
+{"event": "77888", "labels": ["stop", "info"]}
+{"event": "52207", "labels": ["alarm"]}
+{"event": "70200", "labels": ["dose"]}
+{"event": "71924", "labels": ["info"]}
+{"event": "64941", "labels": ["none"]}
+{"event": "86073", "labels": ["ui", "comms"]}
+{"event": "48736", "labels": ["info"]}
+{"event": "75383", "labels": ["stop"]}
+{"event": "52723", "labels": ["dose"]}
+{"event": "87418", "labels": ["info"]}
+{"event": "88599", "labels": ["info"]}
+{"event": "80769", "labels": ["info"]}
+{"event": "52858", "labels": ["comms", "info"]}
+{"event": "64806", "labels": ["info"]}
+{"event": "57843", "labels": ["dose"]}
+{"event": "50167", "labels": ["info"]}
+{"event": "78677", "labels": ["info"]}
+{"event": "53054", "labels": ["dose"]}
+{"event": "55037", "labels": ["info"]}
+{"event": "47442", "labels": ["dose", "stop"]}
+{"event": "46823", "labels": ["info"]}
+{"event": "69377", "labels": ["info"]}
+{"event": "60418", "labels": ["info"]}
+{"event": "70931", "labels": ["info", "ui"]}
+{"event": "61250", "labels": ["info"]}
+{"event": "76752", "labels": ["info", "comms"]}
+{"event": "88746", "labels": ["info"]}
+{"event": "81317", "labels": ["none"]}
+{"event": "62646", "labels": ["info"]}
+{"event": "79641", "labels": ["none"]}
+{"event": "76043", "labels": ["alarm"]}
+{"event": "58031", "labels": ["comms"]}
+{"event": "52820", "labels": ["stop"]}
+{"event": "49136", "labels": ["alarm"]}
+{"event": "81439", "labels": ["stop", "info"]}
+{"event": "58229", "labels": ["dose", "alarm"]}
+{"event": "56411", "labels": ["stop"]}
+{"event": "70591", "labels": ["comms", "stop"]}
+{"event": "61121", "labels": ["none"]}
+{"event": "46902", "labels": ["dose"]}
+{"event": "60455", "labels": ["alarm"]}
+{"event": "88398", "labels": ["comms", "info"]}
+{"event": "80173", "labels": ["stop"]}
+{"event": "63093", "labels": ["dose"]}
+{"event": "67424", "labels": ["alarm"]}
+{"event": "65792", "labels": ["info", "comms"]}
+{"event": "59473", "labels": ["ui"]}
+{"event": "58584", "labels": ["info"]}
+{"event": "85048", "labels": ["stop"]}
+{"event": "68723", "labels": ["none"]}
+{"event": "71359", "labels": ["alarm"]}
+{"event": "88907", "labels": ["info"]}
+{"event": "83270", "labels": ["info"]}
+{"event": "71215", "labels": ["none"]}
+{"event": "77983", "labels": ["power"]}
+{"event": "69258", "labels": ["info", "comms"]}
+{"event": "69234", "labels": ["info"]}
+{"event": "73071", "labels": ["power", "stop"]}
+{"event": "74585", "labels": ["dose"]}
+{"event": "48164", "labels": ["none"]}
+{"event": "83946", "labels": ["info"]}
+{"event": "85340", "labels": ["info"]}
+{"event": "53875", "labels": ["stop"]}
+{"event": "75149", "labels": ["stop"]}
+{"event": "88073", "labels": ["comms"]}
+{"event": "87079", "labels": ["ui"]}
+{"event": "62302", "labels": ["dose"]}
+{"event": "85793", "labels": ["info"]}
+{"event": "59006", "labels": ["dose"]}
+{"event": "77124", "labels": ["info"]}
+{"event": "44811", "labels": ["dose", "info"]}
+{"event": "63957", "labels": ["alarm"]}
+{"event": "87662", "labels": ["power"]}
+{"event": "60781", "labels": ["none"]}
+{"event": "71654", "labels": ["info"]}
+{"event": "85441", "labels": ["dose", "info"]}
+{"event": "67678", "labels": ["dose"]}
+{"event": "53461", "labels": ["dose", "comms"]}
+{"event": "58253", "labels": ["info"]}
+{"event": "70916", "labels": ["alarm"]}
+{"event": "68845", "labels": ["none"]}
+{"event": "78911", "labels": ["info"]}
+{"event": "63368", "labels": ["info"]}
+{"event": "64725", "labels": ["dose"]}
+{"event": "57527", "labels": ["alarm"]}
+{"event": "82225", "labels": ["info"]}
+{"event": "76281", "labels": ["none"]}
+{"event": "66596", "labels": ["info"]}
+{"event": "82696", "labels": ["power", "alarm"]}
+{"event": "62757", "labels": ["info"]}
+{"event": "70073", "labels": ["ui"]}
+{"event": "55164", "labels": ["info"]}
+{"event": "87620", "labels": ["stop"]}
+{"event": "69320", "labels": ["stop"]}
+{"event": "76102", "labels": ["info"]}
+{"event": "68737", "labels": ["comms", "info"]}
+{"event": "50539", "labels": ["info"]}
+{"event": "85293", "labels": ["none"]}
+{"event": "79965", "labels": ["stop"]}
+{"event": "50147", "labels": ["security"]}
+{"event": "75612", "labels": ["none"]}
+{"event": "45398", "labels": ["info"]}
+{"event": "70490", "labels": ["comms"]}
+{"event": "45454", "labels": ["alarm", "stop"]}
+{"event": "88879", "labels": ["info"]}
+{"event": "68431", "labels": ["info"]}
+{"event": "67523", "labels": ["stop"]}
+{"event": "74853", "labels": ["info"]}
+{"event": "46751", "labels": ["ui"]}
+{"event": "74354", "labels": ["info"]}
+{"event": "65721", "labels": ["info"]}
+{"event": "63081", "labels": ["comms"]}
+{"event": "47524", "labels": ["info"]}
+{"event": "86993", "labels": ["dose"]}
+{"event": "49536", "labels": ["dose"]}
+{"event": "88860", "labels": ["dose"]}
+{"event": "75817", "labels": ["stop"]}
+{"event": "48655", "labels": ["none"]}
+{"event": "76024", "labels": ["info", "dose"]}
+{"event": "51863", "labels": ["stop", "alarm"]}
+{"event": "63104", "labels": ["info"]}
+{"event": "62708", "labels": ["info"]}
+{"event": "77312", "labels": ["none"]}
+{"event": "76187", "labels": ["info"]}
+{"event": "77456", "labels": ["comms", "info"]}
+{"event": "52176", "labels": ["info"]}
+{"event": "84883", "labels": ["stop"]}
+{"event": "68984", "labels": ["comms", "dose"]}
+{"event": "59331", "labels": ["none"]}
+{"event": "75756", "labels": ["none"]}
+{"event": "62005", "labels": ["info"]}
+{"event": "64785", "labels": ["info", "comms"]}
+{"event": "78465", "labels": ["comms"]}
+{"event": "89208", "labels": ["info"]}
+{"event": "82003", "labels": ["comms", "info"]}
+{"event": "72137", "labels": ["none"]}
+{"event": "60304", "labels": ["dose"]}
+{"event": "62709", "labels": ["alarm"]}
+{"event": "50755", "labels": ["comms"]}
+{"event": "60480", "labels": ["info"]}
+{"event": "88962", "labels": ["stop"]}
+{"event": "54982", "labels": ["ui"]}
+{"event": "53688", "labels": ["alarm"]}
+{"event": "58186", "labels": ["dose"]}
+{"event": "56141", "labels": ["ui", "alarm", "info"]}
+{"event": "55361", "labels": ["dose"]}
+{"event": "64731", "labels": ["info"]}
+{"event": "88691", "labels": ["stop"]}
+{"event": "87482", "labels": ["security", "comms"]}
+{"event": "38337", "labels": ["info"]}
+{"event": "56867", "labels": ["info", "comms"]}
+{"event": "83519", "labels": ["stop"]}
+{"event": "87273", "labels": ["stop"]}
+{"event": "70847", "labels": ["none"]}
+{"event": "50488", "labels": ["alarm"]}
+{"event": "55868", "labels": ["info", "comms"]}
+{"event": "85912", "labels": ["dose"]}
+{"event": "80298", "labels": ["comms", "dose"]}
+{"event": "59737", "labels": ["alarm"]}
+{"event": "85071", "labels": ["stop"]}
+{"event": "57288", "labels": ["alarm"]}
+{"event": "48439", "labels": ["info"]}
+{"event": "48705", "labels": ["none"]}
+{"event": "46200", "labels": ["info"]}
+{"event": "78756", "labels": ["info"]}
+{"event": "56545", "labels": ["info"]}
+{"event": "68769", "labels": ["info"]}
+{"event": "71573", "labels": ["dose"]}
+{"event": "68263", "labels": ["alarm", "info"]}
+{"event": "89314", "labels": ["info"]}
+{"event": "50990", "labels": ["info"]}
+{"event": "60764", "labels": ["none"]}
+{"event": "87732", "labels": ["info", "stop", "alarm"]}
+{"event": "71206", "labels": ["comms"]}
+{"event": "58197", "labels": ["dose", "info"]}
+{"event": "87579", "labels": ["info"]}
+{"event": "87764", "labels": ["dose"]}
+{"event": "69045", "labels": ["info"]}
+{"event": "86803", "labels": ["alarm", "dose"]}
+{"event": "48684", "labels": ["info"]}
+{"event": "44913", "labels": ["none"]}
+{"event": "87984", "labels": ["alarm"]}
+{"event": "76214", "labels": ["comms"]}
+{"event": "45519", "labels": ["dose"]}
+{"event": "73292", "labels": ["none"]}
+{"event": "75334", "labels": ["comms"]}
+{"event": "86757", "labels": ["info"]}
+{"event": "86205", "labels": ["info"]}
+{"event": "56759", "labels": ["dose"]}
+{"event": "76046", "labels": ["info"]}
+{"event": "75494", "labels": ["info"]}
+{"event": "56848", "labels": ["info"]}
+{"event": "60121", "labels": ["info", "ui"]}
+{"event": "88412", "labels": ["stop"]}
+{"event": "59122", "labels": ["dose"]}
+{"event": "71211", "labels": ["alarm", "info"]}
+{"event": "70002", "labels": ["stop"]}
+{"event": "76506", "labels": ["alarm"]}
+{"event": "79132", "labels": ["stop"]}
+{"event": "66659", "labels": ["info"]}
+{"event": "49005", "labels": ["ui"]}
+{"event": "46408", "labels": ["info", "comms"]}
+{"event": "65131", "labels": ["info"]}
+{"event": "71814", "labels": ["stop"]}
+{"event": "46686", "labels": ["alarm"]}
+{"event": "66865", "labels": ["stop"]}
+{"event": "60036", "labels": ["info"]}
+{"event": "65743", "labels": ["info"]}
+{"event": "52218", "labels": ["info"]}
+{"event": "61111", "labels": ["none"]}
+{"event": "70020", "labels": ["info"]}
+{"event": "70890", "labels": ["info", "comms"]}
+{"event": "64436", "labels": ["none"]}
+{"event": "54648", "labels": ["dose"]}
+{"event": "85241", "labels": ["alarm", "info"]}
+{"event": "68067", "labels": ["alarm"]}
+{"event": "54616", "labels": ["none"]}
+{"event": "84464", "labels": ["alarm", "info"]}
+{"event": "46373", "labels": ["info"]}
+{"event": "53051", "labels": ["info"]}
+{"event": "71270", "labels": ["stop"]}
+{"event": "71084", "labels": ["info", "ui"]}
+{"event": "55699", "labels": ["info"]}
+{"event": "58258", "labels": ["info"]}
+{"event": "83852", "labels": ["comms", "stop"]}
+{"event": "89328", "labels": ["power", "stop"]}
+{"event": "62706", "labels": ["info"]}
+{"event": "48099", "labels": ["dose"]}
+{"event": "50207", "labels": ["dose"]}
+{"event": "68349", "labels": ["alarm"]}
+{"event": "72754", "labels": ["power"]}
+{"event": "74651", "labels": ["info"]}
+{"event": "55008", "labels": ["dose"]}
+{"event": "73595", "labels": ["comms"]}
+{"event": "85633", "labels": ["info", "alarm"]}
+{"event": "88514", "labels": ["stop"]}
+{"event": "49426", "labels": ["none"]}
+{"event": "69748", "labels": ["info"]}
+{"event": "65082", "labels": ["info"]}
+{"event": "87169", "labels": ["alarm", "stop"]}
+{"event": "73593", "labels": ["stop"]}
+{"event": "51423", "labels": ["info"]}
+{"event": "57760", "labels": ["dose"]}
+{"event": "46381", "labels": ["info"]}
+{"event": "71105", "labels": ["info", "ui"]}
+{"event": "49460", "labels": ["ui"]}
+{"event": "78166", "labels": ["info"]}
+{"event": "64761", "labels": ["info", "comms"]}
+{"event": "58420", "labels": ["info"]}
+{"event": "46287", "labels": ["info"]}
+{"event": "60989", "labels": ["comms"]}
+{"event": "65950", "labels": ["ui"]}
+{"event": "72927", "labels": ["info"]}
+{"event": "66067", "labels": ["info"]}
+{"event": "61118", "labels": ["none"]}
+{"event": "62830", "labels": ["info"]}
+{"event": "58811", "labels": ["power"]}
+{"event": "48637", "labels": ["info"]}
+{"event": "49458", "labels": ["info"]}
+{"event": "58267", "labels": ["info", "comms"]}
+{"event": "45856", "labels": ["info"]}
+{"event": "90099", "labels": ["info"]}
+{"event": "70545", "labels": ["info"]}
+{"event": "66585", "labels": ["info"]}
+{"event": "66705", "labels": ["none"]}
+{"event": "61050", "labels": ["info", "ui"]}
+{"event": "81077", "labels": ["stop", "comms"]}
+{"event": "69747", "labels": ["none"]}
+{"event": "86113", "labels": ["info"]}
+{"event": "48660", "labels": ["alarm", "info"]}
+{"event": "56736", "labels": ["info"]}
+{"event": "84954", "labels": ["stop", "info"]}
+{"event": "72763", "labels": ["info"]}
+{"event": "65805", "labels": ["info"]}
+{"event": "49068", "labels": ["info"]}
+{"event": "67947", "labels": ["alarm"]}
+{"event": "88720", "labels": ["none"]}
+{"event": "76253", "labels": ["power", "alarm", "stop"]}
+{"event": "73838", "labels": ["info"]}
+{"event": "59442", "labels": ["info"]}
+{"event": "66632", "labels": ["none"]}
+{"event": "44740", "labels": ["power", "alarm"]}
+{"event": "48114", "labels": ["info"]}
+{"event": "83358", "labels": ["alarm"]}
+{"event": "51497", "labels": ["info"]}
+{"event": "75027", "labels": ["info"]}
+{"event": "70951", "labels": ["dose"]}
+{"event": "67217", "labels": ["ui"]}
+{"event": "83056", "labels": ["dose"]}
+{"event": "80323", "labels": ["info"]}
+{"event": "85091", "labels": ["power"]}
+{"event": "60302", "labels": ["none"]}
+{"event": "72220", "labels": ["ui"]}
+{"event": "65759", "labels": ["info"]}
+{"event": "62760", "labels": ["stop"]}
+{"event": "86992", "labels": ["info"]}
+{"event": "85959", "labels": ["alarm"]}
+{"event": "80771", "labels": ["info"]}
+{"event": "80805", "labels": ["alarm"]}
+{"event": "60865", "labels": ["dose"]}
+{"event": "72026", "labels": ["none"]}
+{"event": "64134", "labels": ["ui"]}
+{"event": "56627", "labels": ["info"]}
+{"event": "57419", "labels": ["comms"]}
+{"event": "77599", "labels": ["info"]}
+{"event": "69957", "labels": ["info"]}
+{"event": "46852", "labels": ["dose"]}
+{"event": "66315", "labels": ["info"]}
+{"event": "60458", "labels": ["info"]}
+{"event": "61127", "labels": ["alarm", "comms"]}
+{"event": "75943", "labels": ["info"]}
+{"event": "78784", "labels": ["dose", "ui"]}
+{"event": "80257", "labels": ["info"]}
+{"event": "84723", "labels": ["alarm"]}
+{"event": "57337", "labels": ["stop"]}
+{"event": "68195", "labels": ["info", "stop"]}
+{"event": "67305", "labels": ["stop"]}
+{"event": "44791", "labels": ["info"]}
+{"event": "46940", "labels": ["none"]}
+{"event": "85838", "labels": ["none"]}
+{"event": "79271", "labels": ["info"]}
+{"event": "75714", "labels": ["info"]}
+{"event": "50541", "labels": ["alarm", "stop"]}
+{"event": "64804", "labels": ["info"]}
+{"event": "66506", "labels": ["dose"]}
+{"event": "71228", "labels": ["info"]}
+{"event": "54718", "labels": ["alarm"]}
+{"event": "66917", "labels": ["info"]}
+{"event": "89160", "labels": ["info"]}
+{"event": "44739", "labels": ["info"]}
+{"event": "79740", "labels": ["info"]}
+{"event": "52024", "labels": ["dose"]}
+{"event": "68395", "labels": ["info"]}
+{"event": "87176", "labels": ["stop"]}
+{"event": "84508", "labels": ["dose"]}
+{"event": "81300", "labels": ["security"]}
+{"event": "81912", "labels": ["dose"]}
+{"event": "87995", "labels": ["dose", "alarm", "info"]}
+{"event": "49546", "labels": ["info"]}
+{"event": "58210", "labels": ["info", "comms"]}
+{"event": "85347", "labels": ["info"]}
+{"event": "53519", "labels": ["info"]}
+{"event": "81751", "labels": ["dose", "alarm"]}
+{"event": "58044", "labels": ["info"]}
+{"event": "59690", "labels": ["none"]}
+{"event": "66314", "labels": ["dose"]}
+{"event": "58878", "labels": ["info", "ui"]}
+{"event": "68357", "labels": ["alarm"]}
+{"event": "82753", "labels": ["info"]}
+{"event": "84232", "labels": ["alarm", "power", "stop"]}
+{"event": "69127", "labels": ["info"]}
+{"event": "47441", "labels": ["info"]}
+{"event": "83889", "labels": ["security", "stop", "alarm", "comms"]}
+{"event": "47807", "labels": ["alarm"]}
+{"event": "60695", "labels": ["info"]}
+{"event": "77248", "labels": ["info"]}
+{"event": "62567", "labels": ["info"]}
+{"event": "56016", "labels": ["info"]}
+{"event": "79054", "labels": ["info", "security", "comms"]}
+{"event": "69847", "labels": ["info"]}
+{"event": "87013", "labels": ["power"]}
+{"event": "68799", "labels": ["info"]}
+{"event": "63143", "labels": ["stop"]}
+{"event": "71405", "labels": ["info", "comms"]}
+{"event": "57591", "labels": ["dose"]}
+{"event": "86972", "labels": ["info"]}
+{"event": "73452", "labels": ["info"]}
+{"event": "77299", "labels": ["info"]}
+{"event": "56428", "labels": ["info"]}
+{"event": "89058", "labels": ["info"]}
+{"event": "47822", "labels": ["dose", "alarm"]}
+{"event": "71995", "labels": ["dose", "stop"]}
+{"event": "38346", "labels": ["info"]}
+{"event": "70687", "labels": ["none"]}
+{"event": "75167", "labels": ["info"]}
+{"event": "87960", "labels": ["info"]}
+{"event": "50201", "labels": ["info"]}
+{"event": "55446", "labels": ["power"]}
+{"event": "69644", "labels": ["none"]}
+{"event": "59847", "labels": ["ui", "alarm"]}
+{"event": "86000", "labels": ["info"]}
+{"event": "82384", "labels": ["info"]}
+{"event": "62516", "labels": ["info"]}
+{"event": "81546", "labels": ["comms", "alarm"]}
+{"event": "76688", "labels": ["stop"]}
+{"event": "83607", "labels": ["stop"]}
+{"event": "88944", "labels": ["ui"]}
+{"event": "70918", "labels": ["info"]}
+{"event": "65440", "labels": ["none"]}
+{"event": "85392", "labels": ["info"]}
+{"event": "88526", "labels": ["stop", "comms"]}
+{"event": "74937", "labels": ["none"]}
+{"event": "69793", "labels": ["info"]}
+{"event": "63616", "labels": ["info"]}
+{"event": "88336", "labels": ["dose", "ui"]}
+{"event": "79462", "labels": ["info"]}
+{"event": "58676", "labels": ["info", "comms"]}
+{"event": "60250", "labels": ["none"]}
+{"event": "66069", "labels": ["alarm"]}
+{"event": "58505", "labels": ["comms", "dose"]}
+{"event": "80400", "labels": ["none"]}
+{"event": "73436", "labels": ["dose"]}
+{"event": "73209", "labels": ["alarm"]}
+{"event": "55910", "labels": ["ui"]}
+{"event": "85771", "labels": ["info", "stop"]}
+{"event": "81706", "labels": ["dose"]}
+{"event": "73692", "labels": ["none"]}
+{"event": "64654", "labels": ["none"]}
+{"event": "87026", "labels": ["dose"]}
+{"event": "85004", "labels": ["info", "comms"]}
+{"event": "68459", "labels": ["stop", "alarm", "info"]}
+{"event": "54483", "labels": ["info"]}
+{"event": "67078", "labels": ["dose"]}
+{"event": "87249", "labels": ["comms", "info"]}
+{"event": "72406", "labels": ["stop", "info"]}
+{"event": "69406", "labels": ["info"]}
+{"event": "72236", "labels": ["info"]}
+{"event": "82304", "labels": ["info"]}
+{"event": "81527", "labels": ["info", "comms", "stop"]}
+{"event": "76541", "labels": ["info"]}
+{"event": "62372", "labels": ["info"]}
+{"event": "68983", "labels": ["info", "comms"]}
+{"event": "64000", "labels": ["info"]}
+{"event": "56272", "labels": ["info"]}
+{"event": "72869", "labels": ["dose"]}
+{"event": "74087", "labels": ["none"]}
+{"event": "64624", "labels": ["stop", "alarm"]}
+{"event": "51492", "labels": ["stop"]}
+{"event": "89139", "labels": ["info"]}
+{"event": "65214", "labels": ["stop"]}
+{"event": "45492", "labels": ["info"]}
+{"event": "85737", "labels": ["info", "alarm"]}
+{"event": "55115", "labels": ["dose"]}
+{"event": "72475", "labels": ["stop"]}
+{"event": "46813", "labels": ["info"]}
+{"event": "66306", "labels": ["info"]}
+{"event": "60847", "labels": ["info", "alarm"]}
+{"event": "80252", "labels": ["dose"]}
+{"event": "49712", "labels": ["info"]}
+{"event": "55427", "labels": ["info"]}
+{"event": "59296", "labels": ["stop"]}
+{"event": "87419", "labels": ["dose"]}
+{"event": "61255", "labels": ["alarm", "comms"]}
+{"event": "56657", "labels": ["alarm"]}
+{"event": "88732", "labels": ["dose"]}
+{"event": "61808", "labels": ["info"]}
+{"event": "88061", "labels": ["dose"]}
+{"event": "59147", "labels": ["none"]}
+{"event": "65868", "labels": ["info"]}
+{"event": "64319", "labels": ["dose"]}

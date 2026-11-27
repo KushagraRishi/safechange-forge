@@ -1,0 +1,784 @@
+{
+  "split": "dev",
+  "events": 175,
+  "label_counts": {
+    "dose": 19,
+    "info": 75,
+    "alarm": 28,
+    "stop": 35,
+    "comms": 27,
+    "security": 6,
+    "ui": 12,
+    "power": 4
+  },
+  "events_with_no_label": 19,
+  "results": {
+    "model": {
+      "tp": 170,
+      "fp": 287,
+      "fn": 36,
+      "recall": 0.8252427184466019,
+      "precision": 0.37199124726477023,
+      "f2": 0.663544106167057,
+      "caught_all": 0.7948717948717948,
+      "flags_per_event": 2.611428571428571,
+      "per_category": {
+        "dose": {
+          "tp": 15,
+          "fp": 49,
+          "fn": 4,
+          "recall": 0.7894736842105263,
+          "precision": 0.234375,
+          "f2": 0.5357142857142857,
+          "support": 19
+        },
+        "info": {
+          "tp": 75,
+          "fp": 79,
+          "fn": 0,
+          "recall": 1.0,
+          "precision": 0.487012987012987,
+          "f2": 0.8259911894273128,
+          "support": 75
+        },
+        "alarm": {
+          "tp": 20,
+          "fp": 43,
+          "fn": 8,
+          "recall": 0.7142857142857143,
+          "precision": 0.31746031746031744,
+          "f2": 0.5714285714285714,
+          "support": 28
+        },
+        "stop": {
+          "tp": 28,
+          "fp": 53,
+          "fn": 7,
+          "recall": 0.8,
+          "precision": 0.345679012345679,
+          "f2": 0.6334841628959276,
+          "support": 35
+        },
+        "comms": {
+          "tp": 21,
+          "fp": 40,
+          "fn": 6,
+          "recall": 0.7777777777777778,
+          "precision": 0.3442622950819672,
+          "f2": 0.621301775147929,
+          "support": 27
+        },
+        "security": {
+          "tp": 3,
+          "fp": 3,
+          "fn": 3,
+          "recall": 0.5,
+          "precision": 0.5,
+          "f2": 0.5,
+          "support": 6
+        },
+        "ui": {
+          "tp": 5,
+          "fp": 11,
+          "fn": 7,
+          "recall": 0.4166666666666667,
+          "precision": 0.3125,
+          "f2": 0.390625,
+          "support": 12
+        },
+        "power": {
+          "tp": 3,
+          "fp": 9,
+          "fn": 1,
+          "recall": 0.75,
+          "precision": 0.25,
+          "f2": 0.5357142857142857,
+          "support": 4
+        }
+      }
+    },
+    "baseline": {
+      "tp": 117,
+      "fp": 73,
+      "fn": 89,
+      "recall": 0.5679611650485437,
+      "precision": 0.6157894736842106,
+      "f2": 0.5769230769230769,
+      "caught_all": 0.47435897435897434,
+      "flags_per_event": 1.0857142857142856,
+      "per_category": {
+        "dose": {
+          "tp": 12,
+          "fp": 21,
+          "fn": 7,
+          "recall": 0.631578947368421,
+          "precision": 0.36363636363636365,
+          "f2": 0.5504587155963303,
+          "support": 19
+        },
+        "info": {
+          "tp": 43,
+          "fp": 15,
+          "fn": 32,
+          "recall": 0.5733333333333334,
+          "precision": 0.7413793103448276,
+          "f2": 0.6005586592178771,
+          "support": 75
+        },
+        "alarm": {
+          "tp": 20,
+          "fp": 6,
+          "fn": 8,
+          "recall": 0.7142857142857143,
+          "precision": 0.7692307692307693,
+          "f2": 0.7246376811594203,
+          "support": 28
+        },
+        "stop": {
+          "tp": 17,
+          "fp": 3,
+          "fn": 18,
+          "recall": 0.4857142857142857,
+          "precision": 0.85,
+          "f2": 0.53125,
+          "support": 35
+        },
+        "comms": {
+          "tp": 12,
+          "fp": 6,
+          "fn": 15,
+          "recall": 0.4444444444444444,
+          "precision": 0.6666666666666666,
+          "f2": 0.47619047619047616,
+          "support": 27
+        },
+        "security": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 1,
+          "recall": 0.8333333333333334,
+          "precision": 0.7142857142857143,
+          "f2": 0.8064516129032258,
+          "support": 6
+        },
+        "ui": {
+          "tp": 4,
+          "fp": 17,
+          "fn": 8,
+          "recall": 0.3333333333333333,
+          "precision": 0.19047619047619047,
+          "f2": 0.2898550724637681,
+          "support": 12
+        },
+        "power": {
+          "tp": 4,
+          "fp": 3,
+          "fn": 0,
+          "recall": 1.0,
+          "precision": 0.5714285714285714,
+          "f2": 0.8695652173913043,
+          "support": 4
+        }
+      }
+    },
+    "union": {
+      "tp": 181,
+      "fp": 322,
+      "fn": 25,
+      "recall": 0.8786407766990292,
+      "precision": 0.35984095427435386,
+      "f2": 0.6819894498869631,
+      "caught_all": 0.8525641025641025,
+      "flags_per_event": 2.874285714285714,
+      "per_category": {
+        "dose": {
+          "tp": 15,
+          "fp": 60,
+          "fn": 4,
+          "recall": 0.7894736842105263,
+          "precision": 0.2,
+          "f2": 0.4966887417218543,
+          "support": 19
+        },
+        "info": {
+          "tp": 75,
+          "fp": 79,
+          "fn": 0,
+          "recall": 1.0,
+          "precision": 0.487012987012987,
+          "f2": 0.8259911894273128,
+          "support": 75
+        },
+        "alarm": {
+          "tp": 25,
+          "fp": 46,
+          "fn": 3,
+          "recall": 0.8928571428571429,
+          "precision": 0.352112676056338,
+          "f2": 0.6830601092896175,
+          "support": 28
+        },
+        "stop": {
+          "tp": 29,
+          "fp": 53,
+          "fn": 6,
+          "recall": 0.8285714285714286,
+          "precision": 0.35365853658536583,
+          "f2": 0.6531531531531531,
+          "support": 35
+        },
+        "comms": {
+          "tp": 21,
+          "fp": 44,
+          "fn": 6,
+          "recall": 0.7777777777777778,
+          "precision": 0.3230769230769231,
+          "f2": 0.6069364161849711,
+          "support": 27
+        },
+        "security": {
+          "tp": 5,
+          "fp": 5,
+          "fn": 1,
+          "recall": 0.8333333333333334,
+          "precision": 0.5,
+          "f2": 0.7352941176470589,
+          "support": 6
+        },
+        "ui": {
+          "tp": 7,
+          "fp": 26,
+          "fn": 5,
+          "recall": 0.5833333333333334,
+          "precision": 0.21212121212121213,
+          "f2": 0.43209876543209874,
+          "support": 12
+        },
+        "power": {
+          "tp": 4,
+          "fp": 9,
+          "fn": 0,
+          "recall": 1.0,
+          "precision": 0.3076923076923077,
+          "f2": 0.6896551724137931,
+          "support": 4
+        }
+      }
+    }
+  },
+  "ci95": {
+    "model": {
+      "recall": [
+        0.7763,
+        0.8756
+      ],
+      "precision": [
+        0.3355,
+        0.4065
+      ],
+      "f2": [
+        0.6231,
+        0.7
+      ],
+      "caught_all": [
+        0.7329,
+        0.8562
+      ],
+      "flags_per_event": [
+        2.4514,
+        2.7714
+      ]
+    },
+    "baseline": {
+      "recall": [
+        0.4975,
+        0.6355
+      ],
+      "precision": [
+        0.5538,
+        0.6816
+      ],
+      "f2": [
+        0.5124,
+        0.637
+      ],
+      "caught_all": [
+        0.3987,
+        0.5541
+      ],
+      "flags_per_event": [
+        0.92,
+        1.2686
+      ]
+    },
+    "union": {
+      "recall": [
+        0.8325,
+        0.9239
+      ],
+      "precision": [
+        0.3241,
+        0.3939
+      ],
+      "f2": [
+        0.6426,
+        0.7196
+      ],
+      "caught_all": [
+        0.7975,
+        0.9074
+      ],
+      "flags_per_event": [
+        2.6971,
+        3.0571
+      ]
+    },
+    "diff_f2_model_minus_baseline": [
+      0.0253,
+      0.1497
+    ]
+  },
+  "primary_success": true,
+  "subgroup_infusion_insulin": {
+    "events": 14,
+    "model": {
+      "tp": 24,
+      "fp": 25,
+      "fn": 6,
+      "recall": 0.8,
+      "precision": 0.4897959183673469,
+      "f2": 0.7100591715976331
+    },
+    "baseline": {
+      "tp": 26,
+      "fp": 16,
+      "fn": 4,
+      "recall": 0.8666666666666667,
+      "precision": 0.6190476190476191,
+      "f2": 0.8024691358024691
+    },
+    "union": {
+      "tp": 28,
+      "fp": 34,
+      "fn": 2,
+      "recall": 0.9333333333333333,
+      "precision": 0.45161290322580644,
+      "f2": 0.7692307692307693
+    }
+  },
+  "kappa_A_vs_B": {
+    "dose": 0.887,
+    "info": 0.942,
+    "alarm": 0.892,
+    "stop": 0.906,
+    "comms": 0.869,
+    "security": 0.906,
+    "ui": 0.682,
+    "power": 1.0
+  },
+  "small_categories": [
+    "security",
+    "power"
+  ],
+  "misses": [
+    {
+      "event": "89645",
+      "gold": [
+        "info",
+        "ui"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "In instances where custom reference ranges were configured on the device post installation, a possibility to inadvertently apply changes to reference range values was found on software versions 2.59.3 and all earlier versions, which can pot"
+    },
+    {
+      "event": "89901",
+      "gold": [
+        "alarm",
+        "info",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Software error may result in sporadic problems causing scanning workflow interruptions, unexpected user notifications and image artifacts. Sporadic software errors may also occur during interventional workflows. Results in potential patient"
+    },
+    {
+      "event": "90085",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "stop",
+        "power"
+      ],
+      "text": "Telemetry error that may occur with Medtronic Cobalt and Crome implantable cardioverter defibrillators (ICDs) and cardiac resynchronization therapy defibrillators (CRT-Ds)."
+    },
+    {
+      "event": "90458",
+      "gold": [
+        "alarm"
+      ],
+      "model": [
+        "info",
+        "stop",
+        "comms"
+      ],
+      "text": "Several complaints were received for the affected lot; users received a \"Fiber type does not match card type\" error message on the GreenLight XPS Laser console, necessitating the replacement of the laser fiber and fiber card. This may resul"
+    },
+    {
+      "event": "90525",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "The Event Notification Manager (ENM) functionality for certain products does not process notifications for study modifications performed on post verified exams."
+    },
+    {
+      "event": "91294",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Due to an incorrect security key, customers were unable to connect to remote monitoring during spinal surgery, neck dissections, thoracic surgeries, and upper and lower extremity procedures."
+    },
+    {
+      "event": "90845",
+      "gold": [
+        "alarm",
+        "dose",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "stop"
+      ],
+      "text": "The display screen may become frozen and unresponsive to user input, triggering an alarm that is evidenced by a buzzer sound and flashing red LEDs as a secondary notification. However, as the screen goes blank it does not indicate an alarm "
+    },
+    {
+      "event": "91362",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "A software update (v1.1.5) has been developed to address the issue of Critical Failure which can occur on the LifeSPARC Controller. The Critical Failure was first addressed in the firm's recall initiated July 21, 2022. During the Critical F"
+    },
+    {
+      "event": "93574",
+      "gold": [
+        "info",
+        "stop"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "Multiple software issues which have the potential to lead to misdiagnosis due to image artifacts or incorrect image orientation labels, or the need for a CT rescan. These include: 1. Artifacts may occur on perfusion images, 2. Orientation l"
+    },
+    {
+      "event": "91646",
+      "gold": [
+        "alarm",
+        "comms"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "Under specific circumstances, the U.S. product registration system did not send up enablement requests to U.S. LATITUDE Customer Support during an 8-month interval in 2022. For these patients, the HeartLogic Index and any associated Yellow "
+    },
+    {
+      "event": "91765",
+      "gold": [
+        "alarm"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "In the event of any unintended table movement, the system may not detect the incorrect direction, could lead to the injury of a patient, staff member, operator, or equipment."
+    },
+    {
+      "event": "91603",
+      "gold": [
+        "alarm",
+        "comms",
+        "stop"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop",
+        "comms"
+      ],
+      "text": "An unexpected shutdown of the IABP may occur due to loss of communication between the Executive Processor PCBA and the Video Generator PCBA. This may result in an interruption to therapy which may threaten the hemodynamic stability of the s"
+    },
+    {
+      "event": "93393",
+      "gold": [
+        "alarm",
+        "comms"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "stop"
+      ],
+      "text": "If using affected glucose monitoring app on Android 13 Operating System, extended periods of signal loss may be experienced, due to app not connected, which could impact ability to receive glucose reading/alarms, which could lead to undetec"
+    },
+    {
+      "event": "91837",
+      "gold": [
+        "comms",
+        "dose"
+      ],
+      "model": [
+        "info",
+        "comms",
+        "power"
+      ],
+      "text": "A limited number of remediated Philips DreamStation units may experience communication issues when connecting to the cloud-based care management application. Should this be the case, this may affect the ability to download prescription sett"
+    },
+    {
+      "event": "92389",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "There is the potential for the program software to malfunction which will not allow it to move forward to the next session."
+    },
+    {
+      "event": "91925",
+      "gold": [
+        "dose",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "comms"
+      ],
+      "text": "Software error causes, safety ventilation, in which ventilation continues in the \"safety ventilation\" mode with audible/visible alarm - patient inputs are not monitored, if the following coincide 1) A mode change to an adaptive mode (ASV, A"
+    },
+    {
+      "event": "96002",
+      "gold": [
+        "info",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop"
+      ],
+      "text": "Due to an automated dispensing cabinet software issue, when a medication single order contains more than one component and at least one is unavailable for a multi-item or combination order, the order may display as grayed out; alternate loc"
+    },
+    {
+      "event": "92462",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "There is a software login in issue that may prevent the user from logging in."
+    },
+    {
+      "event": "92464",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "There is a software login in issue that may prevent the user from logging in."
+    },
+    {
+      "event": "93483",
+      "gold": [
+        "alarm",
+        "comms",
+        "info",
+        "stop",
+        "ui"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "There are potential performance issues found in the Alinity ci-series System software versions 3.4.0 and lower, including: 1) SCC Reagent load error during daily maintenance; 2) Sample Laboratory Report error; 3) Customer requests mechanism"
+    },
+    {
+      "event": "95603",
+      "gold": [
+        "dose"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Shots were terminated by the mAs integrator; however, the 4 ms exposure time did not allow enough tolerance to achieve diagnostic exposures due to variations in hardware and how different timers are started."
+    },
+    {
+      "event": "92760",
+      "gold": [
+        "alarm",
+        "comms"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "There is a potential for a rare interaction between the EMBLEM S-ICD and LATITUDE communicator, which may cause S-ICD sensing disablement for a 24-hour interval."
+    },
+    {
+      "event": "93005",
+      "gold": [
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "comms"
+      ],
+      "text": "Under certain conditions, an issue might prevent the device from performing as intended. A specific sequence of commands on the control unit activates the traction drive and triggers an unintended driving (autodrive) of max. 7 sec. may resu"
+    },
+    {
+      "event": "93046",
+      "gold": [
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info"
+      ],
+      "text": "CORI software was missing a planning stage that appears in cases of significant knee deformation (outside of the range of 3 degrees valgus to 7 degrees varus) when the surgeon chooses to define the femoral rotational reference via the poste"
+    },
+    {
+      "event": "93105",
+      "gold": [
+        "alarm"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop",
+        "comms"
+      ],
+      "text": "Infusion Pumps with affected software revision may fail to detect air in line, which may lead to air embolism."
+    },
+    {
+      "event": "96029",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "If \"Clear All\" selected medications is selected on patient profile, the automated dispensing cabinet may allow dispensing of medication without first requiring the RxVerify Validation Code be entered/without validation from a pharmacist, wh"
+    },
+    {
+      "event": "93259",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "Change Healthcare has identified a software issue where Change Healthcare Radiology Solutions 14.0, 14.1, and 14.2 may not update records in external applications."
+    },
+    {
+      "event": "93638",
+      "gold": [
+        "alarm",
+        "comms"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop",
+        "comms"
+      ],
+      "text": "Push notifications may fail to send to the user under certain conditions. This could potentially result in patient harm due to delay in detection of a change in patient condition."
+    },
+    {
+      "event": "93684",
+      "gold": [
+        "info",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop"
+      ],
+      "text": "Wrong structures imported into the GammaPod Treatment Planning System.-system allowed an RTSS generated from a previous CT scan to be selected"
+    },
+    {
+      "event": "93773",
+      "gold": [
+        "info",
+        "security"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "Issue 1: Mixed Images: The Radio Fluoroscopy (RF) viewer may also display a previous patient s radiography (RAD) images when starting the next patient scan while the previous patient image export is still processing. If the issue occurs, th"
+    },
+    {
+      "event": "93754",
+      "gold": [
+        "alarm",
+        "dose",
+        "info",
+        "stop",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm",
+        "stop"
+      ],
+      "text": "Medfusion syringe pumps, with software versions before v6.0.0, may have the following issues:1. Delivery During Motor Not Running High Priority Alarm, 2. Infusion Restarted with Incorrect Parameters, 3. Screen Lock, 4. Interruption of Bolus"
+    },
+    {
+      "event": "93757",
+      "gold": [
+        "alarm",
+        "comms",
+        "dose",
+        "info",
+        "power",
+        "security"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm",
+        "stop",
+        "comms"
+      ],
+      "text": "Medfusion Model 4000 syringe infusion pumps, with the following software versions, may have the following issues: 1. Delivery During Motor Not Running High Priority Alarm (v1.0.0, v1.1.0, v1.1.1, v1.1.2), 2. Re-administered Loading Dose (v1"
+    }
+  ],
+  "commit": "d154aec",
+  "run_at": "2026-11-27T01:57:01+00:00"
+}

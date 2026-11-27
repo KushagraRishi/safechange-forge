@@ -1,7 +1,7 @@
 // SafeChange: Forge entry points.
 
 import Resolver from '@forge/resolver';
-import { checkChange, signReview, recallsForHazard, releaseCheck, changesTouchingHazard, loadHazardLog, hazardLogStatus, NotConfigured } from './services/engine.js';
+import { checkChange, signReview, recallsForHazard, releaseCheck, changesTouchingHazard, loadHazardLog, hazardLogStatus, staleAlert, releaseRecord, NotConfigured } from './services/engine.js';
 import { getSettings, saveSettings } from './services/store.js';
 import { findPages, getPage } from './services/atlassian.js';
 import { blockMessage } from './core/gate.js';
@@ -118,6 +118,14 @@ admin.define('createDemo', async ({ payload }) => {
 admin.define('releaseCheck', async ({ payload }) => {
   try {
     return await releaseCheck(payload.jql);
+  } catch (e) {
+    return fail(e);
+  }
+});
+
+admin.define('releaseRecord', async ({ payload }) => {
+  try {
+    return await releaseRecord({ jql: payload.jql, title: payload.title });
   } catch (e) {
     return fail(e);
   }
@@ -259,5 +267,31 @@ export async function actionReleaseCheck(payload) {
     return await releaseCheck(jql);
   } catch (e) {
     return fail(e);
+  }
+}
+
+export async function actionReleaseRecord(payload) {
+  try {
+    let jql = payload?.jql;
+    if (!jql && payload?.version) jql = `fixVersion = "${String(payload.version).replace(/"/g, '')}"`;
+    if (!jql && payload?.project) jql = `project = "${String(payload.project).replace(/"/g, '')}" ORDER BY key ASC`;
+    if (!jql) return { error: 'error', message: 'Tell me which release, project or JQL to write the record for.' };
+    return await releaseRecord({ jql, title: payload?.title });
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+// ---------- Trigger: live alert when a reviewed change is edited ----------
+
+export async function onIssueUpdated(event) {
+  try {
+    const key = event?.issue?.key;
+    if (!key) return;
+    const fields = (event?.changelog?.items || []).map((i) => i.field || i.fieldId).filter(Boolean);
+    const r = await staleAlert(key, fields);
+    console.log(`SafeChange stale check ${key}: ${JSON.stringify(r)}`);
+  } catch (e) {
+    console.error(`SafeChange stale check failed: ${e.message || e}`);
   }
 }

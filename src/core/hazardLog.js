@@ -13,7 +13,31 @@ const COLUMN_ALIASES = {
   watches: ['watches', 'software items', 'software item', 'watch', 'triggers'],
   control: ['risk control', 'risk controls', 'control', 'mitigation'],
   verification: ['verification', 'verification test', 'test'],
+  category: ['category', 'categories', 'hazard category', 'hazard type'],
 };
+
+const CATEGORY_CODES = {
+  dose: ['dose', 'wrong therapy amount', 'therapy', 'over-infusion', 'under-infusion'],
+  info: ['info', 'wrong or missing information', 'information', 'data'],
+  alarm: ['alarm', 'alarm or detection failure', 'detection'],
+  stop: ['stop', 'loss of function'],
+  comms: ['comms', 'connectivity or data transfer', 'connectivity', 'communication'],
+  security: ['security', 'cybersecurity'],
+  ui: ['ui', 'user interface or input', 'user interface', 'input'],
+  power: ['power', 'power or battery', 'battery'],
+};
+
+/** "Alarm or detection failure, stop" -> ['alarm', 'stop'] */
+export function parseCategories(text) {
+  const out = [];
+  for (const part of String(text || '').split(/[,;\n]/)) {
+    const t = part.trim().toLowerCase();
+    if (!t) continue;
+    const hit = Object.entries(CATEGORY_CODES).find(([, names]) => names.includes(t));
+    if (hit && !out.includes(hit[0])) out.push(hit[0]);
+  }
+  return out;
+}
 
 export const SEVERITIES = ['Catastrophic', 'Critical', 'Serious', 'Minor', 'Negligible'];
 
@@ -105,6 +129,7 @@ export function parseHazardLog(storageHtml) {
         watches,
         control: rec.control || '',
         verification: rec.verification || '',
+        categories: parseCategories(rec.category),
       });
     });
     return { hazards, problems };

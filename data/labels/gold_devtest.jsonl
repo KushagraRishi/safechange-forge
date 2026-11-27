@@ -1,0 +1,484 @@
+{"event": "91937", "labels": ["info"], "source": "adjudicated"}
+{"event": "99475", "labels": ["security"], "source": "agreed"}
+{"event": "98128", "labels": ["ui"], "source": "agreed"}
+{"event": "97455", "labels": ["info", "ui"], "source": "agreed"}
+{"event": "97545", "labels": ["info"], "source": "agreed"}
+{"event": "93561", "labels": ["stop"], "source": "agreed"}
+{"event": "97197", "labels": ["stop"], "source": "agreed"}
+{"event": "98108", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "94881", "labels": ["alarm"], "source": "agreed"}
+{"event": "96233", "labels": ["info"], "source": "agreed"}
+{"event": "90728", "labels": ["dose", "info"], "source": "agreed"}
+{"event": "91418", "labels": ["stop"], "source": "agreed"}
+{"event": "91159", "labels": ["info"], "source": "agreed"}
+{"event": "94709", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "91523", "labels": ["none"], "source": "agreed"}
+{"event": "97444", "labels": ["stop"], "source": "agreed"}
+{"event": "94456", "labels": ["info"], "source": "agreed"}
+{"event": "93016", "labels": ["info"], "source": "agreed"}
+{"event": "94995", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "97969", "labels": ["stop"], "source": "agreed"}
+{"event": "89961", "labels": ["none"], "source": "agreed"}
+{"event": "90314", "labels": ["alarm"], "source": "agreed"}
+{"event": "96962", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "97509", "labels": ["info"], "source": "agreed"}
+{"event": "99529", "labels": ["info"], "source": "agreed"}
+{"event": "93087", "labels": ["info"], "source": "agreed"}
+{"event": "96946", "labels": ["alarm", "info"], "source": "adjudicated"}
+{"event": "93105", "labels": ["alarm"], "source": "agreed"}
+{"event": "92482", "labels": ["alarm", "stop"], "source": "adjudicated"}
+{"event": "96270", "labels": ["info"], "source": "agreed"}
+{"event": "95227", "labels": ["info"], "source": "agreed"}
+{"event": "95512", "labels": ["security"], "source": "agreed"}
+{"event": "90980", "labels": ["info", "ui"], "source": "agreed"}
+{"event": "93005", "labels": ["ui"], "source": "adjudicated"}
+{"event": "94122", "labels": ["security"], "source": "agreed"}
+{"event": "96831", "labels": ["info"], "source": "adjudicated"}
+{"event": "97262", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "95957", "labels": ["info"], "source": "agreed"}
+{"event": "93757", "labels": ["alarm", "comms", "dose", "info", "power", "security"], "source": "agreed"}
+{"event": "92750", "labels": ["info"], "source": "agreed"}
+{"event": "93925", "labels": ["info"], "source": "agreed"}
+{"event": "94411", "labels": ["info", "ui"], "source": "adjudicated"}
+{"event": "99557", "labels": ["none"], "source": "agreed"}
+{"event": "95665", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "96440", "labels": ["info"], "source": "agreed"}
+{"event": "99730", "labels": ["info"], "source": "agreed"}
+{"event": "99115", "labels": ["info"], "source": "agreed"}
+{"event": "97873", "labels": ["info"], "source": "agreed"}
+{"event": "98917", "labels": ["info"], "source": "agreed"}
+{"event": "92250", "labels": ["stop"], "source": "agreed"}
+{"event": "97379", "labels": ["info"], "source": "agreed"}
+{"event": "94494", "labels": ["power", "stop"], "source": "agreed"}
+{"event": "91852", "labels": ["none"], "source": "agreed"}
+{"event": "95880", "labels": ["info"], "source": "agreed"}
+{"event": "91617", "labels": ["info"], "source": "agreed"}
+{"event": "90498", "labels": ["comms"], "source": "adjudicated"}
+{"event": "93857", "labels": ["alarm"], "source": "agreed"}
+{"event": "96091", "labels": ["alarm", "info"], "source": "adjudicated"}
+{"event": "96326", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "97479", "labels": ["security"], "source": "agreed"}
+{"event": "98929", "labels": ["alarm", "power", "stop"], "source": "agreed"}
+{"event": "99520", "labels": ["info"], "source": "agreed"}
+{"event": "96647", "labels": ["info"], "source": "agreed"}
+{"event": "96344", "labels": ["info"], "source": "agreed"}
+{"event": "98639", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "92921", "labels": ["ui"], "source": "agreed"}
+{"event": "98738", "labels": ["security"], "source": "agreed"}
+{"event": "90716", "labels": ["dose"], "source": "agreed"}
+{"event": "90641", "labels": ["stop"], "source": "adjudicated"}
+{"event": "96585", "labels": ["stop"], "source": "agreed"}
+{"event": "96762", "labels": ["stop"], "source": "agreed"}
+{"event": "98967", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "94547", "labels": ["info"], "source": "adjudicated"}
+{"event": "94919", "labels": ["stop"], "source": "agreed"}
+{"event": "91240", "labels": ["stop"], "source": "agreed"}
+{"event": "97155", "labels": ["stop"], "source": "agreed"}
+{"event": "99361", "labels": ["info"], "source": "agreed"}
+{"event": "93020", "labels": ["alarm"], "source": "agreed"}
+{"event": "95254", "labels": ["info"], "source": "adjudicated"}
+{"event": "96834", "labels": ["none"], "source": "agreed"}
+{"event": "99391", "labels": ["info"], "source": "agreed"}
+{"event": "98009", "labels": ["none"], "source": "agreed"}
+{"event": "96331", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "89515", "labels": ["info"], "source": "agreed"}
+{"event": "93927", "labels": ["alarm"], "source": "adjudicated"}
+{"event": "99083", "labels": ["none"], "source": "agreed"}
+{"event": "97843", "labels": ["stop"], "source": "agreed"}
+{"event": "91795", "labels": ["dose"], "source": "agreed"}
+{"event": "93509", "labels": ["info"], "source": "agreed"}
+{"event": "96802", "labels": ["info"], "source": "agreed"}
+{"event": "95644", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "96025", "labels": ["info"], "source": "agreed"}
+{"event": "98513", "labels": ["info"], "source": "agreed"}
+{"event": "96241", "labels": ["info"], "source": "agreed"}
+{"event": "97910", "labels": ["dose"], "source": "agreed"}
+{"event": "96873", "labels": ["alarm", "power"], "source": "agreed"}
+{"event": "89799", "labels": ["info"], "source": "agreed"}
+{"event": "90736", "labels": ["none"], "source": "agreed"}
+{"event": "89647", "labels": ["info"], "source": "agreed"}
+{"event": "96377", "labels": ["info"], "source": "agreed"}
+{"event": "89703", "labels": ["none"], "source": "agreed"}
+{"event": "96511", "labels": ["info"], "source": "agreed"}
+{"event": "98332", "labels": ["stop"], "source": "agreed"}
+{"event": "97516", "labels": ["stop"], "source": "agreed"}
+{"event": "96085", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "97597", "labels": ["dose", "ui"], "source": "agreed"}
+{"event": "93259", "labels": ["comms"], "source": "agreed"}
+{"event": "94747", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "96512", "labels": ["stop"], "source": "agreed"}
+{"event": "95559", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "93320", "labels": ["info"], "source": "agreed"}
+{"event": "99861", "labels": ["stop"], "source": "agreed"}
+{"event": "92938", "labels": ["info"], "source": "agreed"}
+{"event": "93773", "labels": ["info", "security"], "source": "agreed"}
+{"event": "99588", "labels": ["stop"], "source": "agreed"}
+{"event": "98000", "labels": ["stop"], "source": "agreed"}
+{"event": "94928", "labels": ["info"], "source": "agreed"}
+{"event": "90458", "labels": ["alarm"], "source": "agreed"}
+{"event": "90480", "labels": ["info"], "source": "agreed"}
+{"event": "91099", "labels": ["info"], "source": "agreed"}
+{"event": "93640", "labels": ["none"], "source": "agreed"}
+{"event": "95020", "labels": ["none"], "source": "agreed"}
+{"event": "91603", "labels": ["alarm", "comms", "stop"], "source": "adjudicated"}
+{"event": "96138", "labels": ["alarm"], "source": "agreed"}
+{"event": "94848", "labels": ["info"], "source": "agreed"}
+{"event": "95325", "labels": ["comms"], "source": "agreed"}
+{"event": "96230", "labels": ["power"], "source": "agreed"}
+{"event": "97617", "labels": ["security"], "source": "agreed"}
+{"event": "94892", "labels": ["dose"], "source": "agreed"}
+{"event": "91646", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "94228", "labels": ["dose"], "source": "agreed"}
+{"event": "99400", "labels": ["info"], "source": "agreed"}
+{"event": "97934", "labels": ["stop"], "source": "agreed"}
+{"event": "97904", "labels": ["alarm", "ui"], "source": "adjudicated"}
+{"event": "92061", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "93932", "labels": ["stop"], "source": "agreed"}
+{"event": "93023", "labels": ["info"], "source": "agreed"}
+{"event": "95603", "labels": ["dose"], "source": "agreed"}
+{"event": "95286", "labels": ["info"], "source": "agreed"}
+{"event": "96129", "labels": ["comms"], "source": "agreed"}
+{"event": "93511", "labels": ["dose", "ui"], "source": "agreed"}
+{"event": "95828", "labels": ["none"], "source": "adjudicated"}
+{"event": "89738", "labels": ["info"], "source": "agreed"}
+{"event": "98028", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "96314", "labels": ["info"], "source": "agreed"}
+{"event": "99834", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "98473", "labels": ["comms"], "source": "agreed"}
+{"event": "95477", "labels": ["stop"], "source": "agreed"}
+{"event": "96567", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "98158", "labels": ["comms"], "source": "agreed"}
+{"event": "98640", "labels": ["stop"], "source": "agreed"}
+{"event": "90579", "labels": ["comms", "stop"], "source": "adjudicated"}
+{"event": "91870", "labels": ["stop"], "source": "agreed"}
+{"event": "98102", "labels": ["stop"], "source": "agreed"}
+{"event": "93684", "labels": ["info", "ui"], "source": "agreed"}
+{"event": "92238", "labels": ["info"], "source": "agreed"}
+{"event": "90661", "labels": ["info"], "source": "agreed"}
+{"event": "98487", "labels": ["none"], "source": "agreed"}
+{"event": "92184", "labels": ["info"], "source": "agreed"}
+{"event": "91765", "labels": ["alarm"], "source": "agreed"}
+{"event": "90904", "labels": ["stop"], "source": "adjudicated"}
+{"event": "93855", "labels": ["info"], "source": "agreed"}
+{"event": "92516", "labels": ["info"], "source": "agreed"}
+{"event": "98963", "labels": ["comms"], "source": "adjudicated"}
+{"event": "99007", "labels": ["info"], "source": "agreed"}
+{"event": "95450", "labels": ["info"], "source": "agreed"}
+{"event": "97296", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "93388", "labels": ["info"], "source": "adjudicated"}
+{"event": "90246", "labels": ["stop"], "source": "agreed"}
+{"event": "91649", "labels": ["none"], "source": "agreed"}
+{"event": "98998", "labels": ["info"], "source": "agreed"}
+{"event": "98938", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "96417", "labels": ["dose"], "source": "agreed"}
+{"event": "98022", "labels": ["ui"], "source": "agreed"}
+{"event": "97193", "labels": ["none"], "source": "agreed"}
+{"event": "93451", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "98364", "labels": ["alarm", "dose"], "source": "agreed"}
+{"event": "90175", "labels": ["stop"], "source": "adjudicated"}
+{"event": "93791", "labels": ["alarm", "dose", "power"], "source": "adjudicated"}
+{"event": "90845", "labels": ["alarm", "dose", "stop"], "source": "agreed"}
+{"event": "95635", "labels": ["comms"], "source": "agreed"}
+{"event": "95471", "labels": ["stop"], "source": "agreed"}
+{"event": "89834", "labels": ["info"], "source": "agreed"}
+{"event": "99406", "labels": ["power", "stop"], "source": "agreed"}
+{"event": "95411", "labels": ["info"], "source": "agreed"}
+{"event": "95131", "labels": ["comms"], "source": "agreed"}
+{"event": "98097", "labels": ["none"], "source": "agreed"}
+{"event": "97307", "labels": ["info"], "source": "agreed"}
+{"event": "94956", "labels": ["stop"], "source": "agreed"}
+{"event": "97527", "labels": ["comms", "dose", "info"], "source": "agreed"}
+{"event": "92464", "labels": ["stop"], "source": "agreed"}
+{"event": "92885", "labels": ["info"], "source": "agreed"}
+{"event": "98393", "labels": ["alarm"], "source": "agreed"}
+{"event": "99908", "labels": ["comms"], "source": "agreed"}
+{"event": "96103", "labels": ["stop"], "source": "agreed"}
+{"event": "97788", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "92063", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "92046", "labels": ["info"], "source": "agreed"}
+{"event": "94211", "labels": ["info"], "source": "agreed"}
+{"event": "94878", "labels": ["alarm", "comms", "power"], "source": "agreed"}
+{"event": "96876", "labels": ["info"], "source": "agreed"}
+{"event": "90358", "labels": ["info"], "source": "agreed"}
+{"event": "93637", "labels": ["stop"], "source": "agreed"}
+{"event": "96055", "labels": ["dose", "security", "stop"], "source": "agreed"}
+{"event": "89816", "labels": ["dose"], "source": "agreed"}
+{"event": "97806", "labels": ["stop"], "source": "agreed"}
+{"event": "97437", "labels": ["alarm"], "source": "agreed"}
+{"event": "94836", "labels": ["stop"], "source": "agreed"}
+{"event": "93315", "labels": ["none"], "source": "agreed"}
+{"event": "96153", "labels": ["dose"], "source": "adjudicated"}
+{"event": "96628", "labels": ["comms", "dose", "stop"], "source": "agreed"}
+{"event": "95783", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "97403", "labels": ["dose"], "source": "agreed"}
+{"event": "89499", "labels": ["stop"], "source": "agreed"}
+{"event": "93158", "labels": ["info"], "source": "agreed"}
+{"event": "99228", "labels": ["alarm"], "source": "agreed"}
+{"event": "96992", "labels": ["info"], "source": "agreed"}
+{"event": "97531", "labels": ["stop"], "source": "agreed"}
+{"event": "99404", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "94882", "labels": ["alarm", "comms", "power"], "source": "agreed"}
+{"event": "99079", "labels": ["stop"], "source": "agreed"}
+{"event": "92484", "labels": ["info"], "source": "agreed"}
+{"event": "93697", "labels": ["dose", "stop"], "source": "adjudicated"}
+{"event": "97413", "labels": ["alarm"], "source": "adjudicated"}
+{"event": "96107", "labels": ["info"], "source": "agreed"}
+{"event": "93393", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "98116", "labels": ["dose"], "source": "agreed"}
+{"event": "90136", "labels": ["info"], "source": "agreed"}
+{"event": "97021", "labels": ["alarm", "stop"], "source": "adjudicated"}
+{"event": "99436", "labels": ["info"], "source": "agreed"}
+{"event": "95636", "labels": ["security"], "source": "agreed"}
+{"event": "97726", "labels": ["info"], "source": "agreed"}
+{"event": "90366", "labels": ["info"], "source": "agreed"}
+{"event": "98930", "labels": ["info"], "source": "agreed"}
+{"event": "99800", "labels": ["info", "ui"], "source": "agreed"}
+{"event": "93054", "labels": ["comms"], "source": "agreed"}
+{"event": "93968", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "96202", "labels": ["comms"], "source": "adjudicated"}
+{"event": "99856", "labels": ["info"], "source": "agreed"}
+{"event": "98244", "labels": ["info"], "source": "agreed"}
+{"event": "99423", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "96414", "labels": ["alarm", "info"], "source": "adjudicated"}
+{"event": "94225", "labels": ["alarm", "security", "stop"], "source": "agreed"}
+{"event": "95643", "labels": ["dose"], "source": "agreed"}
+{"event": "99126", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "96771", "labels": ["security", "ui"], "source": "agreed"}
+{"event": "93638", "labels": ["alarm", "comms"], "source": "adjudicated"}
+{"event": "93399", "labels": ["info"], "source": "agreed"}
+{"event": "97835", "labels": ["info"], "source": "agreed"}
+{"event": "99546", "labels": ["info"], "source": "agreed"}
+{"event": "99585", "labels": ["security"], "source": "agreed"}
+{"event": "93574", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "94090", "labels": ["info"], "source": "agreed"}
+{"event": "91664", "labels": ["stop"], "source": "agreed"}
+{"event": "95168", "labels": ["comms"], "source": "agreed"}
+{"event": "99590", "labels": ["stop"], "source": "agreed"}
+{"event": "89662", "labels": ["dose"], "source": "agreed"}
+{"event": "89901", "labels": ["alarm", "info", "stop"], "source": "adjudicated"}
+{"event": "91357", "labels": ["none"], "source": "adjudicated"}
+{"event": "93736", "labels": ["security"], "source": "agreed"}
+{"event": "95116", "labels": ["none"], "source": "agreed"}
+{"event": "91320", "labels": ["info"], "source": "adjudicated"}
+{"event": "93988", "labels": ["info"], "source": "agreed"}
+{"event": "90212", "labels": ["none"], "source": "agreed"}
+{"event": "97686", "labels": ["info"], "source": "agreed"}
+{"event": "99378", "labels": ["stop"], "source": "agreed"}
+{"event": "93129", "labels": ["none"], "source": "agreed"}
+{"event": "98517", "labels": ["stop"], "source": "agreed"}
+{"event": "89922", "labels": ["dose"], "source": "adjudicated"}
+{"event": "97662", "labels": ["alarm", "dose", "stop"], "source": "agreed"}
+{"event": "96651", "labels": ["stop"], "source": "agreed"}
+{"event": "99524", "labels": ["alarm"], "source": "agreed"}
+{"event": "94841", "labels": ["comms"], "source": "agreed"}
+{"event": "93046", "labels": ["ui"], "source": "adjudicated"}
+{"event": "97312", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "98269", "labels": ["info"], "source": "agreed"}
+{"event": "91938", "labels": ["info"], "source": "agreed"}
+{"event": "98207", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "93099", "labels": ["info"], "source": "agreed"}
+{"event": "99328", "labels": ["none"], "source": "agreed"}
+{"event": "95485", "labels": ["ui"], "source": "adjudicated"}
+{"event": "96889", "labels": ["info"], "source": "agreed"}
+{"event": "91158", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "98317", "labels": ["none"], "source": "agreed"}
+{"event": "91837", "labels": ["comms", "dose"], "source": "agreed"}
+{"event": "96031", "labels": ["alarm"], "source": "agreed"}
+{"event": "98872", "labels": ["alarm"], "source": "agreed"}
+{"event": "95604", "labels": ["info"], "source": "agreed"}
+{"event": "97046", "labels": ["stop"], "source": "agreed"}
+{"event": "93049", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "94468", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "92627", "labels": ["info"], "source": "agreed"}
+{"event": "98520", "labels": ["info"], "source": "agreed"}
+{"event": "98518", "labels": ["dose"], "source": "agreed"}
+{"event": "89898", "labels": ["info"], "source": "agreed"}
+{"event": "98270", "labels": ["stop", "ui"], "source": "adjudicated"}
+{"event": "90657", "labels": ["info"], "source": "agreed"}
+{"event": "89929", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "97657", "labels": ["security"], "source": "agreed"}
+{"event": "90529", "labels": ["alarm"], "source": "agreed"}
+{"event": "99731", "labels": ["info"], "source": "agreed"}
+{"event": "94499", "labels": ["ui"], "source": "adjudicated"}
+{"event": "99042", "labels": ["info"], "source": "agreed"}
+{"event": "96360", "labels": ["info"], "source": "agreed"}
+{"event": "91698", "labels": ["none"], "source": "agreed"}
+{"event": "97562", "labels": ["dose"], "source": "agreed"}
+{"event": "92708", "labels": ["stop"], "source": "adjudicated"}
+{"event": "92350", "labels": ["comms"], "source": "agreed"}
+{"event": "98073", "labels": ["stop"], "source": "agreed"}
+{"event": "91339", "labels": ["dose"], "source": "agreed"}
+{"event": "96804", "labels": ["info"], "source": "agreed"}
+{"event": "97049", "labels": ["info"], "source": "agreed"}
+{"event": "91224", "labels": ["info"], "source": "agreed"}
+{"event": "96557", "labels": ["dose", "info"], "source": "adjudicated"}
+{"event": "95402", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "100074", "labels": ["stop"], "source": "agreed"}
+{"event": "91182", "labels": ["ui"], "source": "agreed"}
+{"event": "95150", "labels": ["comms"], "source": "agreed"}
+{"event": "94332", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "94312", "labels": ["power", "stop"], "source": "adjudicated"}
+{"event": "99241", "labels": ["info"], "source": "agreed"}
+{"event": "98031", "labels": ["info"], "source": "agreed"}
+{"event": "92406", "labels": ["info"], "source": "agreed"}
+{"event": "96554", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "92233", "labels": ["security"], "source": "agreed"}
+{"event": "99566", "labels": ["stop"], "source": "agreed"}
+{"event": "90322", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "98111", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "98980", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "93406", "labels": ["comms"], "source": "agreed"}
+{"event": "93209", "labels": ["info"], "source": "agreed"}
+{"event": "96830", "labels": ["security"], "source": "agreed"}
+{"event": "89645", "labels": ["info", "ui"], "source": "adjudicated"}
+{"event": "96874", "labels": ["alarm", "power"], "source": "agreed"}
+{"event": "95018", "labels": ["stop"], "source": "agreed"}
+{"event": "98217", "labels": ["alarm"], "source": "agreed"}
+{"event": "91299", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "99589", "labels": ["comms"], "source": "adjudicated"}
+{"event": "97868", "labels": ["info"], "source": "agreed"}
+{"event": "96564", "labels": ["info"], "source": "agreed"}
+{"event": "97258", "labels": ["info"], "source": "agreed"}
+{"event": "96791", "labels": ["info"], "source": "adjudicated"}
+{"event": "94493", "labels": ["alarm"], "source": "agreed"}
+{"event": "99706", "labels": ["info"], "source": "agreed"}
+{"event": "98444", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "89870", "labels": ["stop"], "source": "agreed"}
+{"event": "99720", "labels": ["ui"], "source": "agreed"}
+{"event": "96685", "labels": ["info"], "source": "agreed"}
+{"event": "97993", "labels": ["info"], "source": "agreed"}
+{"event": "98137", "labels": ["none"], "source": "agreed"}
+{"event": "92141", "labels": ["info"], "source": "agreed"}
+{"event": "94958", "labels": ["info"], "source": "agreed"}
+{"event": "99422", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "93958", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "94444", "labels": ["ui"], "source": "agreed"}
+{"event": "97130", "labels": ["ui"], "source": "agreed"}
+{"event": "98071", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "92205", "labels": ["info"], "source": "agreed"}
+{"event": "99549", "labels": ["security"], "source": "agreed"}
+{"event": "99971", "labels": ["info", "security"], "source": "agreed"}
+{"event": "95074", "labels": ["info"], "source": "agreed"}
+{"event": "91773", "labels": ["info"], "source": "agreed"}
+{"event": "100003", "labels": ["info", "power"], "source": "adjudicated"}
+{"event": "97607", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "91341", "labels": ["stop"], "source": "agreed"}
+{"event": "95557", "labels": ["none"], "source": "adjudicated"}
+{"event": "99931", "labels": ["stop"], "source": "agreed"}
+{"event": "99075", "labels": ["none"], "source": "agreed"}
+{"event": "89576", "labels": ["alarm"], "source": "agreed"}
+{"event": "90605", "labels": ["none"], "source": "agreed"}
+{"event": "97618", "labels": ["none"], "source": "adjudicated"}
+{"event": "92760", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "91260", "labels": ["alarm", "comms"], "source": "agreed"}
+{"event": "90826", "labels": ["dose"], "source": "agreed"}
+{"event": "94840", "labels": ["comms"], "source": "agreed"}
+{"event": "99785", "labels": ["stop"], "source": "adjudicated"}
+{"event": "93606", "labels": ["none"], "source": "agreed"}
+{"event": "93423", "labels": ["none"], "source": "adjudicated"}
+{"event": "90533", "labels": ["info"], "source": "agreed"}
+{"event": "93754", "labels": ["alarm", "dose", "info", "stop", "ui"], "source": "adjudicated"}
+{"event": "93053", "labels": ["info"], "source": "agreed"}
+{"event": "98528", "labels": ["security"], "source": "agreed"}
+{"event": "91925", "labels": ["dose", "stop"], "source": "adjudicated"}
+{"event": "99885", "labels": ["security"], "source": "agreed"}
+{"event": "96430", "labels": ["info"], "source": "agreed"}
+{"event": "90286", "labels": ["info"], "source": "agreed"}
+{"event": "94820", "labels": ["info"], "source": "agreed"}
+{"event": "94472", "labels": ["alarm"], "source": "agreed"}
+{"event": "99331", "labels": ["info"], "source": "agreed"}
+{"event": "94388", "labels": ["info"], "source": "agreed"}
+{"event": "95406", "labels": ["none"], "source": "agreed"}
+{"event": "90085", "labels": ["comms"], "source": "agreed"}
+{"event": "96002", "labels": ["info", "ui"], "source": "adjudicated"}
+{"event": "92269", "labels": ["info"], "source": "agreed"}
+{"event": "89596", "labels": ["dose"], "source": "agreed"}
+{"event": "97646", "labels": ["stop"], "source": "agreed"}
+{"event": "93819", "labels": ["info"], "source": "agreed"}
+{"event": "90160", "labels": ["security"], "source": "agreed"}
+{"event": "94533", "labels": ["dose"], "source": "agreed"}
+{"event": "96029", "labels": ["security"], "source": "adjudicated"}
+{"event": "98428", "labels": ["security"], "source": "agreed"}
+{"event": "94699", "labels": ["stop"], "source": "agreed"}
+{"event": "91294", "labels": ["comms"], "source": "agreed"}
+{"event": "98213", "labels": ["none"], "source": "agreed"}
+{"event": "96286", "labels": ["stop"], "source": "agreed"}
+{"event": "90163", "labels": ["none"], "source": "agreed"}
+{"event": "99207", "labels": ["dose", "stop"], "source": "agreed"}
+{"event": "93312", "labels": ["none"], "source": "agreed"}
+{"event": "99769", "labels": ["stop"], "source": "agreed"}
+{"event": "92462", "labels": ["stop"], "source": "agreed"}
+{"event": "98096", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "93724", "labels": ["info"], "source": "agreed"}
+{"event": "96598", "labels": ["dose"], "source": "agreed"}
+{"event": "97638", "labels": ["info"], "source": "agreed"}
+{"event": "90454", "labels": ["info"], "source": "agreed"}
+{"event": "96285", "labels": ["none"], "source": "agreed"}
+{"event": "94704", "labels": ["comms", "info"], "source": "agreed"}
+{"event": "93127", "labels": ["none"], "source": "agreed"}
+{"event": "97311", "labels": ["dose"], "source": "agreed"}
+{"event": "95215", "labels": ["info"], "source": "agreed"}
+{"event": "90525", "labels": ["comms"], "source": "adjudicated"}
+{"event": "97390", "labels": ["stop"], "source": "agreed"}
+{"event": "89602", "labels": ["none"], "source": "agreed"}
+{"event": "95652", "labels": ["alarm"], "source": "agreed"}
+{"event": "93218", "labels": ["info"], "source": "agreed"}
+{"event": "97125", "labels": ["alarm"], "source": "adjudicated"}
+{"event": "93483", "labels": ["alarm", "comms", "info", "stop", "ui"], "source": "adjudicated"}
+{"event": "96027", "labels": ["stop"], "source": "agreed"}
+{"event": "91917", "labels": ["info"], "source": "agreed"}
+{"event": "96611", "labels": ["security"], "source": "agreed"}
+{"event": "95070", "labels": ["info"], "source": "agreed"}
+{"event": "98977", "labels": ["info"], "source": "agreed"}
+{"event": "95283", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "98243", "labels": ["dose"], "source": "agreed"}
+{"event": "89877", "labels": ["stop"], "source": "agreed"}
+{"event": "96719", "labels": ["info", "stop"], "source": "adjudicated"}
+{"event": "96133", "labels": ["alarm"], "source": "agreed"}
+{"event": "99945", "labels": ["alarm"], "source": "agreed"}
+{"event": "89915", "labels": ["info"], "source": "agreed"}
+{"event": "90165", "labels": ["info"], "source": "agreed"}
+{"event": "89990", "labels": ["dose"], "source": "agreed"}
+{"event": "96193", "labels": ["alarm", "info"], "source": "adjudicated"}
+{"event": "98924", "labels": ["info"], "source": "agreed"}
+{"event": "90737", "labels": ["dose"], "source": "agreed"}
+{"event": "96849", "labels": ["alarm"], "source": "adjudicated"}
+{"event": "91582", "labels": ["comms"], "source": "agreed"}
+{"event": "97264", "labels": ["comms", "ui"], "source": "agreed"}
+{"event": "96796", "labels": ["none"], "source": "agreed"}
+{"event": "98200", "labels": ["stop"], "source": "adjudicated"}
+{"event": "97309", "labels": ["dose"], "source": "agreed"}
+{"event": "99765", "labels": ["dose"], "source": "agreed"}
+{"event": "96169", "labels": ["info"], "source": "agreed"}
+{"event": "96046", "labels": ["security"], "source": "agreed"}
+{"event": "89959", "labels": ["stop"], "source": "agreed"}
+{"event": "96945", "labels": ["dose", "ui"], "source": "agreed"}
+{"event": "97517", "labels": ["dose"], "source": "agreed"}
+{"event": "99476", "labels": ["info", "stop"], "source": "agreed"}
+{"event": "98475", "labels": ["comms", "dose"], "source": "agreed"}
+{"event": "96311", "labels": ["dose", "ui"], "source": "agreed"}
+{"event": "90530", "labels": ["info", "power"], "source": "agreed"}
+{"event": "91362", "labels": ["stop"], "source": "agreed"}
+{"event": "93303", "labels": ["ui"], "source": "agreed"}
+{"event": "95238", "labels": ["info"], "source": "agreed"}
+{"event": "90817", "labels": ["info"], "source": "agreed"}
+{"event": "92389", "labels": ["stop"], "source": "agreed"}
+{"event": "98330", "labels": ["none"], "source": "agreed"}
+{"event": "96684", "labels": ["alarm", "info"], "source": "agreed"}
+{"event": "96925", "labels": ["stop"], "source": "agreed"}
+{"event": "95398", "labels": ["alarm"], "source": "agreed"}
+{"event": "95910", "labels": ["stop"], "source": "agreed"}
+{"event": "98540", "labels": ["alarm"], "source": "agreed"}
+{"event": "91806", "labels": ["info"], "source": "agreed"}
+{"event": "92909", "labels": ["comms", "stop"], "source": "agreed"}
+{"event": "96667", "labels": ["none"], "source": "agreed"}
+{"event": "99280", "labels": ["security"], "source": "agreed"}
+{"event": "95809", "labels": ["info"], "source": "agreed"}
+{"event": "99889", "labels": ["stop"], "source": "agreed"}
+{"event": "95240", "labels": ["alarm", "stop"], "source": "agreed"}
+{"event": "98347", "labels": ["info"], "source": "adjudicated"}
+{"event": "99899", "labels": ["info"], "source": "agreed"}
+{"event": "99268", "labels": ["stop"], "source": "agreed"}
+{"event": "96375", "labels": ["security"], "source": "agreed"}
+{"event": "99349", "labels": ["info"], "source": "agreed"}
+{"event": "95173", "labels": ["dose"], "source": "agreed"}

@@ -95,7 +95,31 @@ export async function getPage(pageId) {
     body: p.body?.storage?.value || '',
     url: p._links?.base && p._links?.webui ? p._links.base + p._links.webui : '',
     webui: p._links?.webui || '',
+    spaceId: p.spaceId || '',
   };
+}
+
+export async function createPage(spaceId, title, html, parentId) {
+  const res = await api.asUser().requestConfluence(route`/wiki/api/v2/pages`, {
+    method: 'POST',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ spaceId, status: 'current', title, ...(parentId ? { parentId } : {}), body: { representation: 'storage', value: html } }),
+  });
+  const p = await json(res, 'Creating the release record page');
+  return { id: p.id, title: p.title, url: p._links?.base && p._links?.webui ? p._links.base + p._links.webui : '' };
+}
+
+function adfParagraphs(text) {
+  return { type: 'doc', version: 1, content: text.split('\n').map((t) => ({ type: 'paragraph', content: [{ type: 'text', text: t }] })) };
+}
+
+export async function addComment(issueKey, text) {
+  const res = await api.asApp().requestJira(route`/rest/api/3/issue/${issueKey}/comment`, {
+    method: 'POST',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ body: adfParagraphs(text) }),
+  });
+  return json(res, `Commenting on ${issueKey}`);
 }
 
 export async function findPages(text) {

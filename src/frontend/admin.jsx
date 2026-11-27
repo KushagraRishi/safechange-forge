@@ -193,25 +193,42 @@ function Release() {
   const [jql, setJql] = useState('statusCategory != Done ORDER BY key ASC');
   const [res, setRes] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [record, setRecord] = useState(null);
   const run = async () => {
     setBusy(true);
     setRes(await invoke('releaseCheck', { jql }));
+    setBusy(false);
+  };
+  const write = async () => {
+    setBusy(true);
+    setRecord(await invoke('releaseRecord', { jql }));
     setBusy(false);
   };
   return (
     <Box xcss={section}>
       <Stack space="space.150">
         <Heading as="h3">Release check</Heading>
-        <Text>See every change in a release that still has hazards not cleared.</Text>
+        <Text>See every change in a release that still has hazards not cleared, or write the release safety record to Confluence.</Text>
         <Inline space="space.100" alignBlock="end">
           <Box xcss={xcss({ width: '420px' })}>
             <Label labelFor="j">JQL</Label>
             <Textfield id="j" value={jql} onChange={(e) => setJql(e.target.value)} />
           </Box>
           <Button appearance="primary" onClick={run} isDisabled={busy}>
-            {busy ? 'Checking' : 'Check'}
+            {busy ? 'Working' : 'Check'}
+          </Button>
+          <Button onClick={write} isDisabled={busy}>
+            Write safety record
           </Button>
         </Inline>
+        {record?.error ? <Text>{record.message}</Text> : null}
+        {record?.page ? (
+          <SectionMessage appearance="success" title="Release safety record written">
+            <Text>
+              <Link href={record.page.url} openNewTab>{record.page.title}</Link>: {record.changes} changes, {record.cleared} cleared, {record.held} held, {record.noHazards} touching no hazard.
+            </Text>
+          </SectionMessage>
+        ) : null}
         {res?.error ? <Text>{res.message}</Text> : null}
         {res?.rows ? (
           <Stack space="space.100">

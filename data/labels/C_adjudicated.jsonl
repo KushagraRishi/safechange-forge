@@ -1,0 +1,59 @@
+{"event": "91937", "labels": ["info"], "why": "Plate information missing from the display after processing; no transfer failure is named."}
+{"event": "96946", "labels": ["alarm", "info"], "why": "A false expired-reagent flag, and results still reported when the setting should block them."}
+{"event": "92482", "labels": ["alarm", "stop"], "why": "Ventilator stops and enters ambient mode with no warning; the stop is the failure, not a dose error."}
+{"event": "93005", "labels": ["ui"], "why": "A sequence of commands on the control unit triggers an unintended action."}
+{"event": "96831", "labels": ["info"], "why": "Display shows lagging, interrupted motion of the surgical view."}
+{"event": "94411", "labels": ["info", "ui"], "why": "Missing digit or decimal makes the shown navigation distance wrong."}
+{"event": "90498", "labels": ["comms"], "why": "Treatment course data is not passed from one system to another."}
+{"event": "96091", "labels": ["alarm", "info"], "why": "Glucose alarms are delayed and a glucose reading is shown 5 minutes late."}
+{"event": "90641", "labels": ["stop"], "why": "Autofocus and other functions become unavailable after application errors."}
+{"event": "94547", "labels": ["info"], "why": "Image is lost or degraded on the monitor."}
+{"event": "95254", "labels": ["info"], "why": "Wrong unit conversion makes measured values 10 times too small."}
+{"event": "93927", "labels": ["alarm"], "why": "QC rule violations are not flagged."}
+{"event": "91603", "labels": ["alarm", "comms", "stop"], "why": "Internal communication loss shuts the pump down and leaves the user unaware of its status."}
+{"event": "97904", "labels": ["alarm", "ui"], "why": "Setup screen is skipped and the override setting is lost, so alerts are silent."}
+{"event": "95828", "labels": ["none"], "why": "Too vague to tell what the software does wrong."}
+{"event": "90579", "labels": ["comms", "stop"], "why": "Communication is lost and the ventilator stops ventilating."}
+{"event": "90904", "labels": ["stop"], "why": "The only failure described is that treatment cannot continue on the system."}
+{"event": "98963", "labels": ["comms"], "why": "Programmer fails to send the command that ends the test."}
+{"event": "93388", "labels": ["info"], "why": "Printed and sent results include analytes from a previous patient."}
+{"event": "90175", "labels": ["stop"], "why": "The only failure described is that treatment cannot continue on the system."}
+{"event": "93791", "labels": ["alarm", "dose", "power"], "why": "A false charging error detection makes the device stop delivering therapy."}
+{"event": "96153", "labels": ["dose"], "why": "Wrong image offsets are used to position the patient for treatment."}
+{"event": "93697", "labels": ["dose", "stop"], "why": "Pump starts unexpectedly or stops unexpectedly."}
+{"event": "97413", "labels": ["alarm"], "why": "Collision protection fails after repeated proximity errors."}
+{"event": "97021", "labels": ["alarm", "stop"], "why": "Cartridges cannot be used, or expired resin is not detected."}
+{"event": "96202", "labels": ["comms"], "why": "Sync timeout disconnects devices from the server so updates are not received."}
+{"event": "96414", "labels": ["alarm", "info"], "why": "Monitor fails to detect blood pressure changes, so readings are inaccurate."}
+{"event": "93638", "labels": ["alarm", "comms"], "why": "Push notifications fail to send."}
+{"event": "89901", "labels": ["alarm", "info", "stop"], "why": "Workflow interruptions, unexpected notifications and image artifacts."}
+{"event": "91357", "labels": ["none"], "why": "Issues with images is too vague to tell what fails."}
+{"event": "91320", "labels": ["info"], "why": "Software produces the wrong aligner count and packaging."}
+{"event": "89922", "labels": ["dose"], "why": "Mismatched plan values lead to treatment in the wrong location."}
+{"event": "93046", "labels": ["ui"], "why": "A planning stage is missing from the workflow screens."}
+{"event": "95485", "labels": ["ui"], "why": "The overlay presentation is misleading."}
+{"event": "98270", "labels": ["stop", "ui"], "why": "After a restart the app resets the patient-side selection to the wrong side."}
+{"event": "94499", "labels": ["ui"], "why": "Analyzer accepts calibrator values from the wrong card."}
+{"event": "92708", "labels": ["stop"], "why": "Users cannot start a new sensor."}
+{"event": "96557", "labels": ["dose", "info"], "why": "Wrong transaction quantity recorded and the cabinet opens more than needed."}
+{"event": "94312", "labels": ["power", "stop"], "why": "App crash loop drains the pump battery and the pump shuts down."}
+{"event": "89645", "labels": ["info", "ui"], "why": "Reference ranges can be changed by mistake and are then shown and printed wrong."}
+{"event": "99589", "labels": ["comms"], "why": "App cannot pair with the CGM over NFC."}
+{"event": "96791", "labels": ["info"], "why": "Field rotation is not applied correctly to the scan."}
+{"event": "100003", "labels": ["info", "power"], "why": "Battery longevity estimate is shown wrong."}
+{"event": "95557", "labels": ["none"], "why": "Failed field upgrade after a power cut fits no category clearly."}
+{"event": "97618", "labels": ["none"], "why": "Only the harm is named, not what the software does wrong."}
+{"event": "99785", "labels": ["stop"], "why": "Therapy disc restarts, fails and becomes non-functional."}
+{"event": "93423", "labels": ["none"], "why": "Delayed processing is too vague to place in a category."}
+{"event": "93754", "labels": ["alarm", "dose", "info", "stop", "ui"], "why": "Listed issues cover alarms, wrong delivery, wrong display, screen lock and settings recall."}
+{"event": "91925", "labels": ["dose", "stop"], "why": "Ventilator falls back to safety ventilation and stops monitoring patient inputs."}
+{"event": "96002", "labels": ["info", "ui"], "why": "Order is grayed out with a wrong tooltip and no alternate locations listed."}
+{"event": "96029", "labels": ["security"], "why": "Medication can be dispensed without the required pharmacist validation code."}
+{"event": "90525", "labels": ["comms"], "why": "Notifications of study changes are not processed and passed on."}
+{"event": "97125", "labels": ["alarm"], "why": "A false electrical reset alert is displayed."}
+{"event": "93483", "labels": ["alarm", "comms", "info", "stop", "ui"], "why": "Listed issues cover load and processing errors, bad downloaded data, report errors, missing entry checks and no expiry."}
+{"event": "96719", "labels": ["info", "stop"], "why": "Monitor freezes and reboots, and ECG statements are inaccurate."}
+{"event": "96193", "labels": ["alarm", "info"], "why": "Wrong stability dates let expired assays run and give wrong results."}
+{"event": "96849", "labels": ["alarm"], "why": "Faulty logic raises frequent false high pressure errors."}
+{"event": "98200", "labels": ["stop"], "why": "Interface content is lost on the external monitor."}
+{"event": "98347", "labels": ["info"], "why": "Analyzer repeats the last result instead of calculating new values."}

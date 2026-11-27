@@ -7,6 +7,7 @@ import { HAZARD_LOG_HTML, DEMO_CHANGES } from '../demo/content.js';
 import { parseHazardLog } from '../core/hazardLog.js';
 import { analyzeChange, extractFiles } from '../core/analyze.js';
 import { saveSettings } from './store.js';
+import { loadModel } from '../core/model.js';
 
 async function ok(res, what) {
   if (!res.ok) {
@@ -125,7 +126,7 @@ export async function createDemo({ projectKey, spaceId }) {
   const created = [];
   for (const c of DEMO_CHANGES) {
     const key = await createIssue(projectKey, typeId, c.summary, c.description, c.components, c.labels);
-    const touched = analyzeChange({ ...c, files: extractFiles(c.description) }, hazards);
+    const touched = analyzeChange({ ...c, files: extractFiles(c.description) }, hazards, loadModel().score(`${c.summary}\n${c.description}`));
     created.push({ key, summary: c.summary, hazards: touched.map((t) => t.hazard.id) });
   }
   // Links do not depend on each other, so make them all at once.

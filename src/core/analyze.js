@@ -58,10 +58,16 @@ function pathMatches(watch, file) {
   return f.toLowerCase() === w.toLowerCase() || f.toLowerCase().endsWith('/' + w.toLowerCase()) || f.toLowerCase().startsWith(w.toLowerCase() + '/');
 }
 
-function keywordRegex(word) {
-  const esc = word.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
-  // Allow simple plurals and endings: "bolus" also matches "boluses".
-  return new RegExp('(^|[^\\w])' + esc + '(e?s|ed|ing)?(?![\\w])', 'i');
+const escapeRe = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
+
+export function keywordRegex(word) {
+  const w = word.trim();
+  // Allow simple endings: "bolus" matches "boluses", "mute" matches "muted"
+  // and "muting", "battery" matches "batteries".
+  let body = escapeRe(w) + '(?:e?s|ed|ing)?';
+  if (/[a-z]e$/i.test(w)) body = `(?:${body}|${escapeRe(w.slice(0, -1))}(?:ed|ing))`;
+  if (/[^aeiou]y$/i.test(w)) body = `(?:${body}|${escapeRe(w.slice(0, -1))}ies)`;
+  return new RegExp('(^|[^\\w])' + body + '(?![\\w])', 'i');
 }
 
 /**
@@ -70,9 +76,15 @@ function keywordRegex(word) {
  */
 export const TEST_LABEL = 'verification';
 
-export function analyzeChange(change, hazards) {
+/**
+ * @param scores optional output of HazardModel.score(): when the model flags a
+ *   category, every hazard in that category is touched too, with the model's
+ *   probability and top words as the reason.
+ */
+export function analyzeChange(change, hazards, scores = null) {
   // Verification tests are evidence, not changes: they never need a review.
   if (change.labels.some((l) => l.toLowerCase() === TEST_LABEL)) return [];
+  const flagged = (scores || []).filter((s) => (s.appFlag === undefined ? s.flagged : s.appFlag));
   const text = `${change.summary}\n${change.description}`;
   const comps = change.components.map((c) => c.toLowerCase());
   const labels = change.labels.map((l) => l.toLowerCase());
@@ -90,6 +102,11 @@ export function analyzeChange(change, hazards) {
         reasons.push({ kind: 'label', watch: w, detail: w });
       } else if (keywordRegex(w).test(text)) {
         reasons.push({ kind: 'word', watch: w, detail: w });
+      }
+    }
+    for (const s of flagged) {
+      if ((h.categories || []).includes(s.category)) {
+        reasons.push({ kind: 'model', watch: s.category, detail: `${s.name} ${Math.round(s.p * 100)}%${s.words.length ? ` (${s.words.join(', ')})` : ''}`, p: s.p });
       }
     }
     if (reasons.length) touched.push({ hazard: h, reasons });
