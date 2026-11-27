@@ -2,7 +2,7 @@
 // Same look as the approved InfuSafe deck (Georgia + Arial, teal, dark green cover and close).
 // Shapes named "aN|..." fade in, in order N (add_animations.py).
 // Shapes the video effects use: slide 2 a1|card1..a3|card3, slide 4 a1|stat1..a3|stat3,
-// slide 5 a1|hazard log .. a4|result, slide 6 a1|input .. a6|chip.
+// slide 5 a1|hazard log .. a4|result, slide 6 a1|input .. a3|model .. a6|chip, slide 8 a1|stat_model, a2|stat_base.
 // Run: PPTX_SKILL=<pptx skill folder> node build.js
 const pptxgen = require('pptxgenjs');
 const fs = require('fs');
@@ -161,7 +161,7 @@ async function icon(Comp, color) {
   source(s, 'Sources: FDA, General Principles of Software Validation (2002), section 2.4; openFDA device recall API, openFDA data updated 2026-11-21');
 
   // ============ 5. The gap ============
-  s = content('The problem', 'THE GAP', 'Jira lets a risky change reach Done');
+  s = content('The problem', 'THE GAP', 'A keyword checklist misses almost half');
   const panel = async (k, x, Ic, head, sub, name, rows) => {
     rbox(s, x, 1.85, 4.6, 2.85, X.lt2, `a${k}|${name}`, { r: 0.2, line: LINE });
     await circleIcon(s, x + 0.3, 2.1, 0.6, X.dk2, Ic, `a${k}|${name} icon`);
@@ -181,13 +181,11 @@ async function icon(Comp, color) {
   s.addShape(pres.shapes.LINE, { x: 5.3, y: 3.27, w: 0.95, h: 0, line: { color: X.accent5, width: 3, dashType: 'dash' }, objectName: 'a3|link left' });
   s.addShape(pres.shapes.LINE, { x: 7.05, y: 3.27, w: 0.95, h: 0, line: { color: X.accent5, width: 3, dashType: 'dash' }, objectName: 'a3|link right' });
   await circleIcon(s, 6.3, 2.92, 0.7, X.accent3, fa.FaUnlink, 'a3|link break');
-  text(s, 'no link', 5.9, 3.7, 1.5, 0.35, { fontSize: 13, bold: true, color: C.accent3, align: 'center' }, 'a3|link break label');
-  rbox(s, 0.7, 5.0, 11.9, 1.05, PALE_RED, 'a4|result strip', { r: 0.2 });
-  text(s, [
-    { text: '21 of 21', options: { fontSize: 36, bold: true, fontFace: 'Georgia' } },
-    { text: '   risky changes reached Done with no risk review', options: { fontSize: 21, bold: true } },
-  ], 1.0, 5.0, 11.4, 1.05, { color: C.accent3, valign: 'middle' }, 'a4|result');
-  text(s, 'Test project: 30 changes, 8 hazards', 0.7, 6.25, 11.9, 0.35, { fontSize: 13, color: C.accent5 }, 'a5|test project');
+  text(s, 'only a keyword checklist', 5.35, 3.7, 2.6, 0.35, { fontSize: 13, bold: true, color: C.accent3, align: 'center' }, 'a3|link break label');
+  rbox(s, 0.7, 4.95, 11.9, 1.25, PALE_RED, 'a4|result strip', { r: 0.2 });
+  text(s, '56%', 1.0, 4.95, 1.9, 1.25, { fontSize: 54, bold: true, color: C.accent3, fontFace: 'Georgia', valign: 'middle' }, 'a4|result');
+  text(s, 'of hazards caught by a keyword checklist', 2.95, 4.95, 9.4, 1.25, { fontSize: 22, bold: true, color: C.accent3, valign: 'middle' }, 'a4|result caption');
+  text(s, '309 FDA software recalls, 2024 to 2026', 0.7, 6.35, 11.9, 0.35, { fontSize: 13, color: C.accent5 }, 'a5|test set');
 
   // ============ 6. The solution ============
   pres.addSection({ title: 'The solution' });
@@ -205,10 +203,13 @@ async function icon(Comp, color) {
   arrow(s, 3.85, 2.65, 4.7, 2.65, 'a2|arrow jira change');
   arrow(s, 3.85, 4.5, 4.7, 4.5, 'a2|arrow hazard log');
   rbox(s, 4.7, 1.85, 4.1, 3.8, X.dk2, 'a3|safechange box', { r: 0.2, shadow: true });
-  text(s, 'SafeChange', 5.0, 2.0, 3.5, 0.6, { fontSize: 24, bold: true, color: C.background1, fontFace: 'Georgia', valign: 'middle' }, 'a3|safechange title');
+  text(s, 'SafeChange', 5.0, 1.95, 3.5, 0.55, { fontSize: 24, bold: true, color: C.background1, fontFace: 'Georgia', valign: 'middle' }, 'a3|safechange title');
+  rbox(s, 4.88, 2.55, 3.74, 0.5, '1D6A62', 'a3|model bg', { r: 0.25 });
+  await iconIn(s, fa.FaBrain, 'FFFFFF', 5.03, 2.65, 0.3, 'a3|model icon');
+  text(s, 'Model trained on 700 FDA recalls', 5.45, 2.55, 3.15, 0.5, { fontSize: 13, bold: true, color: C.background1, valign: 'middle' }, 'a3|model');
   const checks = ['Finds touched hazards', 'Needs a signed review', 'Needs a passed test', 'Review goes stale on edit'];
   for (let i = 0; i < checks.length; i++) {
-    const y = 2.8 + i * 0.66;
+    const y = 3.2 + i * 0.58;
     await iconIn(s, i === 3 ? fa.FaHistory : fa.FaCheckCircle, i === 3 ? X.accent2 : '5FD3BE', 5.0, y + 0.07, 0.34, `a3|safechange check ${i + 1} icon`);
     text(s, checks[i], 5.5, y, 3.2, 0.48, { fontSize: 16, color: C.background1, valign: 'middle' }, `a3|safechange check ${i + 1}`);
   }
@@ -234,37 +235,46 @@ async function icon(Comp, color) {
     const meta = await sharp(DEMO).metadata();
     const r = Math.min(SW / meta.width, SH / meta.height);
     const w = meta.width * r, h = meta.height * r;
-    s.addImage({ path: DEMO, x: SX + (SW - w) / 2, y: SY + (SH - h) / 2, w, h, shadow: shadow(), objectName: 'a1|demo screen', altText: 'SafeChange running on Forge' });
+    const x = SX + (SW - w) / 2, y = SY + (SH - h) / 2;
+    // rounded corners: mask the screenshot with a rounded rectangle, then draw a thin frame on top
+    const rad = Math.round(0.16 / r);
+    const mask = Buffer.from(`<svg width="${meta.width}" height="${meta.height}"><rect width="${meta.width}" height="${meta.height}" rx="${rad}" ry="${rad}"/></svg>`);
+    const rounded = await sharp(DEMO).ensureAlpha().composite([{ input: mask, blend: 'dest-in' }]).png().toBuffer();
+    s.addImage({ data: 'image/png;base64,' + rounded.toString('base64'), x, y, w, h, objectName: 'a1|demo screen', altText: 'SafeChange running on Forge' });
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w, h, rectRadius: 0.16, fill: { color: X.lt1, transparency: 100 }, line: { color: 'C9D6D3', width: 1 }, objectName: 'a1|demo screen frame' });
   } else {
     rbox(s, SX, SY, SW, SH, 'EEF2F1', 'a1|demo screen', { r: 0.2, line: 'D5DFDD' });
     await circleIcon(s, SX + SW / 2 - 0.45, SY + SH / 2 - 0.75, 0.9, X.accent5, fa.FaPlay, 'a1|demo screen play');
     text(s, 'Demo recording', SX, SY + SH / 2 + 0.3, SW, 0.5, { fontSize: 18, bold: true, color: C.accent5, align: 'center' }, 'a1|demo screen label');
   }
-  const steps = ['Finds the hazard', 'Blocks Done', 'Signed review + passed test', 'Edit after review: stale'];
+  const steps = ['Finds the hazard', 'Blocks Done', 'Signed review + passed test', 'Edited after review: comment right away'];
   for (let i = 0; i < steps.length; i++) {
     const y = 2.0 + i * 0.78;
     const k = 2 + i;
     await circleIcon(s, 8.75, y, 0.48, i === 1 ? X.accent3 : i === 3 ? X.accent2 : X.accent1, [fa.FaSearch, fa.FaBan, fa.FaCheck, fa.FaHistory][i], `a${k}|demo step ${i + 1}`);
-    text(s, steps[i], 9.4, y - 0.06, 3.25, 0.6, { fontSize: 18, color: C.text1, valign: 'middle' }, `a${k}|demo step ${i + 1} text`);
+    text(s, steps[i], 9.4, y - 0.06, 3.25, 0.6, { fontSize: 17, color: C.text1, valign: 'middle' }, `a${k}|demo step ${i + 1} text`);
   }
   pill(s, 'Real Forge app, not a mockup', 8.75, 5.45, 3.85, 0.5, X.accent6, C.text2, 'a6|real tag', 14);
 
   // ============ 8. Results ============
   pres.addSection({ title: 'Proof' });
-  s = content('Proof', 'RESULTS', '27 of 27 hazard links found, none missed');
-  text(s, '27 / 27', 0.7, 2.55, 4.6, 1.3, { fontSize: 66, bold: true, color: C.accent1, fontFace: 'Georgia', valign: 'middle' }, 'a1|stat 27');
-  text(s, 'hazard links found. None missed.', 0.7, 3.9, 4.2, 0.9, { fontSize: 18, color: C.text1, valign: 'top' }, 'a1|stat 27 caption');
-  const BX = 5.9, BW = 6.7;
-  const bar = (k, y, label, n, of, valueText) => {
-    text(s, label, BX, y, BW, 0.4, { fontSize: 16, bold: true, color: C.text1, valign: 'bottom' }, `a${k}|bar ${k - 1} label`);
-    rbox(s, BX, y + 0.5, BW - 1.5, 0.5, 'E6EEEC', `a${k}|bar ${k - 1} track`, { r: 0.18 });
-    rbox(s, BX, y + 0.5, (BW - 1.5) * n / of, 0.5, X.accent1, `a${k}|bar ${k - 1} fill`, { r: 0.18 });
-    text(s, valueText, BX + BW - 1.35, y + 0.42, 1.35, 0.66, { fontSize: 22, bold: true, color: C.accent1, fontFace: 'Georgia', valign: 'middle', align: 'right' }, `a${k}|bar ${k - 1} value`);
+  s = content('Proof', 'RESULTS', '83% of hazards caught on recalls it never saw');
+  text(s, '83%', 0.7, 1.95, 4.4, 1.3, { fontSize: 72, bold: true, color: C.accent1, fontFace: 'Georgia', valign: 'middle' }, 'a1|stat_model');
+  text(s, 'SafeChange model', 0.7, 3.25, 4.4, 0.45, { fontSize: 19, bold: true, color: C.text1, valign: 'top' }, 'a1|stat_model caption');
+  text(s, '56%', 0.7, 3.95, 4.4, 0.85, { fontSize: 40, bold: true, color: C.accent5, fontFace: 'Georgia', valign: 'middle' }, 'a2|stat_base');
+  text(s, 'keyword checklist', 0.7, 4.8, 4.4, 0.4, { fontSize: 16, color: C.accent5, valign: 'top' }, 'a2|stat_base caption');
+  const BX = 5.9, BW = 6.7, TRACK = BW - 1.5;
+  const bar = (k, y, label, pct, color, name) => {
+    text(s, label, BX, y, BW, 0.4, { fontSize: 16, bold: true, color: C.text1, valign: 'bottom' }, `a${k}|bar ${name} label`);
+    rbox(s, BX, y + 0.5, TRACK, 0.5, 'E6EEEC', `a${k}|bar ${name} track`, { r: 0.18 });
+    rbox(s, BX, y + 0.5, TRACK * pct / 100, 0.5, color, `a${k}|bar ${name} fill`, { r: 0.18 });
+    text(s, pct.toFixed(1) + '%', BX + BW - 1.35, y + 0.42, 1.35, 0.66, { fontSize: 22, bold: true, color, fontFace: 'Georgia', valign: 'middle', align: 'right' }, `a${k}|bar ${name} value`);
   };
-  bar(2, 1.95, 'Risky changes held', 21, 21, '21 of 21');
-  bar(3, 3.25, 'Safe changes passed with no extra step', 8, 9, '8 of 9');
-  bar(4, 4.55, "Automated tests passing", 23, 23, "23 of 23");
-  text(s, '30 sample changes, 8 hazards, labelled by hand. 3 extra flags, all on the safe side.', 0.7, 6.2, 11.9, 0.35, { fontSize: 13, color: C.accent5 }, 'a5|method');
+  bar(3, 1.95, 'Model', 82.6, X.accent1, 'model');
+  bar(4, 3.05, 'Keyword checklist', 55.5, X.accent5, 'keywords');
+  bar(5, 4.15, 'Model + keywords', 89.5, X.dk2, 'model plus keywords');
+  pill(s, 'Plan locked in git before training', BX, 5.4, 4.3, 0.46, X.accent6, C.text2, 'a6|plan locked', 14);
+  text(s, '309 FDA software recalls from 2024 to 2026, unseen in training. Model precision 39% vs 59%; it loses on security. 396 tests and CI check every number.', 0.7, 6.1, 11.9, 0.55, { fontSize: 12, color: C.accent5, valign: 'top' }, 'a7|method');
 
   // ============ 9. Close ============
   pres.addSection({ title: 'Closing' });
