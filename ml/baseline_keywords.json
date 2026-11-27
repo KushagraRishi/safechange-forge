@@ -1,0 +1,11 @@
+{
+  "_about": "Today's method: a fixed safety keyword checklist per hazard category, the kind of list a team puts in a Jira automation rule or a review checklist. Written on 2026-11-27 before any labels existed and before any model was trained. A category is flagged if any of its words appears (case-insensitive, whole word, simple plural).",
+  "dose": ["dose", "dosage", "overdose", "underdose", "infusion", "infuse", "bolus", "insulin", "rate", "radiation", "delivery", "therapy"],
+  "info": ["incorrect result", "wrong result", "incorrect value", "wrong patient", "display", "image", "measurement", "report", "data"],
+  "alarm": ["alarm", "alert", "warning", "detect", "detection", "notification"],
+  "stop": ["freeze", "crash", "reboot", "restart", "hang", "shutdown", "shut down", "unresponsive", "unavailable", "stop"],
+  "comms": ["network", "communication", "interface", "transfer", "connection", "bluetooth", "wireless", "hl7", "dicom", "sync"],
+  "security": ["security", "cybersecurity", "vulnerability", "unauthorized", "password", "encryption"],
+  "ui": ["user interface", "screen", "button", "entry", "units", "label", "selection", "keypad"],
+  "power": ["battery", "power", "charge", "charging"]
+}

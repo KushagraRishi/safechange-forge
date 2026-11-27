@@ -1,0 +1,9 @@
+{
+  "query": "root_cause_description:\"Software\"",
+  "total_reported": 4329,
+  "downloaded": 4329,
+  "openfda_last_updated": "2026-11-21",
+  "downloaded_at": "2026-11-27T01:46:35+00:00",
+  "source": "https://api.fda.gov/device/recall.json",
+  "license": "https://open.fda.gov/license/"
+}
