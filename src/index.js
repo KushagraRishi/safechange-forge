@@ -208,6 +208,8 @@ export async function actionAnalyzeChange(payload) {
       })),
       linkedIssues: r.linked,
       hazardLog: r.log.page,
+      modelStrongSignals: r.model,
+      modelSuggestionsNotBlocking: r.suggestions,
     };
   } catch (e) {
     return fail(e);

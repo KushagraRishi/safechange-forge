@@ -228,6 +228,12 @@ function App() {
   return (
     <Stack space="space.150">
       <Verdict gate={data.gate} />
+      {data.suggestions && data.suggestions.length ? (
+        <Text>
+          <Strong>Also worth a look (not blocking): </Strong>
+          {data.suggestions.map((m) => `${m.name} (${m.words.join(', ')})`).join('; ')}
+        </Text>
+      ) : null}
       {data.model && data.model.length ? (
         <Text>
           <Strong>Model reads this change as: </Strong>

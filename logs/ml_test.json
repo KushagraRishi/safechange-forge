@@ -1,0 +1,1084 @@
+{
+  "split": "test",
+  "events": 309,
+  "label_counts": {
+    "dose": 35,
+    "info": 123,
+    "alarm": 47,
+    "stop": 85,
+    "comms": 35,
+    "security": 22,
+    "ui": 17,
+    "power": 9
+  },
+  "events_with_no_label": 22,
+  "results": {
+    "model": {
+      "tp": 308,
+      "fp": 486,
+      "fn": 65,
+      "recall": 0.8257372654155496,
+      "precision": 0.3879093198992443,
+      "f2": 0.673665791776028,
+      "caught_all": 0.7874564459930313,
+      "flags_per_event": 2.56957928802589,
+      "per_category": {
+        "dose": {
+          "tp": 27,
+          "fp": 67,
+          "fn": 8,
+          "recall": 0.7714285714285715,
+          "precision": 0.2872340425531915,
+          "f2": 0.5769230769230769,
+          "support": 35
+        },
+        "info": {
+          "tp": 118,
+          "fp": 115,
+          "fn": 5,
+          "recall": 0.959349593495935,
+          "precision": 0.5064377682403434,
+          "f2": 0.8137931034482758,
+          "support": 123
+        },
+        "alarm": {
+          "tp": 44,
+          "fp": 101,
+          "fn": 3,
+          "recall": 0.9361702127659575,
+          "precision": 0.30344827586206896,
+          "f2": 0.6606606606606606,
+          "support": 47
+        },
+        "stop": {
+          "tp": 68,
+          "fp": 78,
+          "fn": 17,
+          "recall": 0.8,
+          "precision": 0.4657534246575342,
+          "f2": 0.6995884773662552,
+          "support": 85
+        },
+        "comms": {
+          "tp": 29,
+          "fp": 83,
+          "fn": 6,
+          "recall": 0.8285714285714286,
+          "precision": 0.25892857142857145,
+          "f2": 0.5753968253968254,
+          "support": 35
+        },
+        "security": {
+          "tp": 10,
+          "fp": 6,
+          "fn": 12,
+          "recall": 0.45454545454545453,
+          "precision": 0.625,
+          "f2": 0.4807692307692308,
+          "support": 22
+        },
+        "ui": {
+          "tp": 4,
+          "fp": 13,
+          "fn": 13,
+          "recall": 0.23529411764705882,
+          "precision": 0.23529411764705882,
+          "f2": 0.23529411764705882,
+          "support": 17
+        },
+        "power": {
+          "tp": 8,
+          "fp": 23,
+          "fn": 1,
+          "recall": 0.8888888888888888,
+          "precision": 0.25806451612903225,
+          "f2": 0.5970149253731343,
+          "support": 9
+        }
+      }
+    },
+    "baseline": {
+      "tp": 207,
+      "fp": 144,
+      "fn": 166,
+      "recall": 0.5549597855227882,
+      "precision": 0.5897435897435898,
+      "f2": 0.561584373304395,
+      "caught_all": 0.47038327526132406,
+      "flags_per_event": 1.1359223300970873,
+      "per_category": {
+        "dose": {
+          "tp": 27,
+          "fp": 36,
+          "fn": 8,
+          "recall": 0.7714285714285715,
+          "precision": 0.42857142857142855,
+          "f2": 0.6650246305418719,
+          "support": 35
+        },
+        "info": {
+          "tp": 66,
+          "fp": 37,
+          "fn": 57,
+          "recall": 0.5365853658536586,
+          "precision": 0.6407766990291263,
+          "f2": 0.5546218487394958,
+          "support": 123
+        },
+        "alarm": {
+          "tp": 31,
+          "fp": 10,
+          "fn": 16,
+          "recall": 0.6595744680851063,
+          "precision": 0.7560975609756098,
+          "f2": 0.6768558951965066,
+          "support": 47
+        },
+        "stop": {
+          "tp": 29,
+          "fp": 6,
+          "fn": 56,
+          "recall": 0.3411764705882353,
+          "precision": 0.8285714285714286,
+          "f2": 0.38666666666666666,
+          "support": 85
+        },
+        "comms": {
+          "tp": 18,
+          "fp": 22,
+          "fn": 17,
+          "recall": 0.5142857142857142,
+          "precision": 0.45,
+          "f2": 0.5,
+          "support": 35
+        },
+        "security": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 2,
+          "recall": 0.9090909090909091,
+          "precision": 1.0,
+          "f2": 0.9259259259259259,
+          "support": 22
+        },
+        "ui": {
+          "tp": 8,
+          "fp": 25,
+          "fn": 9,
+          "recall": 0.47058823529411764,
+          "precision": 0.24242424242424243,
+          "f2": 0.39603960396039606,
+          "support": 17
+        },
+        "power": {
+          "tp": 8,
+          "fp": 8,
+          "fn": 1,
+          "recall": 0.8888888888888888,
+          "precision": 0.5,
+          "f2": 0.7692307692307693,
+          "support": 9
+        }
+      }
+    },
+    "union": {
+      "tp": 334,
+      "fp": 551,
+      "fn": 39,
+      "recall": 0.8954423592493298,
+      "precision": 0.37740112994350283,
+      "f2": 0.7025662599915861,
+      "caught_all": 0.867595818815331,
+      "flags_per_event": 2.8640776699029127,
+      "per_category": {
+        "dose": {
+          "tp": 31,
+          "fp": 84,
+          "fn": 4,
+          "recall": 0.8857142857142857,
+          "precision": 0.26956521739130435,
+          "f2": 0.6078431372549019,
+          "support": 35
+        },
+        "info": {
+          "tp": 118,
+          "fp": 123,
+          "fn": 5,
+          "recall": 0.959349593495935,
+          "precision": 0.4896265560165975,
+          "f2": 0.8049113233287858,
+          "support": 123
+        },
+        "alarm": {
+          "tp": 45,
+          "fp": 103,
+          "fn": 2,
+          "recall": 0.9574468085106383,
+          "precision": 0.30405405405405406,
+          "f2": 0.6696428571428571,
+          "support": 47
+        },
+        "stop": {
+          "tp": 73,
+          "fp": 80,
+          "fn": 12,
+          "recall": 0.8588235294117647,
+          "precision": 0.477124183006536,
+          "f2": 0.7403651115618661,
+          "support": 85
+        },
+        "comms": {
+          "tp": 29,
+          "fp": 94,
+          "fn": 6,
+          "recall": 0.8285714285714286,
+          "precision": 0.23577235772357724,
+          "f2": 0.5513307984790875,
+          "support": 35
+        },
+        "security": {
+          "tp": 21,
+          "fp": 6,
+          "fn": 1,
+          "recall": 0.9545454545454546,
+          "precision": 0.7777777777777778,
+          "f2": 0.9130434782608695,
+          "support": 22
+        },
+        "ui": {
+          "tp": 9,
+          "fp": 36,
+          "fn": 8,
+          "recall": 0.5294117647058824,
+          "precision": 0.2,
+          "f2": 0.39823008849557523,
+          "support": 17
+        },
+        "power": {
+          "tp": 8,
+          "fp": 25,
+          "fn": 1,
+          "recall": 0.8888888888888888,
+          "precision": 0.24242424242424243,
+          "f2": 0.5797101449275363,
+          "support": 9
+        }
+      }
+    },
+    "model_app": {
+      "tp": 52,
+      "fp": 17,
+      "fn": 321,
+      "recall": 0.13941018766756033,
+      "precision": 0.7536231884057971,
+      "f2": 0.16655989750160155,
+      "caught_all": 0.12195121951219512,
+      "flags_per_event": 0.22330097087378642,
+      "per_category": {
+        "dose": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 34,
+          "recall": 0.02857142857142857,
+          "precision": 0.5,
+          "f2": 0.035211267605633804,
+          "support": 35
+        },
+        "info": {
+          "tp": 14,
+          "fp": 0,
+          "fn": 109,
+          "recall": 0.11382113821138211,
+          "precision": 1.0,
+          "f2": 0.1383399209486166,
+          "support": 123
+        },
+        "alarm": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 42,
+          "recall": 0.10638297872340426,
+          "precision": 0.5555555555555556,
+          "f2": 0.12690355329949238,
+          "support": 47
+        },
+        "stop": {
+          "tp": 12,
+          "fp": 2,
+          "fn": 73,
+          "recall": 0.1411764705882353,
+          "precision": 0.8571428571428571,
+          "f2": 0.1694915254237288,
+          "support": 85
+        },
+        "comms": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 32,
+          "recall": 0.08571428571428572,
+          "precision": 0.75,
+          "f2": 0.10416666666666667,
+          "support": 35
+        },
+        "security": {
+          "tp": 10,
+          "fp": 6,
+          "fn": 12,
+          "recall": 0.45454545454545453,
+          "precision": 0.625,
+          "f2": 0.4807692307692308,
+          "support": 22
+        },
+        "ui": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 16,
+          "recall": 0.058823529411764705,
+          "precision": 0.3333333333333333,
+          "f2": 0.07042253521126761,
+          "support": 17
+        },
+        "power": {
+          "tp": 6,
+          "fp": 1,
+          "fn": 3,
+          "recall": 0.6666666666666666,
+          "precision": 0.8571428571428571,
+          "f2": 0.6976744186046512,
+          "support": 9
+        }
+      }
+    },
+    "union_app": {
+      "tp": 215,
+      "fp": 156,
+      "fn": 158,
+      "recall": 0.5764075067024129,
+      "precision": 0.5795148247978437,
+      "f2": 0.5770263016639828,
+      "caught_all": 0.49825783972125437,
+      "flags_per_event": 1.2006472491909386,
+      "per_category": {
+        "dose": {
+          "tp": 27,
+          "fp": 36,
+          "fn": 8,
+          "recall": 0.7714285714285715,
+          "precision": 0.42857142857142855,
+          "f2": 0.6650246305418719,
+          "support": 35
+        },
+        "info": {
+          "tp": 68,
+          "fp": 37,
+          "fn": 55,
+          "recall": 0.5528455284552846,
+          "precision": 0.6476190476190476,
+          "f2": 0.5695142378559463,
+          "support": 123
+        },
+        "alarm": {
+          "tp": 31,
+          "fp": 12,
+          "fn": 16,
+          "recall": 0.6595744680851063,
+          "precision": 0.7209302325581395,
+          "f2": 0.670995670995671,
+          "support": 47
+        },
+        "stop": {
+          "tp": 33,
+          "fp": 8,
+          "fn": 52,
+          "recall": 0.38823529411764707,
+          "precision": 0.8048780487804879,
+          "f2": 0.4330708661417323,
+          "support": 85
+        },
+        "comms": {
+          "tp": 19,
+          "fp": 23,
+          "fn": 16,
+          "recall": 0.5428571428571428,
+          "precision": 0.4523809523809524,
+          "f2": 0.521978021978022,
+          "support": 35
+        },
+        "security": {
+          "tp": 21,
+          "fp": 6,
+          "fn": 1,
+          "recall": 0.9545454545454546,
+          "precision": 0.7777777777777778,
+          "f2": 0.9130434782608695,
+          "support": 22
+        },
+        "ui": {
+          "tp": 8,
+          "fp": 26,
+          "fn": 9,
+          "recall": 0.47058823529411764,
+          "precision": 0.23529411764705882,
+          "f2": 0.39215686274509803,
+          "support": 17
+        },
+        "power": {
+          "tp": 8,
+          "fp": 8,
+          "fn": 1,
+          "recall": 0.8888888888888888,
+          "precision": 0.5,
+          "f2": 0.7692307692307693,
+          "support": 9
+        }
+      }
+    }
+  },
+  "ci95": {
+    "model": {
+      "recall": [
+        0.7859,
+        0.8628
+      ],
+      "precision": [
+        0.3593,
+        0.4157
+      ],
+      "f2": [
+        0.6385,
+        0.7049
+      ],
+      "caught_all": [
+        0.7404,
+        0.8328
+      ],
+      "flags_per_event": [
+        2.4531,
+        2.6828
+      ]
+    },
+    "baseline": {
+      "recall": [
+        0.5028,
+        0.6058
+      ],
+      "precision": [
+        0.5449,
+        0.6366
+      ],
+      "f2": [
+        0.5136,
+        0.6077
+      ],
+      "caught_all": [
+        0.4124,
+        0.5296
+      ],
+      "flags_per_event": [
+        1.0227,
+        1.246
+      ]
+    },
+    "union": {
+      "recall": [
+        0.8624,
+        0.9255
+      ],
+      "precision": [
+        0.352,
+        0.4014
+      ],
+      "f2": [
+        0.6737,
+        0.7285
+      ],
+      "caught_all": [
+        0.8269,
+        0.9038
+      ],
+      "flags_per_event": [
+        2.7314,
+        2.9968
+      ]
+    },
+    "model_app": {
+      "recall": [
+        0.1039,
+        0.1747
+      ],
+      "precision": [
+        0.6585,
+        0.85
+      ],
+      "f2": [
+        0.1253,
+        0.207
+      ],
+      "caught_all": [
+        0.0856,
+        0.1614
+      ],
+      "flags_per_event": [
+        0.1715,
+        0.2751
+      ]
+    },
+    "union_app": {
+      "recall": [
+        0.5249,
+        0.627
+      ],
+      "precision": [
+        0.537,
+        0.6246
+      ],
+      "f2": [
+        0.53,
+        0.623
+      ],
+      "caught_all": [
+        0.4406,
+        0.5548
+      ],
+      "flags_per_event": [
+        1.0841,
+        1.3107
+      ]
+    },
+    "diff_f2_model_minus_baseline": [
+      0.0599,
+      0.1639
+    ]
+  },
+  "primary_success": true,
+  "subgroup_infusion_insulin": {
+    "events": 30,
+    "model": {
+      "tp": 30,
+      "fp": 62,
+      "fn": 16,
+      "recall": 0.6521739130434783,
+      "precision": 0.32608695652173914,
+      "f2": 0.5434782608695652
+    },
+    "baseline": {
+      "tp": 31,
+      "fp": 31,
+      "fn": 15,
+      "recall": 0.6739130434782609,
+      "precision": 0.5,
+      "f2": 0.6300813008130082
+    },
+    "union": {
+      "tp": 39,
+      "fp": 76,
+      "fn": 7,
+      "recall": 0.8478260869565217,
+      "precision": 0.3391304347826087,
+      "f2": 0.6521739130434783
+    },
+    "model_app": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 44,
+      "recall": 0.043478260869565216,
+      "precision": 0.6666666666666666,
+      "f2": 0.053475935828877004
+    },
+    "union_app": {
+      "tp": 31,
+      "fp": 31,
+      "fn": 15,
+      "recall": 0.6739130434782609,
+      "precision": 0.5,
+      "f2": 0.6300813008130082
+    }
+  },
+  "kappa_A_vs_B": {
+    "dose": 0.92,
+    "info": 0.899,
+    "alarm": 0.921,
+    "stop": 0.944,
+    "comms": 0.969,
+    "security": 1.0,
+    "ui": 0.813,
+    "power": 0.872
+  },
+  "small_categories": [
+    "power"
+  ],
+  "misses": [
+    {
+      "event": "93697",
+      "gold": [
+        "dose",
+        "stop"
+      ],
+      "model": [
+        "alarm",
+        "stop"
+      ],
+      "text": "Due to software and controller systems that results in unexpected pump start or pump stop."
+    },
+    {
+      "event": "94122",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "Torrent Suite Dx Software versions 5.14 and earlier used in connection with Ion PGM DX Systems exploitation of the vulnerability by a threat actor may allow them to alter settings, configurations, software, or data on the instrument"
+    },
+    {
+      "event": "94225",
+      "gold": [
+        "alarm",
+        "security",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "stop",
+        "power"
+      ],
+      "text": "CADD-Solis Ambulatory Infusion Pumps, with software versions before v4.3, may have the following issues:1. Upstream Occlusion, 2. Stop and Power Keys Unresponsive, 3. Manual Mode Air Detector, 4. Single Bubble Air Detection, 5. Error Codes "
+    },
+    {
+      "event": "94228",
+      "gold": [
+        "dose"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "Software has anomalies that have the potential to cause underdose, overdose, or delay in therapy which could lead to serious patient harm or death."
+    },
+    {
+      "event": "94332",
+      "gold": [
+        "alarm",
+        "stop"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "comms"
+      ],
+      "text": "Due to firmware issues with the prosthetic knee, there is the potential for unintended warnings and device shutdown which could result in patient falls."
+    },
+    {
+      "event": "94411",
+      "gold": [
+        "info",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "stop"
+      ],
+      "text": "Due to a software issue, there is the potential for a missing digit, letter, or decimal in either the \"distance to target\" or \"tip stop point\" display during navigation."
+    },
+    {
+      "event": "94499",
+      "gold": [
+        "ui"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "Beckman Coulter is recalling their DxI 9000 Access Immunoassay Analyzers, an in vitro diagnostic device used for the quantitative, semi-quantitative, or qualitative determination of various analyte concentrations found in human body fluids,"
+    },
+    {
+      "event": "94699",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "If automated dispensing cabinets have specific software versions, and Component Manager was configured to \"installed mode\", and software patch KB 5033688 was installed in the production environment, then this will will lead to an error that"
+    },
+    {
+      "event": "94836",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "Heater shaker module does not perform heating if the temperature is set below 40C for static incubation steps when running IVD protocol QIAamp DSP DNA Mini Kit (cat. no. 61304), Protocol: Isolation of genomic DNA from Gram-positive bacteria"
+    },
+    {
+      "event": "94919",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "Philips lntelliVue Patient Monitors MX400/450/500/550 Shipped or Upgraded with Incorrect Software Options. Changes were made to reflect some options becoming standard capabilities for software-version N.x. In the process, the entitlements o"
+    },
+    {
+      "event": "94956",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "If the Sensis documentation functionality is used during adding of once-per-study reporting events (e.g., Type 1 events, as further defined in the administrator manual), the possibility exists that the application could crash."
+    },
+    {
+      "event": "95150",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Firm has developed a software correction (Revision D.00) outside the US to mitigate product problems that pose a risk of hemodynamic instability and failure of transmission of clinical data in Cardiosave Hybrid and Cardiosave Rescue Intra-A"
+    },
+    {
+      "event": "95168",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Firm has developed a software correction (Revision D.01) for outside the US to mitigate product problems that pose a risk of hemodynamic instability and failure of transmission of clinical data in Cardiosave Hybrid and Cardiosave Rescue Int"
+    },
+    {
+      "event": "95283",
+      "gold": [
+        "alarm",
+        "info"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Due to two software anomalies that can occur within a spine procedure. Two issues are: 1. Navigation Orientation - when lateral orientation radiographic images are taken, information may appear flipped when utilizing the system (180 degree "
+    },
+    {
+      "event": "95240",
+      "gold": [
+        "alarm",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "comms"
+      ],
+      "text": "The software has anomalies that have the potential to cause alarms, nonfunctioning pump, or unresponsive screen while continuing therapy. These could cause serious patient harm or death."
+    },
+    {
+      "event": "95485",
+      "gold": [
+        "ui"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "The overlay of visual field test locations on a probability map, as presented in IMAGEnet 6 in the so-called \"Hood Report\", is not appropriate as it can imply a structure/function correlation for which clinical evidence is not provided"
+    },
+    {
+      "event": "99585",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm"
+      ],
+      "text": "Retrospectively reported correction for an instrument intended for targeted sequencing of DNA libraries from human genomic DNA used with in vitro diagnostic assays has a server with a security vulnerability."
+    },
+    {
+      "event": "95635",
+      "gold": [
+        "comms"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "For the Z-800WF pumps, the WiFi software was not compatible with the pump software that had been loaded in accordance with ongoing correction Z-1183-2024."
+    },
+    {
+      "event": "95512",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "GE HealthCare has become aware of an issue in Centricity Universal Viewer Zero Footprint Client (ZFP) where there is a potential security vulnerability which could allow a malicious actor to access the system and potentially manipulate pati"
+    },
+    {
+      "event": "95643",
+      "gold": [
+        "dose"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "Due to a software issue, automated dispensing cabinet devices may open the wrong cubie pocket or position, which can lead to: 1) Unintended and incorrect medication removal, or 2) Potential for a different medication (medication pulled in e"
+    },
+    {
+      "event": "96055",
+      "gold": [
+        "dose",
+        "security",
+        "stop"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm",
+        "stop"
+      ],
+      "text": "Software issues could potentially result in: 1) delays in accessing dispensing software application, 2) wrong therapy (dose, item, timing, etc.), or 3) unauthorized access and/or compliance related issues"
+    },
+    {
+      "event": "96153",
+      "gold": [
+        "dose"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "comms"
+      ],
+      "text": "Image offsets calculated by oncology Information System software may be incorrect for Linear Accelerator (LINACs) not characterized at IEC61217 scale."
+    },
+    {
+      "event": "96091",
+      "gold": [
+        "alarm",
+        "info"
+      ],
+      "model": [
+        "dose",
+        "alarm",
+        "stop"
+      ],
+      "text": "Under very rare situations, the Dexcom G6 touchscreen receiver may not provide high or low glucose alarms/alerts as designed, which can result in two different conditions. First, if a receiver operating system .net error occurs when an alar"
+    },
+    {
+      "event": "97455",
+      "gold": [
+        "info",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "comms"
+      ],
+      "text": "Entering multiple keys that trigger input simultaneously may remove data from first field of screens and/or questionnaires with more than one field."
+    },
+    {
+      "event": "96414",
+      "gold": [
+        "alarm",
+        "info"
+      ],
+      "model": [
+        "alarm",
+        "stop",
+        "comms",
+        "power"
+      ],
+      "text": "Single-use battery-powered blood pressure monitor, for use on neonates and infants, due to vibratory noise, may not adequately detect changes in blood pressure per specification. Containment actions: 1) Ventilator lines not to touch the iso"
+    },
+    {
+      "event": "96286",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "dose",
+        "info"
+      ],
+      "text": "There is a software issue which causes the upper back section to not be operable/adjustable when the \"emergency mode\" function is enabled."
+    },
+    {
+      "event": "96554",
+      "gold": [
+        "comms",
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "comms"
+      ],
+      "text": "When DxI 9000 Access Immunoassay Analyzer is connected to a host system (laboratory information system (LIS) or middleware) and has accumulated canceled QC test results that were not sent by LIS, the analyzer may lose communication with the"
+    },
+    {
+      "event": "96611",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "A cybersecurity vulnerability was discovered through internal testing."
+    },
+    {
+      "event": "96651",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "ui"
+      ],
+      "text": "A software bug in Blueprint version 4.2.1 prevents users from accessing cases initiated in previous versions of the software."
+    },
+    {
+      "event": "96830",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info",
+        "stop",
+        "comms"
+      ],
+      "text": "The MUSE Administrator Account active directory or local credential could potentially be used from your local network to log into a GE HealthCare MUSE 5 system and potentially manipulate recorded patient data."
+    },
+    {
+      "event": "96771",
+      "gold": [
+        "security",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm"
+      ],
+      "text": "Firm has identified Drug Library Management defects in the software: 1) DLM software does not allow user to create percentage dose rate or rate change values with certain limits, potentially resulting in over-delivery to patient. 2) An unau"
+    },
+    {
+      "event": "96945",
+      "gold": [
+        "dose",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "stop"
+      ],
+      "text": "Insulet Corporation is recalling Omnipod 5 iOS App, due to a software design issue in which a comma is not recognized as a decimal separator and the user cannot enter a decimal separator in any manual entry screen if the user manually updat"
+    },
+    {
+      "event": "97264",
+      "gold": [
+        "comms",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info",
+        "alarm"
+      ],
+      "text": "an app defect that occurs when the phone is set to a right-to-left language, which causes app-pump pairing issues and graphical defects, which can potentially lead to incorrect therapy decisions and subsequent hypoglycemia or hyperglycemia."
+    },
+    {
+      "event": "97311",
+      "gold": [
+        "dose"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "Due to incorrect software configuration that potentially allows more than two (2) fractions within a 12-hour period (fractionLimits) and could potentially lead to adverse events (toxicity)."
+    },
+    {
+      "event": "97390",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm",
+        "comms"
+      ],
+      "text": "On a clinical analyzer, when ordering a Clinical Chemistry (CC) combination test simultaneously with an Immunoassay (IA) test, if the IA test is processed between the CC tests, CC sample status will remain In Progress with no errors, may ca"
+    },
+    {
+      "event": "98528",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info",
+        "stop"
+      ],
+      "text": "it was found that in versions 1.3.7, 1.4.2, and 1.4.3, the Lock Screen and Limited Access Passcode Screen on the iLet graphical user interface (GUI) include certain icons displayed in the status bar that are active, thereby allowing the use"
+    },
+    {
+      "event": "97527",
+      "gold": [
+        "comms",
+        "dose",
+        "info"
+      ],
+      "model": [
+        "info",
+        "comms"
+      ],
+      "text": "Vantive has identified a software defect within the Sharesource Claria software, which may cause a patient s updated prescription program settings to not be properly saved on the actual cycler that the patient is using to perform their ther"
+    },
+    {
+      "event": "97657",
+      "gold": [
+        "security"
+      ],
+      "model": [
+        "info"
+      ],
+      "text": "Firm has identified a security vulnerability in AW Server products. If exploited, a malicious actor could compromise the confidentiality, integrity, and availability of patient data."
+    },
+    {
+      "event": "97531",
+      "gold": [
+        "stop"
+      ],
+      "model": [
+        "info",
+        "alarm"
+      ],
+      "text": "Automated pipetting, diluting and specimen processing workstations for flow cytometric analysis device instructions for use list incorrect dead volumes: Cassette Type/List volume/correct volume, B/750/1582 microliters, and E/1300/2093 micro"
+    },
+    {
+      "event": "97597",
+      "gold": [
+        "dose",
+        "ui"
+      ],
+      "model": [
+        "dose",
+        "info"
+      ],
+      "text": "The failure occurs if a user on the Omnipod 5 iOS application selects and holds down on a manual entry field, to magnify the visual field using the magnifying feature of the iPhone, while simultaneously selecting a single number on the keyb"
+    }
+  ],
+  "commit": "8e1f77c",
+  "run_at": "2026-11-27T01:58:45+00:00"
+}

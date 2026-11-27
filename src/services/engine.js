@@ -50,6 +50,10 @@ export async function checkChange(issueKey) {
     log: { page: log.page, problems: log.problems, count: log.hazards.length },
     productCodes: log.settings.productCodes,
     model: scores.filter((x) => x.appFlag).map(({ category, name, p, words }) => ({ category, name, p, words })),
+    // Not blocking: the model's wider reading (dev thresholds, positive evidence).
+    // On unseen recalls this setting caught far more hazards than keywords,
+    // but it also raises more flags, so it suggests and never gates.
+    suggestions: scores.filter((x) => x.flagged && !x.appFlag && x.evidence > 0).map(({ category, name, p, words }) => ({ category, name, p, words })),
   };
 }
 

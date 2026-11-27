@@ -5,33 +5,28 @@ on:
   pull_request:
 
 jobs:
-  app:
-    name: Forge app tests
+  check:
+    name: Tests, model reproducibility and claims
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm ci
-      - run: npm test
-      - run: npm run -s evaluate
-      - name: Claims match the logs
-        run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check_claims.js
-
-  model:
-    name: Hazard model tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: npm ci
       - run: pip install scikit-learn==1.6.1 numpy
-      - name: Data, splits, labels, baseline and metrics
-        run: python -m unittest discover -s ml -p "test_*.py" -v
-      - name: Retrain gives the same model as the one shipped
+      - name: All tests (Forge app and model), counted into logs/tests.json
+        run: PYTHON=python node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/count_tests.js
+      - name: Rule matcher on the 30 sample changes
+        run: npm run -s evaluate
+      - name: Retraining gives the model that ships
         run: |
           cp src/core/model.json /tmp/model_shipped.json
-          cd ml && python train.py > /dev/null
-          cd .. && python ml/compare_models.py /tmp/model_shipped.json src/core/model.json
+          (cd ml && python train.py > /dev/null)
+          python ml/compare_models.py /tmp/model_shipped.json src/core/model.json
+          git checkout -- src/core/model.json src/core/model-data.js test/fixtures/model_parity.json logs/ml_train.json
+      - name: Every claim matches its source
+        run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check_claims.js
