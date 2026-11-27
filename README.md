@@ -23,13 +23,16 @@ SafeChange connects the two:
 | `rovo:agent` + 5 `action`s | Analyze change, hazard impact, similar recalls, record risk review, release check |
 | `rovo:mcp` | The four read actions as MCP tools for other agents |
 | `rovo:skill` | `skills/safechange-risk-review/SKILL.md` |
+| `trigger` | Comments on an issue the moment an edit makes a signed review stale |
+| `confluence:contentBylineItem` | On the hazard log page: the open changes touching each hazard |
+| `jira:globalPage` | Setup, sample data, release check and the release safety record |
 
 Data: settings in Forge storage (`@forge/kvs`); reviews as a Jira issue property (`safechange-reviews`) so they stay with the issue; hazard log parsed from Confluence and cached by page version.
 
 ## Try it (judges)
 
 1. Open the install link from the Devpost page and install SafeChange on your site in **Jira**, then in **Confluence**. Rovo must be on for the agent.
-2. In Jira, open **Apps, SafeChange setup**. Under "Try it with sample data", pick a company-managed project and a Confluence space, then click **Create sample data**. This makes a sample infusion pump hazard log page, 8 verification tests and 8 sample changes, and sets the page as the hazard log.
+2. In Jira, open **Apps, SafeChange** in the left sidebar. Under "Try it with sample data", pick a company-managed project and a Confluence space, then click **Create sample data**. This makes a sample infusion pump hazard log page, 8 verification tests and 8 sample changes, and sets the page as the hazard log.
 3. Turn on the gate: **Project settings, Workflows**, edit the workflow, select the transition into Done, **Add rule**, pick **SafeChange hazard gate**, and publish.
 4. Open the change "Max flow rate raised to 1200 mL/h". Open the **SafeChange** panel (the shield button under the summary). It shows HAZ-1 (over-infusion, Catastrophic) and why it matched.
 5. Try to move it to Done. Jira refuses with the SafeChange message.
@@ -43,7 +46,7 @@ Needs Node.js 22 or 24 and the Forge CLI (`npm install -g @forge/cli`), and an A
 
 ```bash
 npm install
-npm test                 # 23 tests: parser, matcher, gate, and every handler against a fake Jira and Confluence
+npm test                 # 363 tests: parser, matcher, gate, model parity, every handler against a fake Jira and Confluence
 npm run evaluate         # scores the matcher on 30 labelled sample changes, writes logs/evaluate.log
 forge login
 forge register           # gives the app your own id
@@ -55,13 +58,34 @@ forge install --product confluence
 
 On this Mac, `./forge.sh` runs the Forge CLI with Node 24.
 
-## Results so far
+## The hazard model, and the test it had to pass
 
-From `logs/evaluate.log` (30 sample changes for a sample infusion pump, 8 hazards, labelled by hand):
+Rules only find what a team thought to write in its watch list. So SafeChange also ships a small model, trained by me on real FDA data, that reads a change the way a recall report reads a failure.
 
-- SafeChange found **27 of 27** expected hazard links and missed none. It added 3 extra links, all on the safe side (it asks for a review that a person may decide is not needed).
-- 21 of the 30 changes touch a hazard. A plain Jira workflow has no hazard check, so all 21 could reach Done with no risk review. With SafeChange, all of them are held until reviewed and tested.
-- 8 of the 9 changes that touch no hazard (docs, CI, translations) pass with no extra step. The ninth, a rate limit on a cloud login API, was flagged by the word "rate limit": a safe side false alarm that a reviewer can clear.
+- **Data:** every openFDA device recall record with a software root cause (4,329 records), grouped into 2,737 recall events (`ml/fetch_recalls.py`, `ml/build_events.py`).
+- **Labels:** 8 hazard categories from a written codebook (`ml/CODEBOOK.md`). Two independent labelers did every test event blind to each other, and a third settled disagreements.
+- **Model:** TF-IDF and one logistic regression per category (`ml/train.py`), exported to JSON and run inside Forge in plain JavaScript (`src/core/model.js`). A parity test checks that the app's numbers match scikit-learn's.
+- **Locked first:** the plan, the splits, the baseline and the success test were committed before any label existed (`ml/PREREGISTRATION.md`).
+
+**Result on 309 recall events from 2024 to 2026 that the model never saw** (`ml/RESULTS.md`):
+
+| | Hazard categories caught | Precision | F2 |
+|---|---|---|---|
+| Keyword checklist (how teams check today) | 55.5% | 59.0% | 0.562 |
+| SafeChange model | **82.6%** | 38.8% | **0.674** |
+| Model and keywords together | 89.5% | 37.7% | 0.703 |
+
+The 95% interval for the F2 gap is 0.060 to 0.164, so the pre-registered test passed. What did not work is written down just as plainly: the model raises more flags, keywords beat it on security, and on the 30 pump recalls it did not beat keywords on its own. Because of that, the Done gate uses a strict setting and the model's wider reading shows as non-blocking suggestions. See `LIMITS.md`.
+
+## Rule matcher check
+
+From `logs/evaluate.log` (30 sample changes I wrote and labelled, 8 hazards): 27 of 27 expected hazard links found, none missed, 3 extra flags on the safe side. 21 of the 30 touch a hazard; a plain Jira workflow would let all 21 reach Done with no review.
+
+## Proof
+
+- 392 automated tests (363 for the Forge app, 29 for the data and model), counted into `logs/tests.json`.
+- GitHub Actions runs every test, retrains the model to check it matches the one shipped, and checks every number in `claims.json` against the logs.
+- `JUDGES.md`: a two minute path through the app. `LIMITS.md`: what it does not do.
 
 ## Project layout
 
