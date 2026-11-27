@@ -104,6 +104,7 @@ export async function createPage(spaceId, title, html, parentId) {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify({ spaceId, status: 'current', title, ...(parentId ? { parentId } : {}), body: { representation: 'storage', value: html } }),
+    // a wide page, so the record table is readable
   });
   const p = await json(res, 'Creating the release record page');
   return { id: p.id, title: p.title, url: p._links?.base && p._links?.webui ? p._links.base + p._links.webui : '' };

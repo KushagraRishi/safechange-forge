@@ -32,6 +32,20 @@ const res = (status, body) => ({ ok: status < 300, status, json: async () => bod
 async function requestJira(path, opts = {}) {
   const p = String(path);
   let m;
+  if ((m = p.match(/^\/rest\/api\/3\/issue\/([A-Z]+-\d+)\/comment$/))) {
+    site.comments = site.comments || {};
+    const body = JSON.parse(opts.body).body;
+    (site.comments[m[1]] = site.comments[m[1]] || []).push(body.content.map((pp) => pp.content[0].text).join('\n'));
+    return res(201, {});
+  }
+  if ((m = p.match(/^\/rest\/api\/3\/issue\/([A-Z]+-\d+)\/properties\/safechange-alert$/))) {
+    site.alerts = site.alerts || {};
+    if (opts.method === 'PUT') {
+      site.alerts[m[1]] = JSON.parse(opts.body);
+      return res(200, {});
+    }
+    return site.alerts[m[1]] ? res(200, { value: site.alerts[m[1]] }) : res(404, {});
+  }
   if ((m = p.match(/^\/rest\/api\/3\/issue\/([A-Z]+-\d+)\/properties\/safechange-reviews$/))) {
     if (opts.method === 'PUT') {
       site.props[m[1]] = JSON.parse(opts.body);
@@ -184,4 +198,49 @@ test('Confluence byline: each hazard lists the open changes touching it', async 
   assert.deepEqual(byId['HAZ-1'].changes.map((c) => c.key), ['PUMP-1']);
   assert.equal(byId['HAZ-4'].changes.length, 0);
   assert.ok(byId['HAZ-1'].open >= 1);
+});
+
+// ---------- live alert and release record ----------
+
+test('stale alert: no comment for a change with no reviews', async () => {
+  const r = await app.onIssueUpdated({ issue: { key: 'PUMP-3' }, changelog: { items: [{ field: 'description' }] } });
+  assert.equal(r, undefined);
+  assert.equal(site.comments?.['PUMP-3'], undefined);
+});
+
+test('stale alert: ignores edits to fields that do not change the review', async () => {
+  const before = site.comments?.['PUMP-1']?.length || 0;
+  await app.onIssueUpdated({ issue: { key: 'PUMP-1' }, changelog: { items: [{ field: 'assignee' }] } });
+  assert.equal(site.comments?.['PUMP-1']?.length || 0, before);
+});
+
+test('stale alert: comments once when a reviewed change is edited, not twice', async () => {
+  site.props['PUMP-1'] = { reviews: { 'HAZ-1': { decision: 'acceptable', fingerprint: 'old', testKey: 'PUMP-2', reviewer: 'acc-1', reviewedAt: '2026-11-27T00:00:00Z' } } };
+  await app.onIssueUpdated({ issue: { key: 'PUMP-1' }, changelog: { items: [{ field: 'description' }] } });
+  await app.onIssueUpdated({ issue: { key: 'PUMP-1' }, changelog: { items: [{ field: 'description' }] } });
+  const cs = site.comments['PUMP-1'];
+  assert.equal(cs.length, 1);
+  assert.match(cs[0], /edited after its risk review/);
+  assert.match(cs[0], /HAZ-1/);
+});
+
+test('release record HTML lists every hazard with state, review and fingerprint, and escapes text', async () => {
+  const { releaseRecordHtml } = await import('../src/services/engine.js');
+  const rows = [
+    { key: 'A-1', summary: 'Rate <fix>', fingerprint: 'f1', gate: { status: 'blocked', items: [
+      { hazard: { id: 'HAZ-1', severity: 'Catastrophic' }, reasons: [{ kind: 'file', detail: 'src/dose/a.c' }], state: 'stale-review', review: { decision: 'acceptable', reviewerName: 'Ana', reviewedAt: '2026-11-27T10:00:00Z' }, test: { key: 'T-1', status: 'Done' } },
+      { hazard: { id: 'HAZ-6', severity: 'Serious' }, reasons: [{ kind: 'model', detail: 'Alarm 70%' }], state: 'missing-review', review: null, test: null },
+    ] } },
+    { key: 'A-2', summary: 'Docs', fingerprint: 'f2', gate: { status: 'no-hazards', items: [] } },
+  ];
+  const html = releaseRecordHtml({ title: 't', jql: 'project = A', generatedAt: 'now', log: { title: 'Log', version: 3 }, rows });
+  assert.match(html, /<strong>2<\/strong> changes: <strong>0<\/strong> cleared, <strong>1<\/strong> held, <strong>1<\/strong> touching no hazard/);
+  assert.match(html, /rowspan="2"/);
+  assert.match(html, /Rate &lt;fix&gt;/);
+  assert.match(html, /Edited after review/);
+  assert.match(html, /acceptable, Ana, 2026-11-27/);
+  assert.match(html, /T-1 \(Done\)/);
+  assert.match(html, /model Alarm 70%/);
+  assert.match(html, /No hazard touched/);
+  assert.match(html, /<code>f1<\/code>/);
 });

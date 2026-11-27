@@ -71,7 +71,7 @@ function HazardLog({ info, reload }) {
         <Inline space="space.100" alignBlock="end">
           <Box xcss={xcss({ width: '320px' })}>
             <Label labelFor="q">Page title</Label>
-            <Textfield id="q" value={text} onChange={(e) => setText(e.target.value)} placeholder="Hazard log" />
+            <Textfield id="q" defaultValue={text} onChange={(e) => setText(e.target.value)} placeholder="Hazard log" />
           </Box>
           <Button onClick={search}>Search</Button>
         </Inline>
@@ -179,7 +179,7 @@ function Recalls({ info, reload }) {
         <Inline space="space.100" alignBlock="end">
           <Box xcss={xcss({ width: '220px' })}>
             <Label labelFor="c">Product codes</Label>
-            <Textfield id="c" value={codes} onChange={(e) => setCodes(e.target.value)} />
+            <Textfield id="c" defaultValue={codes} onChange={(e) => setCodes(e.target.value)} />
           </Box>
           <Button onClick={save}>Save</Button>
         </Inline>
@@ -212,7 +212,7 @@ function Release() {
         <Inline space="space.100" alignBlock="end">
           <Box xcss={xcss({ width: '420px' })}>
             <Label labelFor="j">JQL</Label>
-            <Textfield id="j" value={jql} onChange={(e) => setJql(e.target.value)} />
+            <Textfield id="j" defaultValue={jql} onChange={(e) => setJql(e.target.value)} />
           </Box>
           <Button appearance="primary" onClick={run} isDisabled={busy}>
             {busy ? 'Working' : 'Check'}

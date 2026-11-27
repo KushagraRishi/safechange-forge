@@ -227,7 +227,7 @@ export function releaseRecordHtml({ title, jql, generatedAt, log, rows }) {
     )
     .join('\n');
   return `${head}
-<table><tbody>
+<table data-layout="full-width"><tbody>
 <tr><th><p>Change</p></th><th><p>Summary</p></th><th><p>Hazard</p></th><th><p>Why it matched</p></th><th><p>State</p></th><th><p>Review</p></th><th><p>Test</p></th><th><p>Change fingerprint</p></th></tr>
 ${body}
 </tbody></table>

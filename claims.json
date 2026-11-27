@@ -1,25 +1,165 @@
 {
   "about": "Every number SafeChange states in its pitch, deck, video, website and Devpost text, with the file it comes from. scripts/check_claims.js checks each one in CI.",
   "claims": [
-    {"id": "recall-records", "text": "4,329 FDA device recall records with a software root cause", "file": "data/raw/meta.json", "path": "total_reported", "equals": 4329},
-    {"id": "openfda-date", "text": "openFDA data updated 2026-11-21", "file": "data/raw/meta.json", "path": "openfda_last_updated", "equals": "2026-11-21"},
-    {"id": "test-events", "text": "309 recall events from 2024 to 2026 in the locked test", "file": "logs/ml_test.json", "path": "events", "equals": 309},
-    {"id": "model-recall", "text": "the model caught 82.6% of hazard categories", "file": "logs/ml_test.json", "path": "results.model.recall", "scale": 100, "decimals": 1, "equals": 82.6},
-    {"id": "baseline-recall", "text": "a keyword checklist caught 55.5%", "file": "logs/ml_test.json", "path": "results.baseline.recall", "scale": 100, "decimals": 1, "equals": 55.5},
-    {"id": "union-recall", "text": "model plus keywords caught 89.5%", "file": "logs/ml_test.json", "path": "results.union.recall", "scale": 100, "decimals": 1, "equals": 89.5},
-    {"id": "model-f2", "text": "model F2 0.674", "file": "logs/ml_test.json", "path": "results.model.f2", "scale": 1, "decimals": 3, "equals": 0.674},
-    {"id": "baseline-f2", "text": "keyword F2 0.562", "file": "logs/ml_test.json", "path": "results.baseline.f2", "scale": 1, "decimals": 3, "equals": 0.562},
-    {"id": "gap-ci-low", "text": "95% interval for the F2 gap starts at 0.060", "file": "logs/ml_test.json", "path": "ci95.diff_f2_model_minus_baseline.0", "scale": 1, "decimals": 3, "equals": 0.06},
-    {"id": "gap-ci-high", "text": "95% interval for the F2 gap ends at 0.164", "file": "logs/ml_test.json", "path": "ci95.diff_f2_model_minus_baseline.1", "scale": 1, "decimals": 3, "equals": 0.164},
-    {"id": "primary-success", "text": "the pre-registered success test passed", "file": "logs/ml_test.json", "path": "primary_success", "equals": true},
-    {"id": "model-flags", "text": "the model raises 2.57 flags per recall", "file": "logs/ml_test.json", "path": "results.model.flags_per_event", "scale": 1, "decimals": 2, "equals": 2.57},
-    {"id": "baseline-flags", "text": "keywords raise 1.14 flags per recall", "file": "logs/ml_test.json", "path": "results.baseline.flags_per_event", "scale": 1, "decimals": 2, "equals": 1.14},
-    {"id": "app-recall", "text": "at the app gate setting the model alone caught 13.9%", "file": "logs/ml_test.json", "path": "results.model_app.recall", "scale": 100, "decimals": 1, "equals": 13.9},
-    {"id": "pump-events", "text": "30 infusion and insulin pump recall events in the test", "file": "logs/ml_test.json", "path": "subgroup_infusion_insulin.events", "equals": 30},
-    {"id": "train-events", "text": "trained on 700 recall events", "file": "src/core/model.json", "path": "train_events", "equals": 700},
-    {"id": "fixture-links", "text": "27 of 27 expected hazard links on 30 sample changes", "file": "logs/evaluate.log", "regex": "Hazard links found: (\\d+) of 27", "equals": 27},
-    {"id": "fixture-held", "text": "21 of 21 hazard changes could reach Done in a plain Jira workflow", "file": "logs/evaluate.log", "regex": "Plain Jira workflow: (\\d+) of 21", "equals": 21},
-    {"id": "tests-total", "text": "392 automated tests", "file": "logs/tests.json", "path": "total_tests", "equals": 392},
-    {"id": "tests-pass", "text": "all tests pass", "file": "logs/tests.json", "path": "all_pass", "equals": true}
+    {
+      "id": "recall-records",
+      "text": "4,329 FDA device recall records with a software root cause",
+      "file": "data/raw/meta.json",
+      "path": "total_reported",
+      "equals": 4329
+    },
+    {
+      "id": "openfda-date",
+      "text": "openFDA data updated 2026-11-21",
+      "file": "data/raw/meta.json",
+      "path": "openfda_last_updated",
+      "equals": "2026-11-21"
+    },
+    {
+      "id": "test-events",
+      "text": "309 recall events from 2024 to 2026 in the locked test",
+      "file": "logs/ml_test.json",
+      "path": "events",
+      "equals": 309
+    },
+    {
+      "id": "model-recall",
+      "text": "the model caught 82.6% of hazard categories",
+      "file": "logs/ml_test.json",
+      "path": "results.model.recall",
+      "scale": 100,
+      "decimals": 1,
+      "equals": 82.6
+    },
+    {
+      "id": "baseline-recall",
+      "text": "a keyword checklist caught 55.5%",
+      "file": "logs/ml_test.json",
+      "path": "results.baseline.recall",
+      "scale": 100,
+      "decimals": 1,
+      "equals": 55.5
+    },
+    {
+      "id": "union-recall",
+      "text": "model plus keywords caught 89.5%",
+      "file": "logs/ml_test.json",
+      "path": "results.union.recall",
+      "scale": 100,
+      "decimals": 1,
+      "equals": 89.5
+    },
+    {
+      "id": "model-f2",
+      "text": "model F2 0.674",
+      "file": "logs/ml_test.json",
+      "path": "results.model.f2",
+      "scale": 1,
+      "decimals": 3,
+      "equals": 0.674
+    },
+    {
+      "id": "baseline-f2",
+      "text": "keyword F2 0.562",
+      "file": "logs/ml_test.json",
+      "path": "results.baseline.f2",
+      "scale": 1,
+      "decimals": 3,
+      "equals": 0.562
+    },
+    {
+      "id": "gap-ci-low",
+      "text": "95% interval for the F2 gap starts at 0.060",
+      "file": "logs/ml_test.json",
+      "path": "ci95.diff_f2_model_minus_baseline.0",
+      "scale": 1,
+      "decimals": 3,
+      "equals": 0.06
+    },
+    {
+      "id": "gap-ci-high",
+      "text": "95% interval for the F2 gap ends at 0.164",
+      "file": "logs/ml_test.json",
+      "path": "ci95.diff_f2_model_minus_baseline.1",
+      "scale": 1,
+      "decimals": 3,
+      "equals": 0.164
+    },
+    {
+      "id": "primary-success",
+      "text": "the pre-registered success test passed",
+      "file": "logs/ml_test.json",
+      "path": "primary_success",
+      "equals": true
+    },
+    {
+      "id": "model-flags",
+      "text": "the model raises 2.57 flags per recall",
+      "file": "logs/ml_test.json",
+      "path": "results.model.flags_per_event",
+      "scale": 1,
+      "decimals": 2,
+      "equals": 2.57
+    },
+    {
+      "id": "baseline-flags",
+      "text": "keywords raise 1.14 flags per recall",
+      "file": "logs/ml_test.json",
+      "path": "results.baseline.flags_per_event",
+      "scale": 1,
+      "decimals": 2,
+      "equals": 1.14
+    },
+    {
+      "id": "app-recall",
+      "text": "at the app gate setting the model alone caught 13.9%",
+      "file": "logs/ml_test.json",
+      "path": "results.model_app.recall",
+      "scale": 100,
+      "decimals": 1,
+      "equals": 13.9
+    },
+    {
+      "id": "pump-events",
+      "text": "30 infusion and insulin pump recall events in the test",
+      "file": "logs/ml_test.json",
+      "path": "subgroup_infusion_insulin.events",
+      "equals": 30
+    },
+    {
+      "id": "train-events",
+      "text": "trained on 700 recall events",
+      "file": "src/core/model.json",
+      "path": "train_events",
+      "equals": 700
+    },
+    {
+      "id": "fixture-links",
+      "text": "27 of 27 expected hazard links on 30 sample changes",
+      "file": "logs/evaluate.log",
+      "regex": "Hazard links found: (\\d+) of 27",
+      "equals": 27
+    },
+    {
+      "id": "fixture-held",
+      "text": "21 of 21 hazard changes could reach Done in a plain Jira workflow",
+      "file": "logs/evaluate.log",
+      "regex": "Plain Jira workflow: (\\d+) of 21",
+      "equals": 21
+    },
+    {
+      "id": "tests-total",
+      "text": "396 automated tests",
+      "file": "logs/tests.json",
+      "path": "total_tests",
+      "equals": 396
+    },
+    {
+      "id": "tests-pass",
+      "text": "all tests pass",
+      "file": "logs/tests.json",
+      "path": "all_pass",
+      "equals": true
+    }
   ]
 }
