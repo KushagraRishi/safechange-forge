@@ -46,7 +46,7 @@ Needs Node.js 22 or 24 and the Forge CLI (`npm install -g @forge/cli`), and an A
 
 ```bash
 npm install
-npm test                 # 367 tests: parser, matcher, gate, model parity, every handler against a fake Jira and Confluence
+npm test                 # 368 tests: parser, matcher, gate, model parity, every handler against a fake Jira and Confluence
 npm run evaluate         # scores the matcher on 30 labelled sample changes, writes logs/evaluate.log
 forge login
 forge register           # gives the app your own id
@@ -83,7 +83,7 @@ From `logs/evaluate.log` (30 sample changes I wrote and labelled, 8 hazards): 27
 
 ## Proof
 
-- 396 automated tests (367 for the Forge app, 29 for the data and model), counted into `logs/tests.json`.
+- 397 automated tests (368 for the Forge app, 29 for the data and model), counted into `logs/tests.json`.
 - GitHub Actions runs every test, retrains the model to check it matches the one shipped, and checks every number in `claims.json` against the logs.
 - `JUDGES.md`: a two minute path through the app. `LIMITS.md`: what it does not do.
 

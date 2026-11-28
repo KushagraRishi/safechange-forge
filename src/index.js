@@ -99,6 +99,11 @@ admin.define('setProductCodes', async ({ payload }) => {
   return { ok: true, productCodes: codes };
 });
 
+admin.define('setFdaLookups', async ({ payload }) => {
+  const s = await saveSettings({ fdaLookups: Boolean(payload.on) });
+  return { ok: true, fdaLookups: s.fdaLookups };
+});
+
 admin.define('targets', async () => {
   try {
     return await listProjectsAndSpaces();

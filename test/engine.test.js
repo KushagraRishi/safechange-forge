@@ -244,3 +244,13 @@ test('release record HTML lists every hazard with state, review and fingerprint,
   assert.match(html, /No hazard touched/);
   assert.match(html, /<code>f1<\/code>/);
 });
+
+test('privacy: an admin can turn off the one outside call (FDA lookups)', async () => {
+  await app.adminResolver.setFdaLookups({ payload: { on: false } });
+  const r = await app.panelResolver.recalls({ payload: { hazardId: 'HAZ-1' } });
+  assert.equal(r.disabled, true);
+  assert.equal(r.items.length, 0);
+  await app.adminResolver.setFdaLookups({ payload: { on: true } });
+  const r2 = await app.panelResolver.recalls({ payload: { hazardId: 'HAZ-1' } });
+  assert.equal(r2.disabled, undefined);
+});

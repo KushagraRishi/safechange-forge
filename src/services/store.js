@@ -15,6 +15,7 @@ export const DEFAULT_SETTINGS = {
   pageTitle: '',
   pageUrl: '',
   productCodes: ['FRN'],
+  fdaLookups: true,
   doneOnly: true,
 };
 

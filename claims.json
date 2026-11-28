@@ -149,10 +149,10 @@
     },
     {
       "id": "tests-total",
-      "text": "396 automated tests",
+      "text": "397 automated tests",
       "file": "logs/tests.json",
       "path": "total_tests",
-      "equals": 396
+      "equals": 397
     },
     {
       "id": "tests-pass",

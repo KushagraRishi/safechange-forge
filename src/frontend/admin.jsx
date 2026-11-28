@@ -183,6 +183,19 @@ function Recalls({ info, reload }) {
           </Box>
           <Button onClick={save}>Save</Button>
         </Inline>
+        <Inline space="space.100" alignBlock="center">
+          <Text>
+            FDA lookups are <Strong>{info.settings.fdaLookups === false ? 'off' : 'on'}</Strong>. They send only hazard words to the public FDA API, never code, issue text or patient data. Everything else stays inside Atlassian.
+          </Text>
+          <Button
+            onClick={async () => {
+              await invoke('setFdaLookups', { on: info.settings.fdaLookups === false });
+              reload();
+            }}
+          >
+            {info.settings.fdaLookups === false ? 'Turn on' : 'Turn off'}
+          </Button>
+        </Inline>
         {msg ? <Text>{msg}</Text> : null}
       </Stack>
     </Box>

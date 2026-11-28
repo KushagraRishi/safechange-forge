@@ -72,6 +72,7 @@ function Recalls({ hazardId }) {
     );
   if (!data) return <Spinner size="small" label="Loading FDA recalls" />;
   if (data.error) return <Text>Could not reach openFDA: {data.message}</Text>;
+  if (data.disabled) return <Text>FDA recall lookups are turned off on this site.</Text>;
   return (
     <Stack space="space.075">
       <Text>

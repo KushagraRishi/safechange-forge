@@ -82,6 +82,10 @@ export async function signReview({ issueKey, hazardId, decision, note, testKey, 
 }
 
 export async function recallsForHazard(hazard, productCodes) {
+  const settings = await getSettings();
+  // The only call that leaves Atlassian. It sends hazard words to the public
+  // FDA recall API, never code, issue text or patient data. Admins can turn it off.
+  if (settings.fdaLookups === false) return { total: 0, items: [], disabled: true };
   return similarRecalls(hazardWords(hazard), productCodes);
 }
 
