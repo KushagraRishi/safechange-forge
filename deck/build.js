@@ -2,7 +2,7 @@
 // Same look as the approved InfuSafe deck (Georgia + Arial, teal, dark green cover and close).
 // Shapes named "aN|..." fade in, in order N (add_animations.py).
 // Shapes the video effects use: slide 2 a1|card1..a3|card3, slide 4 a1|stat1..a3|stat3,
-// slide 5 a1|hazard log .. a4|result, slide 6 a1|input .. a3|model .. a6|chip, slide 8 a1|stat_model, a2|stat_base.
+// slide 5 a1|hazard log .. a4|result, slide 7 a1|input .. a3|model .. a6|features, a7|privacy, slide 8 a1|stat_model, a2|stat_base.
 // Run: PPTX_SKILL=<pptx skill folder> node build.js
 const pptxgen = require('pptxgenjs');
 const fs = require('fs');
@@ -97,9 +97,9 @@ async function icon(Comp, color) {
   pres.addSection({ title: 'Opening' });
   let s = pres.addSlide({ masterName: 'COVER', sectionTitle: 'Opening' });
   s.addImage({ data: img('cover_iv.jpg'), x: 6.9, y: 0, w: 6.433, h: 7.5, sizing: { type: 'cover', w: 6.433, h: 7.5 }, objectName: 'a1|photo IV line at a pump', altText: 'A hand checks an IV line above an infusion pump' });
-  text(s, 'FOR MEDICAL DEVICE SOFTWARE TEAMS', 0.8, 1.25, 5.9, 0.35, { fontSize: 12, bold: true, color: C.accent2, charSpacing: 2 }, 'a1|eyebrow');
+  text(s, 'RELEASE DAY', 0.8, 1.25, 5.9, 0.35, { fontSize: 12, bold: true, color: C.accent2, charSpacing: 2 }, 'a1|eyebrow');
   text(s, 'SafeChange', 0.8, 1.8, 5.9, 1.2, { fontSize: 64, bold: true, color: C.background1, fontFace: 'Georgia' }, 'a1|title');
-  text(s, 'No code change reaches a patient until its risks are checked.', 0.8, 3.15, 5.6, 1.3, { fontSize: 26, color: 'DDF2EE', fontFace: 'Georgia', italic: true, valign: 'top' }, 'a2|tagline');
+  text(s, 'Sam changes one line of pump code. Which patient risks did it touch?', 0.8, 3.15, 5.7, 1.6, { fontSize: 24, color: 'DDF2EE', fontFace: 'Georgia', italic: true, valign: 'top' }, 'a2|tagline');
   text(s, [
     { text: 'Kushagra Chaudhary', options: { bold: true, color: C.background1, fontSize: 15, breakLine: true } },
     { text: 'Atlassian Codegeist 2026', options: { color: 'A9D8CF', fontSize: 13, breakLine: true } },
@@ -187,49 +187,9 @@ async function icon(Comp, color) {
   text(s, 'of hazards caught by a keyword checklist', 2.95, 4.95, 9.4, 1.25, { fontSize: 22, bold: true, color: C.accent3, valign: 'middle' }, 'a4|result caption');
   text(s, '309 FDA software recalls, 2024 to 2026', 0.7, 6.35, 11.9, 0.35, { fontSize: 13, color: C.accent5 }, 'a5|test set');
 
-  // ============ 6. The solution ============
-  pres.addSection({ title: 'The solution' });
-  s = content('The solution', 'THE SOLUTION', 'SafeChange connects the hazard log to every change');
-  const inBox = async (k, y, Ic, head, sub, name) => {
-    rbox(s, 0.7, y, 3.15, 1.3, X.lt2, `a${k}|input ${name}`, { r: 0.18, line: LINE });
-    await iconIn(s, Ic, X.dk2, 0.95, y + 0.4, 0.5, `a${k}|input ${name} icon`);
-    text(s, [
-      { text: head, options: { fontSize: 17, bold: true, color: C.text2, breakLine: true } },
-      { text: sub, options: { fontSize: 13, color: C.accent5 } },
-    ], 1.65, y, 2.1, 1.3, { valign: 'middle' }, `a${k}|input ${name} text`);
-  };
-  await inBox(1, 2.0, fa.FaTasks, 'Jira change', 'components, files, words', 'jira change');
-  await inBox(1, 3.85, fa.FaBook, 'Hazard log', 'Confluence', 'hazard log');
-  arrow(s, 3.85, 2.65, 4.7, 2.65, 'a2|arrow jira change');
-  arrow(s, 3.85, 4.5, 4.7, 4.5, 'a2|arrow hazard log');
-  rbox(s, 4.7, 1.85, 4.1, 3.8, X.dk2, 'a3|safechange box', { r: 0.2, shadow: true });
-  text(s, 'SafeChange', 5.0, 1.95, 3.5, 0.55, { fontSize: 24, bold: true, color: C.background1, fontFace: 'Georgia', valign: 'middle' }, 'a3|safechange title');
-  rbox(s, 4.88, 2.55, 3.74, 0.5, '1D6A62', 'a3|model bg', { r: 0.25 });
-  await iconIn(s, fa.FaBrain, 'FFFFFF', 5.03, 2.65, 0.3, 'a3|model icon');
-  text(s, 'Model trained on 700 FDA recalls', 5.45, 2.55, 3.15, 0.5, { fontSize: 13, bold: true, color: C.background1, valign: 'middle' }, 'a3|model');
-  const checks = ['Finds touched hazards', 'Needs a signed review', 'Needs a passed test', 'Review goes stale on edit'];
-  for (let i = 0; i < checks.length; i++) {
-    const y = 3.2 + i * 0.58;
-    await iconIn(s, i === 3 ? fa.FaHistory : fa.FaCheckCircle, i === 3 ? X.accent2 : '5FD3BE', 5.0, y + 0.07, 0.34, `a3|safechange check ${i + 1} icon`);
-    text(s, checks[i], 5.5, y, 3.2, 0.48, { fontSize: 16, color: C.background1, valign: 'middle' }, `a3|safechange check ${i + 1}`);
-  }
-  arrow(s, 8.8, 2.9, 9.6, 2.65, 'a4|arrow held', X.accent3);
-  pill(s, 'Held at Done', 9.6, 2.25, 3.0, 0.8, X.accent3, C.background1, 'a4|pill held', 18);
-  text(s, 'until review and test are in', 9.6, 3.1, 3.0, 0.4, { fontSize: 13, color: C.accent5, align: 'center' }, 'a4|pill held caption');
-  arrow(s, 8.8, 4.4, 9.6, 4.65, 'a5|arrow cleared', X.accent1);
-  pill(s, 'Cleared', 9.6, 4.25, 3.0, 0.8, X.accent1, C.background1, 'a5|pill cleared', 18);
-  text(s, 'review signed, test passed', 9.6, 5.1, 3.0, 0.4, { fontSize: 13, color: C.accent5, align: 'center' }, 'a5|pill cleared caption');
-  const chip = async (x, Ic, t, name) => {
-    rbox(s, x, 5.95, 1.95, 0.5, X.accent6, `a6|chip ${name}`, { r: 0.25 });
-    await iconIn(s, Ic, X.dk2, x + 0.2, 6.05, 0.3, `a6|chip ${name} icon`);
-    text(s, t, x + 0.55, 5.95, 1.35, 0.5, { fontSize: 13, bold: true, color: C.text2, valign: 'middle' }, `a6|chip ${name} text`);
-  };
-  s.addShape(pres.shapes.LINE, { x: 6.75, y: 5.65, w: 0, h: 0.3, line: { color: X.accent5, width: 1.5, dashType: 'dash' }, objectName: 'a6|chip link' });
-  await chip(4.7, fa.FaRobot, 'Rovo agent', 'rovo agent');
-  await chip(6.85, fa.FaFileMedical, 'FDA recalls', 'fda recalls');
-
-  // ============ 7. Live demo ============
-  s = content('The solution', 'LIVE DEMO', 'Live on Forge');
+  // ============ 6. Live demo ============
+  pres.addSection({ title: 'The demo' });
+  s = content('The demo', 'LIVE DEMO', 'Live on Forge');
   const SX = 0.7, SY = 1.85, SW = 7.6, SH = 4.275;
   if (fs.existsSync(DEMO)) {
     const meta = await sharp(DEMO).metadata();
@@ -256,6 +216,53 @@ async function icon(Comp, color) {
   }
   pill(s, 'Real Forge app, not a mockup', 8.75, 5.45, 3.85, 0.5, X.accent6, C.text2, 'a6|real tag', 14);
 
+  // ============ 7. How it works ============
+  s = content('The demo', 'HOW IT WORKS', 'One model and 11 Forge modules, all inside Atlassian');
+  const inBox = async (k, y, Ic, head, sub, name) => {
+    rbox(s, 0.7, y, 2.95, 1.1, X.lt2, `a${k}|input ${name}`, { r: 0.18, line: LINE });
+    await iconIn(s, Ic, X.dk2, 0.92, y + 0.33, 0.44, `a${k}|input ${name} icon`);
+    text(s, [
+      { text: head, options: { fontSize: 16, bold: true, color: C.text2, breakLine: true } },
+      { text: sub, options: { fontSize: 12, color: C.accent5 } },
+    ], 1.55, y, 2.05, 1.1, { valign: 'middle' }, `a${k}|input ${name} text`);
+  };
+  await inBox(1, 1.95, fa.FaTasks, 'Jira change', 'components, files, words', 'jira change');
+  await inBox(1, 3.45, fa.FaBook, 'Hazard log', 'Confluence', 'hazard log');
+  arrow(s, 3.65, 2.5, 4.4, 2.5, 'a2|arrow jira change');
+  arrow(s, 3.65, 4.0, 4.4, 4.0, 'a2|arrow hazard log');
+  rbox(s, 4.4, 1.8, 4.55, 2.85, X.dk2, 'a3|safechange box', { r: 0.2, shadow: true });
+  text(s, 'SafeChange', 4.7, 1.86, 3.9, 0.5, { fontSize: 22, bold: true, color: C.background1, fontFace: 'Georgia', valign: 'middle' }, 'a3|safechange title');
+  rbox(s, 4.58, 2.4, 4.19, 0.44, '1D6A62', 'a3|model bg', { r: 0.22 });
+  await iconIn(s, fa.FaBrain, 'FFFFFF', 4.73, 2.47, 0.3, 'a3|model icon');
+  text(s, 'Model trained on 700 FDA recalls', 5.15, 2.4, 3.55, 0.44, { fontSize: 14, bold: true, color: C.background1, valign: 'middle' }, 'a3|model');
+  const checks = ['Finds touched hazards', 'Needs a signed review', 'Needs a passed test', 'Review goes stale on edit'];
+  for (let i = 0; i < checks.length; i++) {
+    const y = 2.95 + i * 0.4;
+    await iconIn(s, i === 3 ? fa.FaHistory : fa.FaCheckCircle, i === 3 ? X.accent2 : '5FD3BE', 4.73, y + 0.06, 0.28, `a3|safechange check ${i + 1} icon`);
+    text(s, checks[i], 5.15, y, 3.6, 0.4, { fontSize: 14, color: C.background1, valign: 'middle' }, `a3|safechange check ${i + 1}`);
+  }
+  arrow(s, 8.95, 2.6, 9.75, 2.35, 'a4|arrow held', X.accent3);
+  pill(s, 'Held at Done', 9.75, 2.0, 2.85, 0.66, X.accent3, C.background1, 'a4|pill held', 17);
+  text(s, 'until review and test are in', 9.75, 2.7, 2.85, 0.35, { fontSize: 12, color: C.accent5, align: 'center' }, 'a4|pill held caption');
+  arrow(s, 8.95, 3.75, 9.75, 3.95, 'a5|arrow cleared', X.accent1);
+  pill(s, 'Cleared', 9.75, 3.6, 2.85, 0.66, X.accent1, C.background1, 'a5|pill cleared', 17);
+  text(s, 'review signed, test passed', 9.75, 4.3, 2.85, 0.35, { fontSize: 12, color: C.accent5, align: 'center' }, 'a5|pill cleared caption');
+  const FEATURES = [
+    [fa.FaColumns, 'Jira issue panel'], [fa.FaBan, 'Workflow gate'], [fa.FaBolt, 'Live trigger'], [fa.FaFileAlt, 'Confluence page view'],
+    [fa.FaRobot, 'Rovo agent, 6 actions'], [fa.FaPlug, 'MCP tools'], [fa.FaMagic, 'Rovo skill'], [fa.FaDatabase, 'Forge storage'],
+  ];
+  const TW = (11.9 - 3 * 0.2) / 4;
+  for (let i = 0; i < FEATURES.length; i++) {
+    const [Ic, t] = FEATURES[i];
+    const x = 0.7 + (i % 4) * (TW + 0.2), y = 4.95 + Math.floor(i / 4) * 0.56;
+    rbox(s, x, y, TW, 0.44, X.lt1, `a6|features ${t} bg`, { r: 0.22, line: '9FD9CE' });
+    await iconIn(s, Ic, X.accent1, x + 0.2, y + 0.09, 0.26, `a6|features ${t} icon`);
+    text(s, t, x + 0.58, y, TW - 0.7, 0.44, { fontSize: 14, bold: true, color: C.text2, valign: 'middle' }, `a6|features ${t}`);
+  }
+  rbox(s, 0.7, 6.15, 11.9, 0.55, X.accent6, 'a7|privacy strip', { r: 0.2 });
+  await iconIn(s, fa.FaLock, X.dk2, 1.0, 6.28, 0.29, 'a7|privacy icon');
+  text(s, 'No code or patient data leaves Atlassian. The model runs inside Forge.', 1.45, 6.15, 11.0, 0.55, { fontSize: 16, bold: true, color: C.text2, valign: 'middle' }, 'a7|privacy');
+
   // ============ 8. Results ============
   pres.addSection({ title: 'Proof' });
   s = content('Proof', 'RESULTS', '83% of hazards caught on recalls it never saw');
@@ -274,7 +281,7 @@ async function icon(Comp, color) {
   bar(4, 3.05, 'Keyword checklist', 55.5, X.accent5, 'keywords');
   bar(5, 4.15, 'Model + keywords', 89.5, X.dk2, 'model plus keywords');
   pill(s, 'Plan locked in git before training', BX, 5.4, 4.3, 0.46, X.accent6, C.text2, 'a6|plan locked', 14);
-  text(s, '309 FDA software recalls from 2024 to 2026, unseen in training. Model precision 39% vs 59%; it loses on security. 396 tests and CI check every number.', 0.7, 6.1, 11.9, 0.55, { fontSize: 12, color: C.accent5, valign: 'top' }, 'a7|method');
+  text(s, '309 FDA software recalls from 2024 to 2026, unseen in training. Model precision 39% vs 59%; it loses on security. 397 tests and CI check every number.', 0.7, 6.1, 11.9, 0.55, { fontSize: 12, color: C.accent5, valign: 'top' }, 'a7|method');
 
   // ============ 9. Close ============
   pres.addSection({ title: 'Closing' });
